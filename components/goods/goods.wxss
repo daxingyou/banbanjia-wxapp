@@ -1,0 +1,21 @@
+@import '../../utils/iconfont.wxss';
+.details{display: flex;justify-content: center;margin:12rpx 0 20rpx;}
+.goods{display: flex;flex-wrap: wrap;margin:0 30rpx;}
+
+.goods_box{width: 33.3%;display: flex;justify-content: center;}
+.box{border-radius: 8rpx;width:140rpx;height: 54rpx;background-color: rgba(233, 233, 233, 1);display: flex;justify-content:space-around;align-items: center;margin-bottom:30rpx;}
+.xia{margin-left:-22rpx;}
+.curtain{position: fixed;left:0rpx;top: 0rpx;width: 100%;height: 100vh;z-index: 20;background: #000000;opacity: 0.5;}
+.goods_content{animation: viewlinear 20s linear infinite;
+	position:fixed;top:68rpx;left:25rpx;background:#FFFFFF;z-index:21;border-radius:8rpx;background-color: rgba(241, 241, 241, 1);}
+
+scroll-view {width:700rpx;height:946rpx;}
+
+.box_two{display: flex;flex-wrap: wrap;}
+.commodity{width: 30%;display: flex;align-items: center;flex-direction:column;margin:24rpx 11rpx;color: rgba(80, 80, 80, 1);}
+.commodity_image{height:182rpx;width: 160rpx;}
+.commodity_name{font-size: 20rpx;margin:2rpx 0 5rpx 0;}
+.commodity_operation{display: flex;width: 160rpx;justify-content: space-between;}
+.plus_reduce{width: 40rpx;height:40rpx; }
+.button_box{margin:20rpx 0;}
+.button{width:280rpx;height: 66rpx;color: #FFFFFF;background-color: rgba(237, 59, 72, 1);border-radius: 8rpx;font-size: 28rpx;box-shadow: 0px 6px 6px 0px rgba(237, 59, 72, 0.3);text-align: center;}

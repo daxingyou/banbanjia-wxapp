@@ -1,0 +1,71 @@
+<view class="business_details">
+	<view class="carousel"> <!--轮播图-->
+		<swiper indicator-dots="{{indicatorDots}}" circular="false"
+		  autoplay="true" interval="2000" duration="1000" previous-margin="60rpx" next-margin="60rpx">
+		  <block wx:for="{{imgUrls}}">
+			<swiper-item>
+			  <image src="{{item}}" class="slide-image" width="355" height="150"/>
+			</swiper-item>
+		  </block>
+		</swiper>
+	</view>
+	<view class="information">  <!--基本信息-->
+		<view class="company">
+			<view><image src="../../../images/03426c04ff620269952d6492b2e48c50.jpg"></image></view>
+			<view class="head_right">
+				<view class="head_right_one">
+					<view class="head_right_name"><view>广州超级搬家</view><i-rate class="xx" value="4"></i-rate></view>
+					<view class="head_right_right">
+						<image src="../../../images/no_collection.png" wx:if="{{ai==1}}"></image>
+						<image src="../../../images/collection.png" wx:if="{{ai==2}}"></image>
+						<image src="../../../images/fenxiang.png" class="share"></image>
+					</view>
+				</view>
+				<view class="case_number">案例：124</view>
+			</view> 
+		</view>
+		<view class="telephone">
+			<view>地址：广州市白云区嘉禾望岗大岗路xx号</view>
+			<view>现场预约</view>
+		</view>
+		<view class="address">电话：1234567895</view>
+	</view>
+	
+	
+	<view class="service_type">  <!-- 服务类型 -->
+		<view class="lable">
+			<view class="name">服务类型：</view>
+			<view class="lable_list">
+				<view wx:for="{{service_type}}" style="border:1px solid {{randomColorArr[index]}};color:{{randomColorArr[index]}} ;" class="lable_items">{{item}}</view>
+			</view>
+		</view>
+		<view class="nav">
+			<view class="nav_items" wx:for="{{service}}">
+				<view>
+					 <view>
+						 <image src="{{item.image}}"></image>
+						 <view>{{item.title}}</view>
+					 </view>
+					 <view class="free">免费</view>
+					 <view class="yuyue">立即预约</view>
+				 </view>
+			</view>
+		</view>
+	</view>
+	
+	<view class="case">
+		<view class="head_box">
+			<view>搬家案例</view>
+			<view bindtap="more">65<text class="iconfont icon-more"></text></view>
+		</view>
+		
+		<view class="conent_box"> 
+			<view class="case_item" wx:for="{{case_list}}">
+				<view class="conent_list">
+				<image src="{{item.image}}"></image>
+				<view class="case_item_title">{{item.title}}</view> 
+				</view>
+			</view> 
+		</view>
+	</view>
+</view>

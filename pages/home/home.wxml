@@ -1,0 +1,174 @@
+<view class="home">
+	<empower wx:if="{{empower}}" bind:state="state"></empower> <!-- 授权组件 -->
+	<view class="head"> <!--头部-->
+		<view class="location"  bindtap="choose_city"> <!-- 定位 -->
+			<viwe ><image src="../../images/定位.png" class='location_img'  mode="scaleToFill"></image></viwe>
+			<view class="location_name">{{city}}</view>
+		</view>
+		<view span="17">  <!-- 价格估算 -->
+			<button bindtap="estimate" class="price">价格估算</button>
+		</view>
+		<view span="4">	<!-- 日历 签到 -->
+			<image src="../../images/签到 (1).png" class='calendar_img' mode="scaleToFill"></image>
+		</view>
+	</view>
+	
+	<view class="carousel">	<!--轮播-->
+		<swiper autoplay="true" interval="1000" class="swiper">
+			<block wx:for="{{imgUrls}}">
+			  <swiper-item class="swiper_item"><image src="{{item}}" class="slide-image" /></swiper-item>
+			</block>
+		</swiper>
+	</view>
+	
+	<viwe class="order">  <!--实时订单-->
+		<view class="order_name">实时订单</view>
+		<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="3000">
+			<block wx:for="{{msgList}}">
+			<navigator url="/pages/index/index?title={{item.url}}" open-type="navigate">
+			<swiper-item class="swiper-item">
+				<view class="order_content">
+				<view>{{item.origin}}<text space="ensp" style="color: #CCCCCC;"> 搬家到 </text>{{item.end}}<text space="ensp" style="color: #ED3B48;"> [{{item.type}}]</text></view>
+				<view class="order_time">{{item.time}}</view>
+				</view>
+			</swiper-item>
+			</navigator>
+			</block>
+		</swiper>
+	</viwe>
+	
+	<view class="nav">	<!--菜单-->
+		<navigator class="nav_box">
+			<view class="image_box"><image src="../../images/货车.png" class="image"></image></view>
+			<view class="nav_name">国内搬家</view>
+		</navigator>
+		<navigator url="" class="nav_box">
+			<view class="image_box"><image src="../../images/国际搬家.png" class="image"></image></view>
+			<view class="nav_name">国际搬家</view>
+		</navigator>
+		<navigator url="" class="nav_box">
+			<view class="image_box"><image src="../../images/国际快递.png" class="image"></image></view>
+			<view class="nav_name">国际快递</view>
+		</navigator>
+		<navigator url="" class="nav_box">
+			<view class="image_box"><image src="../../images/晒单评论.png" class="image"></image></view>
+			<view class="nav_name">晒单评论</view>
+		</navigator>
+		<navigator url="" class="nav_box">
+			<view class="image_box"><image src="../../images/问答攻略.png" class="image"></image></view>
+			<view class="nav_name">问答攻略</view>
+		</navigator>
+	</view>
+	
+	
+	<view class="headlines">   <!--搬家头条 -->
+		<view class="headlines_name">
+			<view>搬家</view>
+			<view>头条</view>
+		</view>
+		<view class="headlines_content">
+				<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="3000">
+					<block wx:for="{{msgList_two}}">
+					<swiper-item class="swiper-item">
+						{{item.name}}
+					</swiper-item>
+					</block>
+				</swiper>
+				<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="3000">
+					<block wx:for="{{msgList_two}}">
+					<swiper-item class="swiper-item">
+						{{item.name}}
+					</swiper-item>
+					</block>
+				</swiper>
+		</view>
+		<view class="headlines_button">
+			<button bind:click="handleClick" class="information">最新资讯</button>
+		</view>
+	</view> 
+	
+	<view class="demand"> <!--了解搬家 -->
+		<view class="demand_left">
+			<image mode="scaleToFill" src="../../images/t0169ed52127b821764.jpg" class="demand_one"></image>
+			<view class="demand_name_one">图片主题识别</view>
+			<view class="demand_name_two">一分钟了解搬搬家花多少钱</view>
+		</view>
+		<view class="demand_fight">
+			<image mode="scaleToFill" src="../../images/873.jpg" class="demand_two"></image>
+			<image mode="scaleToFill" src="../../images/873.jpg" class="demand_two"></image>
+			<view class="demand_name_three">细化房间物品</view>
+			<view class="demand_name_four">精确物品，搬家更精确</view>
+			<view class="demand_name_five">需求提交</view>
+		</view>
+	</view>
+	
+	<view class="carry_diary_box"> <!--附近搬运工 和 搬家日记-->
+ 		<view class="carry_diary">
+			<view><image mode="scaleToFill" class="carry_diary_image" src="../../images/人.png"></image></view>
+			<view class="carry_diary_name">附近的搬运工</view>
+		</view>
+		<view class="carry_diary">
+			<view><image mode="scaleToFill" class="carry_diary_image" src="../../images/记录.png"></image></view>
+			<view class="carry_diary_name">最新搬家记</view>
+		</view>
+	</view>
+	
+	<view class="message_box">	<!-- 新闻什么的 -->
+		<view class="message_box_head">  
+			<view class="message_left">
+				<view class="tab {{current==1?'seed':''}}" data-index="1" bindtap="currents">推荐</view>
+				<view class="tab {{current==2?'seed':''}}" data-index="2" bindtap="currents">合同审核</view>
+				<view class="tab {{current==3?'seed':''}}" data-index="3" bindtap="currents">免费验收</view>
+			</view>
+			<view class="message_right">
+				<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="3000">
+					<block wx:for="{{msgList_two}}">
+					<swiper-item class="swiper-item_two">
+						{{item.name}}
+					</swiper-item>
+					</block>
+				</swiper>
+			</view>
+		</view>
+		<view class="message_box_content">
+			<view class="content_box">
+				<view><image src="../../images/873.jpg" mode="scaleToFill" class="message_image"></image></view>
+				<view class="title_time">
+					<view>什么是免费搬家？？</view>
+					<view>2019-06-10 12:00</view>
+				</view>
+				<view class="message_user">
+					<image src="../../images/true.jpg" mode="scaleToFill" class="message_user_image"></image>
+					<view>张三</view>
+				</view>
+				
+			</view>
+			<view class="content_box">
+				<view><image src="../../images/873.jpg" mode="scaleToFill" class="message_image"></image></view>
+				<view class="title_time">
+					<view>什么是免费搬家？？</view>
+					<view>2019-06-10 12:00</view>
+				</view>
+				<view class="message_user">
+					<image src="../../images/true.jpg" mode="scaleToFill" class="message_user_image"></image>
+					<view>张三</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	
+	
+	
+	
+	<!-- 提醒打开gps -->
+	<i-modal title="请打开定位" visible="{{visible}}" actions="{{ actions }}" action-mode="{{ vertical }}" bind:click="handleClick">
+
+	</i-modal>
+	
+	
+	
+	
+	
+	
+	
+</view>

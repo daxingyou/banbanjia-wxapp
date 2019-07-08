@@ -1,0 +1,80 @@
+<view class="photograph">
+	<view class="photo">
+		<view class="images_list"> 
+			<view class="image_box" wx:for="{{images}}"> 
+			  <image  src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="enlarge_image"></image>
+			   <image src="../../images/510beee62bf1f87edda0d4b7873f73e.png" bindtap="delete_image" class="images_close" data-index="{{index}}"></image>
+			</view> 
+			<view class="upload_image" bindtap="photo_image">
+				<image src="../../images/paizhao.png" class="photo_image"></image>
+				<view class="photo_tp">添加照片</view>
+			</view>
+		</view>
+	</view>
+	
+	<view  class="content_box">
+		<view class="type">
+			<view class="type_name">类型：</view>
+			<view class="type_array"> 
+				<view wx:for="{{list}}" class="list_item {{new_select==index?'new_class':'no_class'}}" data-index="{{index}}" bindtap="select_type">{{item}}</view>
+			</view>
+		</view>
+		<view class="select_content" wx:if="{{new_select==0}}">
+			<picker bindchange="orderSelect" bindcancel="cancel"  value="{{index}}"  range-key="title"  range="{{orders}}">
+				<view class="drying_list">
+					<view>订单晒单：<text class="drying_list_title">{{orders_item.title}}</text></view>
+					<view wx:if="{{orders_item==null}}">选择订单<text class="iconfont icon-more "></text></view>
+				</view>
+			</picker>
+			<view class="score_box">
+				<view class="score_name">评分：</view>
+				<view  style="margin-bottom:10rpx;"><i-rate bind:change="onChangefraction" value="{{fraction}}"></i-rate></view>
+			</view>
+			<view class="evaluate_box">
+				<view class="evaluate_name">好评：</view>
+				<view class="evaluate_select">
+					<view class="evaluate_select_list" wx:for="{{evaluate_list}}" bindtap="select_evaluate" data-index="{{index}}" data-select="{{item.select}}"  data-name="{{item.name}}"><text space="ensp">( ) </text>{{item.name}}<image hidden="{{item.select}}" src="../../images/gou.png" class="yes"></image></view>
+					
+				</view>
+			</view>
+			<view class="deit_content">
+				<textarea placeholder-class="size" bindinput="textinput" maxlength="200" type="text" placeholder="在此填写评论"/>
+			</view>
+		</view>
+		
+		<view wx:if="{{new_select==1}}" class="diary_box">
+			<view class="diary_title">
+				<input placeholder-class="size" bindinput="titleinput" placeholder="标题" />
+			</view>
+			<view class="diary_content">
+				<editors></editors>
+			</view>
+		</view>
+		
+		
+		<view wx:if="{{new_select==2}}" class="diary_box">
+			<view class="diary_title">
+				<input placeholder-class="size" bindinput="titleinput" placeholder="标题" />
+			</view>
+			<view class="answers_content">
+				<textarea placeholder-class="size"  bindinput="textinput" maxlength="200" type="text" placeholder="在此填写评论"/>
+			</view>
+		</view>
+		
+		
+		
+	</view>
+	
+	<view class="bottom">
+		<button  class="rlease" hover-class="hover"   bindtap="sub" > 发布 </button>
+	</view>
+	
+	
+	
+	
+	<i-message id="message" />
+	
+	
+	
+	
+</view>

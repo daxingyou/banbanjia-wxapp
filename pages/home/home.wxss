@@ -1,0 +1,78 @@
+/* 头部 */
+.head{display: flex;align-items: center;background:#fafafa;position: fixed;z-index:10;width: 100%;height:128rpx;}
+.location{display: flex; align-items: center;margin-top:10rpx	}
+.location_img{width:40rpx;height: 40rpx;margin:0 5rpx 0 12rpx;}
+.location_name{font-size:28rpx;width:100rpx;overflow: hidden;white-space: nowrap;text-overflow: ellipsis}
+
+.calendar_img{width:50rpx;height: 50rpx;margin-left:6rpx;}
+.price{margin: 0 20rpx;background:#ed3b48;color:#FFFFFF;border-radius:20rpx;height:64rpx;display: flex;align-items: center;justify-content: center;width:470rpx;letter-spacing:12rpx;font-weight: 10rpx;font-weight:bolder;}
+
+/* 轮播 */
+.swiper{overflow:hidden;border-radius:16rpx;-webkit-backface-visibility: hidden;-webkit-transform: translate3d(0, 0, 0);box-shadow:1rpx 8rpx 10rpx #a6a6a6;}
+.carousel{padding:150rpx 32rpx 35rpx;background:#fafafa;} 
+.carousel image{height: 100%;width: 100%;border-radius:16rpx;}
+
+
+/* 实时订单 */
+.order{display: flex;font-size: 22rpx;align-items: center;height:82rpx;margin:0 35rpx;}
+.order_name{font-size: 34rpx;color:#ed3b48;margin-right: 30rpx;width:200rpx;font-style:italic;}
+.order_content{display: flex;justify-content: space-between;width: 100%}
+
+/* 菜单 */
+.nav{display: flex;height:148rpx;
+}
+.nav_box{display: flex;flex-direction: column;align-items: center;background:#fafafa;flex: 1;justify-content: center;}
+.nav_name{font-size:22rpx;}
+.image{width:80rpx;height:80rpx;}
+
+/* 头条 */
+.headlines{display: flex;align-items:center;height:104rpx;margin: 0 35rpx;}
+.headlines_name{color: #ED3B48;font-style:italic;width: 20%;font-weight: bold;}
+.headlines_name view:nth-child(2){margin-top:-12rpx;}
+.headlines_content{font-size:26rpx;color: #333333;width:56%;}
+.headlines_content view{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.headlines_button{width:24%}
+.information{font-size:30rpx;background:#ed3b48;color:#FFFFFF;border-radius:12rpx;height:58rpx;display: flex;align-items: center;justify-content: center;width:138rpx;letter-spacing:-1rpx;padding:0rpx !important;box-shadow:1rpx 8rpx 10rpx #f9c4c8;
+}
+
+/* 咨询 */
+.demand{display: flex;padding:30rpx 35rpx;height:212rpx;justify-content:space-between;background:#fafafa;}
+.demand_left{width:47.5%;position: relative;}
+.demand_fight{width:47.5%;position: relative;}
+.demand_one{width: 100%;height:212rpx;border-radius: 20rpx}
+.demand_two{border-radius: 20rpx;width: 100%;height:102rpx;}
+.demand_name_one{position: absolute;color: #ff6c4b;top:7rpx;font-size:28rpx;left:10rpx;}
+.demand_name_two{position: absolute;font-size:28rpx;left:10rpx;font-size:20rpx;top:44rpx;}
+.demand_name_three{position: absolute;color: #ff6c4b;top:7rpx;font-size:28rpx;left:10rpx;}
+.demand_name_four{position: absolute;font-size:28rpx;left:10rpx;font-size:20rpx;top:44rpx;}
+.demand_name_five{position: absolute;color: #ff6c4b;left:10rpx;font-size:28rpx;top:120rpx;}
+
+/* 搬运 和 日记 */
+.carry_diary_box{display: flex;height: 90rpx;align-items: center;justify-content:flex-start;}
+.carry_diary{display: flex;align-items: center;margin-left:88rpx;}
+.carry_diary_image{width: 64rpx;height: 64rpx;margin-right:26rpx;}
+.carry_diary_name{font-size: 26rpx;}
+
+
+
+/* 新闻什么的 */
+.content_box{padding-bottom: 30rpx;}
+.message_box{background:#fafafa;padding: 0 35rpx;}
+.message_box_head{display: flex;align-items: center;height:78rpx;}
+.message_left{display: flex;font-size:28rpx;width: 62%}
+.message_right{color: #AAAAAA;font-size: 18rpx;width:38%;text-align: right;}
+.tab{flex: 1;text-align: center;}
+.seed{font-weight: bold;border-bottom: 2px solid #ED3B48;margin-bottom:-10rpx;}
+.message_image{width:100%;height:302rpx;border-radius:20rpx;}
+.title_time{display: flex;align-items: center;} 
+.title_time view:nth-child(1){font-size: 30rpx;width: 72%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.title_time view:nth-child(2){color: #CCCCCC;font-size: 20rpx;width: 28%;text-align: right;}
+.message_user{display: flex;align-items: center;padding-top:6rpx;}
+.message_user_image{width: 44rpx;height: 44rpx;border-radius: 30rpx;}
+.message_user view:nth-child(2){font-size:20rpx;margin-left: 10rpx;color: #999999;}
+
+
+/* 滚动文字 */
+.swiper_container {height: 50rpx;width: 100%;}
+.swiper-item{display: flex;align-items: center;}
+.swiper-item_two{display: flex;align-items: center;justify-content: flex-end;}

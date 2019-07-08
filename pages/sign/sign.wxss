@@ -1,0 +1,60 @@
+@import '../../utils/iconfont.wxss'; 
+.sign_box_image{background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;height: 768rpx;
+box-shadow: 0px 10rpx 10rpx 0px rgba(236, 65, 73, 0.1);border-radius:0 0 10rpx 10rpx;}
+.sign_box{margin: 0 30rpx;}
+.header_box{display: flex;justify-content:space-between;color: rgba(255, 255, 255, 1);font-size:24rpx;align-items: center;padding:26rpx 0 26rpx 0;}
+.header_box view{display: flex;align-items: center;}
+
+.integral{display: flex;align-items: center;justify-content: space-between;}
+.info{display: flex;align-items: center;color: rgba(255, 255, 255, 1);font-size: 12px;}
+.info .number{color: rgba(255, 235, 59, 1);font-size: 32rpx;padding:0 10rpx 0 14rpx;}
+.info view{display: flex;align-items: center;}
+.head{height: 76rpx;width: 76rpx;border-radius: 40rpx;}
+.qiandao{width:178rpx;height: 52rpx;padding-top:10rpx;}
+.sign_buttom{position: relative;}
+.sign_buttom text{position: absolute;top: 17rpx;left: 20rpx;color: rgba(251, 255, 130, 1);font-size: 24rpx;font-weight: bold;}
+.sign_days{color: rgba(255, 255, 255, 1);font-size:24rpx;margin:36rpx 0;}
+
+
+.volume_box{display:flex;justify-content: space-between;}
+.volume_item{width:216rpx;}
+.volume{display: flex;align-items: center;color:rgba(255, 255, 255, 1);font-size: 20rpx;justify-content: center;ackground-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;width: 216rpx;height: 118rpx;}
+.volume_box .content{text-align: center;}
+.volume_box .content view:nth-child(1){color: rgba(236, 65, 73, 1);}
+.continuity{display: flex;justify-content: center;margin-top:16rpx;}
+ .continuity view{width: 172rpx;height: 38rpx;color: rgba(255, 255, 255, 1);background-color: rgba(255, 126, 126, 1);border-radius: 18rpx;font-size: 20rpx; box-shadow: 0px 4rpx 4rpx 0px rgba(246, 142, 142, 0.3); display: flex;align-items: center;justify-content: center;}
+ 
+ 
+ /* 使用方式 */
+ .explain_box{margin-top:156rpx;}
+ .usage{color: rgba(236, 65, 73, 1);font-size: 32rpx;text-align:center;font-weight: bold}
+ .explain_box .content{color: rgba(166, 166, 166, 1);font-size:20rpx;}
+ .explain_box .image{width: 48rpx;height: 48rpx;margin-right:17rpx;}
+ 
+ .explain_list{display: flex;align-items: center;justify-content: space-between;margin:28rpx 0;}
+ .explain_list .explain_items:nth-child(2) image{width: 40rpx;height: 40rpx}
+ .explain_list .explain_items:nth-child(3) image{width: 44rpx;height: 44rpx}
+ .explain_items{display: flex;align-items: center;color: rgba(80, 80, 80, 1);font-size: 24rpx;font-weight: bold;}
+ 
+ 
+ 
+ /* 晒单 */
+ .list{ }
+ .more text{font-size: 30rpx;}
+ .list_title{display: flex;justify-content: space-between;margin:26rpx 30rpx 20rpx;}
+ .list_name{color: rgba(80, 80, 80, 1);font-size: 28rpx;display: flex;align-items:center;font-weight: bold}
+ .red_vertical{width: 6rpx;height:32rpx;background-color: rgba(236, 65, 73, 1);border-radius: 4rpx;margin-right:10rpx;}
+ .list .more{color: rgba(166, 166, 166, 1);font-size: 20rpx;display: flex;align-items: center}
+ .list_content{margin-bottom: 48rpx;border-bottom: 1px solid rgba(229, 229, 229, 1);padding-bottom:14rpx;}
+ .list_content .title{display: flex;justify-content: space-between;align-items: center;margin:0 30rpx;}
+ .list_content .image{width: 60rpx;height: 60rpx;border-radius: 30rpx;margin-right: 12rpx;}
+ .user{display: flex;align-items:center ;color: rgba(0, 0, 0, 1);font-size: 24rpx;}
+ .time{color: rgba(166, 166, 166, 1);font-size: 20rpx;}
+ .content{color: rgba(80, 80, 80, 1);font-size: 24rpx;margin:10rpx 30rpx;}
+ .list_image{display: flex;flex-wrap: wrap;margin:0 12rpx;}
+ .item_image{width: 33%;text-align:center;}
+ .item_image image{width: 208rpx;height: 160rpx;border-radius:16rpx;}
+ 
+ 
+ 
+ .header_box .text{font-size: 30rpx;}

@@ -1,0 +1,158 @@
+<view class="box">
+	<!-- 头像名称 -->
+	<view class="head_box">
+		<view class="user_box">
+			<image class="user_head" src="../../images/t0169ed52127b821764.jpg"></image>
+			<view class="name_xm">小明家</view>
+		</view>
+		<image class="set" src="../../images/seizi.png" mode="scaleToFill" ></image>
+	</view>
+	
+	<!-- 普通用户 -->
+	<view class="content_box">
+		<view class="gn">常用功能</view>
+		<view class="button">
+			<navigator class="button_box">
+				<image src="../../images/签到管理.png"  class="name_image"></image>
+				<div class="name">我的签到</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/qianbao.png" class="name_image"></image>
+				<div class="name">我的钱包</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/采购订单_1.png" class="name_image dd"></image>
+				<div class="name">我的订单</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/我的收藏 (1).png" class="name_image"></image>
+				<div class="name">我的收藏</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/我的咨询.png" class="name_image"></image>
+				<div class="name">我的咨询</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/晒单.png" class="name_image saidan"></image>
+				<div class="name">晒单评论</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/工具.png" class="name_image gj"></image>
+				<div class="name">工具箱</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/qiehuan.png" class="name_image"></image>
+				<div class="name">身份切换</div>
+			</navigator>
+		</view>
+	</view>
+	<view class="content_box">
+		<view class="gn">更多服务</view>
+		<view class="button">
+			<navigator class="button_box">
+				<image src="../../images/账户安全1.png"  class="name_image"></image>
+				<div class="name">安全中心</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/客服 @2x.png" class="name_image"></image>
+				<div class="name">客服中心</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/首页ICON_商家入驻敬请期待.png" class="name_image"></image>
+				<div class="name">我要入驻</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/更多.png" class="name_image gd"></image>
+				<div class="name">更多</div>
+			</navigator>
+		</view>
+	</view>
+
+	<!-- 商户 -->
+	<view class="content_box">
+		<view class="gn"></view>
+		<view class="button">
+			<navigator class="button_box_two">
+				<image src="../../images/企业管理咨询.png"  class="name_image"></image>
+				<div class="name">企业信息</div>
+			</navigator>
+			<navigator class="button_box_two">
+				<image src="../../images/grxx.png" class="name_image"></image>
+				<div class="name">员工管理</div>
+			</navigator>
+			<navigator class="button_box_two">
+				<image src="../../images/采购订单_1.png" class="name_image dd"></image>
+				<div class="name">订单中心</div>
+			</navigator>
+			<navigator class="button_box_two">
+				<image src="../../images/通知.png" class="name_image"></image>
+				<div class="name">消息通知</div>
+			</navigator>
+		</view>
+	</view>
+	<view class="content_box">
+		<view class="gn"></view>
+		<view class="button">
+			<navigator class="button_box_two">
+				<image src="../../images/我的咨询.png"  class="name_image"></image>
+				<div class="name">客户资讯</div>
+			</navigator>
+			<navigator class="button_box_two">
+				<image src="../../images/我的资产.png" class="name_image"></image>
+				<div class="name">资产中心</div>
+			</navigator> 
+			<navigator class="button_box_two">
+				<image src="../../images/我的团队.png" class="name_image"></image>
+				<div class="name">我的团队</div>
+			</navigator>
+			<navigator class="button_box_two">
+				<image src="../../images/数据.png" class="name_image"></image>
+				<div class="name">数据分析</div>
+			</navigator>
+			<navigator class="button_box_two">
+				<image src="../../images/qiehuan.png" class="name_image"></image>
+				<div class="name">身份切换</div>
+			</navigator>
+		</view>
+	</view>
+
+
+
+
+
+
+	<!-- 搬运工 -->
+	<view class="content_box">
+		<view class="gn"></view>
+		<view class="button">
+			<navigator class="button_box_two">
+				<image src="../../images/grxx.png"  class="name_image"></image>
+				<div class="name">个人信息</div>
+			</navigator>
+			<navigator class="button_box_two">
+				<image src="../../images/通知.png" class="name_image"></image>
+				<div class="name">消息通知</div>
+			</navigator>
+			<navigator class="button_box_two">
+				<image src="../../images/采购订单_1.png" class="name_image dd"></image>
+				<div class="name">订单中心</div>
+			</navigator>
+			<view class="button_box_two">
+				<image src="../../images/我的团队.png" class="name_image"></image>
+				<div class="name">我的团队</div>
+			</view>
+			<navigator class="button_box_two">
+				<image src="../../images/数据.png" class="name_image"></image>
+				<div class="name">数据分析</div>
+			</navigator>
+			<navigator class="button_box_two">
+				<image src="../../images/我的资产.png" class="name_image saidan"></image>
+				<div class="name">资产中心</div>
+			</navigator>
+			<navigator class="button_box_two">
+				<image src="../../images/qiehuan.png" class="name_image"></image>
+				<div class="name">身份切换</div>
+			</navigator>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,21 @@
+page{background-color: #FAFAFA;}
+.box{margin:30rpx 30rpx 0;}
+.head_box{display: flex;justify-content: space-between;color:#505050;align-items: center;margin-bottom:30rpx;}
+.user_box{display: flex;align-items: center;}
+.user_head{width: 90rpx;height: 90rpx;border-radius: 50rpx;}
+.name_xm{font-size:32rpx;margin-left:16rpx;}
+.set{width: 46rpx;height: 46rpx;margin-right:38rpx;}
+
+.content_box{background: #FFFFFF;box-shadow:0rpx 0rpx 20rpx #d8d5d5 ;border-radius: 18rpx;margin-bottom:40rpx;}
+.button{display: flex;flex-wrap: wrap;}
+.button_box{display: flex;flex-direction: column;align-items: center;width: 25%;margin-bottom:20rpx;}
+.button_box_two{display: flex;flex-direction: column;align-items: center;width: 25%;margin-bottom:20rpx;}
+.name_image{width: 54rpx;height: 54rpx;}
+.name{color:#505050;font-size:24rpx;margin-top:6rpx}
+.gn{padding:8px 11px;font-size:26rpx;}
+
+/* 修改某些图片尺寸 */
+.dd{width: 50rpx;height: 50rpx;margin-top: 4rpx;}
+/* .saidan{height:64rpx;margin-top:-10rpx;margin-bottom:-7rpx;} */
+.gj{width:50rpx;height:50rpx;margin-top:4rpx;}
+.gd{width:58rpx;height:58rpx;margin-top:-4rpx;}

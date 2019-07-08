@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "切换城市",
+	"usingComponents": {
+		 "i-modal": "../../../dist/modal/index"
+	}
+}

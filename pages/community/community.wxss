@@ -1,0 +1,7 @@
+.community_box{overflow: hidden;}
+.community_box{margin: 4rpx 0 10rpx 0;}
+.tab{display: flex;color: rgba(80, 80, 80, 1);font-size:28rpx;font-weight: bold;padding-bottom:15rpx}
+.tab_item{width: 18%;text-align: center;display: flex;justify-content: center;}
+.border{width: 84rpx;padding-bottom:4rpx;}
+.new{border-bottom:4rpx solid rgba(236, 65, 73, 1);color:rgba(236, 65, 73, 1);}
+.scoll-h{height: 100%;}

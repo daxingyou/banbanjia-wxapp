@@ -1,0 +1,63 @@
+<text class="details" space="ensp">—— 物品详情 ——</text>
+<veiw class="goods">
+	<view class="goods_box">
+		<view class="box" data-name="1" bindtap="clicks">
+			<text>家具</text>
+			<text class="iconfont icon-moreunfold xia"></text>
+		</view>
+	</view>
+	<view class="goods_box">
+		<view class="box" data-name="2" bindtap="clicks">
+			<text>电器</text>
+			<text class="iconfont icon-moreunfold xia"></text>
+		</view>
+	</view>
+	<view class="goods_box">
+		<view class="box" data-name="3" bindtap="clicks">
+			<text>重物</text>
+			<text class="iconfont icon-moreunfold xia"></text>
+		</view>
+	</view>
+	<view class="goods_box">
+		<view class="box" data-name="4" bindtap="clicks">
+			<text>配件</text>
+			<text class="iconfont icon-moreunfold xia"></text>
+		</view>
+	</view>
+	<view class="goods_box">
+		<view class="box" data-name="5" bindtap="clicks">
+			<text>杂物</text>
+			<text class="iconfont icon-moreunfold xia"></text>
+		</view>
+	</view>
+	<view class="goods_box">
+		<view class="box" data-name="6" bindtap="clicks">
+			<text>其他</text>
+			<text class="iconfont icon-moreunfold xia"></text>
+		</view>
+	</view>
+</veiw>
+
+
+<view class="" wx:if="{{state}}" catchtouchmove="move">
+	<view class="curtain"></view>
+	<view class="goods_content">
+		<scroll-view scroll-y="true">
+			<view class="box_two">
+				<block wx:for="{{new_data}}">
+					<view class="commodity">
+						<view><image class="commodity_image" src="{{item.image}}"></image></view>
+						<view class="commodity_name">{{item.name}}</view>
+						<view class="commodity_operation">
+							<image src="../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce" data-volume="{{item.volume}}" data-number="{{item.number}}" data-ids="{{item.id}}" data-id="{{index}}" data-index="1" ></image>
+							<text space="ensp"><text wx:if="{{item.number==null}}">0</text><text wx:if="{{item.number!=null}}">{{item.number}}</text></text>
+							<image src="../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-volume="{{item.volume}}" data-number="{{item.number}}" data-ids="{{item.id}}" data-id="{{index}}" data-index="2"  ></image></view>
+					</view>
+				</block>
+				 
+				
+			</view>
+		</scroll-view>
+		<view class="button_box"><button class="button" bindtap="sure">确定</button></view>
+	</view>
+</view>

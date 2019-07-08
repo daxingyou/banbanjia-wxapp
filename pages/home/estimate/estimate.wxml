@@ -1,0 +1,505 @@
+<view class="box"  >
+	<view class="">
+		<image src="../../../images/4accc602eaf84132a5bc77116110b20.jpg" class="background"></image>
+	</view>
+	<view class="subject">
+		<view class="computer_box">
+			<view class="display_box">
+				<image src="../../../images/anniutwo.png" class="display"></image>
+				<view class="number">{{number}}</view>
+				<view class="yuan">元</view>
+			</view>
+			<view class="content">
+				<view class="radio_box">
+					<radio-group class="radio-group" bindchange="carry">
+					  <label class="radio {{carry==item.id?'radio_click':''}}" wx:for="{{items}}">
+						<radio value="{{item.id}}" checked="{{item.checked}}"/>
+						<text class="name">{{item.value}}</text>
+					  </label>
+					</radio-group>
+				</view>
+				<view>{{item.id}}</view>
+				
+				<!-- 国内搬家 -->
+				<view class="domestic" hidden="{{carry!=1}}">
+				
+					<view class="radio_box">  <!-- 国内搬家  免费 共享 公司 选择-->
+						<radio-group class="radio-group" bindchange="types_handling">
+							<label class="radio {{carry_type==item.id?'radio_click':''}}" wx:for="{{items_two}}">
+								<radio value="{{item.id}}" checked="{{item.checked}}"/>
+								<text class="name">{{item.value}}</text>
+							</label>
+						</radio-group>
+					</view>
+					
+					 <view class="free" hidden="{{carry_type!=1}}"> <!-- 免费搬运 -->
+						<view class="origin">  
+							<view class="origin_name">起运地</view>
+							<view class="origin_lu"></view>
+							<view class="origin_input"><input disabled value="{{start_location.place}}" style="font-size:26rpx;" bindtap="location" placeholder="您从哪里搬出"/></view>
+						</view>
+						<view class="type">
+							<view class="type_name">服务类型</view>
+							<view class="radio_box_two">  <!-- 国内搬家  免费 共享 公司 选择 -->
+								<radio-group class="radio-group" bindchange="service_type">
+									<label class="radio" wx:for="{{items_three}}">
+										<radio value="{{item.id}}" checked="{{item.checked}}"/>
+										<text class="name">{{item.value}}</text>
+									</label>
+								</radio-group>
+							</view>
+						</view>
+						<view class="floor"> 
+							<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+								<view class="picker">
+									<text space="ensp">楼层 {{floor}} 楼<text class="iconfont icon-moreunfold xia_left"></text></text>
+								</view>
+							</picker>
+							
+							<view class="radio_box_three">
+								<radio-group class="radio-group" bindchange="stairsEvent">
+									<label class="radio" wx:for="{{items_four}}">
+										<radio value="{{item.id}}" checked="{{item.checked}}"/>
+										<text class="name">{{item.value}}</text>
+									</label>
+								</radio-group>
+							</view>
+						</view> 
+						<goods id="goods" data="{{goods}}" updata="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!--  物品星详情的分类  -->
+						<view class="goods_people">
+							<text space="ensp" bindtap="godos_list">物品清单 <text class="iconfont icon-moreunfold "></text></text>
+							<text space="ensp" data-who="1" bindtap="member_map">附近人员 <text class="iconfont icon-more "></text></text>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">体积：</view> 
+							<view class="volume_input"><input disabled value="{{volume}}" placeholder="此为预估体积"/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">备注：</view> 
+							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height	 bindinput="remarks_input" placeholder=""/></view>
+						</view>
+						<view class="button_box">
+							<button class="now">现在搬运</button>
+							<button class="appointment">预约</button>
+						</view>
+					</view> 
+					
+					
+					<view class="free"  hidden="{{carry_type!=2}}">   <!--共享搬运 -->
+						<view class="origin">  
+							<view class="origin_name">起运地</view>
+							<view class="origin_lu"></view>
+							<view class="origin_input"><input disabled value="{{start_location.place}}" style="font-size:26rpx;" bindtap="location" placeholder="您从哪里搬出"/></view>
+						</view>
+						<view class="origin">  
+							<view class="origin_name">目的地</view>
+							<view class="origin_lu_two"></view>
+							<view class="origin_input"><input disabled value="{{end_location.place}}" style="font-size:26rpx;" bindtap="end_location" placeholder="您从哪里搬出"/></view>
+						</view>
+						
+						<view class="type">
+							<view class="type_name">服务类型</view>
+							<view class="radio_box_two">  <!-- 国内搬家  免费 共享 公司 选择-->
+								<radio-group class="radio-group" bindchange="service_type">
+									<label class="radio" wx:for="{{items_three}}">
+										<radio value="{{item.id}}" checked="{{item.checked}}"/>
+										<text class="name">{{item.value}}</text>
+									</label>
+								</radio-group>
+							</view>
+						</view>
+						<view class="floor"> 
+							<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+								<view class="picker">
+									<text space="ensp">楼层 {{floor}} 楼<text class="iconfont icon-moreunfold xia_left"></text></text>
+								</view>
+							</picker>
+							
+							<view class="radio_box_three">
+								<radio-group class="radio-group" bindchange="stairsEvent">
+									<label class="radio" wx:for="{{items_four}}">
+										<radio value="{{item.id}}" checked="{{item.checked}}"/>
+										<text class="name">{{item.value}}</text>
+									</label>
+								</radio-group>
+							</view>
+						</view> 
+						<text class="details" space="ensp">—— 物品详情 ——</text>
+						<view class="house">
+							<view class="room">
+								<text space="ensp">{{hall}}   厅</text>
+								<image src="../../../images/reduce.png" class="plus_reduce" bindtap="plus_reduce" data-name="1" data-index="1" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  	bindtap="plus_reduce" data-name="2" data-index="1" ></image>
+							</view>
+							<view class="room">
+								<text space="ensp">{{room}}   房间</text>
+								<image src="../../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce" data-name="1" data-index="2" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="2" ></image>
+							</view>
+							<view class="room">
+								<text space="ensp">{{toilet}}   卫</text>
+								<image src="../../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce" data-name="1" data-index="3" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="3" ></image>
+							</view>
+							<view class="room">
+								<text space="ensp">{{balcony}}   阳台</text>
+								<image src="../../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce" data-name="1" data-index="4" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="4" ></image>
+							</view>
+						</view>
+						<goods id="goods" data="{{goods}}"  updata="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!-- 物品星详情的分类 -->
+						<view class="goods_people">
+							<text space="ensp" bindtap="godos_list">物品清单 <text class="iconfont icon-moreunfold "></text></text>
+							<text space="ensp" data-who="2" bindtap="member_map">附近人员及商户<text class="iconfont icon-more "></text></text>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">体积：</view> 
+							<view class="volume_input"><input disabled value="{{volume}}" placeholder="此为预估体积"/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">备注：</view> 
+							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height bindinput="remarks_input" placeholder=""/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">保价：</view> 
+							<view class="volume_input"><input  bindinput="insuranceEvent"/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">优惠卷：</view> 
+							<view class="volume_input_two"><input disabled bindtap="coupon" value="{{start_location}}" placeholder="暂无优惠卷可使用"/></view>
+						</view>
+						<view class="button_box">
+							<button class="now">现在搬运</button>
+							<button class="appointment">预约</button>
+						</view>
+					</view>
+					
+					
+					
+					<view class="free" hidden="{{carry_type!=3}}">   <!--搬家公司-->
+						<view class="origin">  
+							<view class="origin_name">起运地</view>
+							<view class="origin_lu"></view>
+							<view class="origin_input"><input disabled value="{{start_location.place}}" style="font-size:26rpx;" bindtap="location" placeholder="您从哪里搬出"/></view>
+						</view>
+						<view class="origin">  
+							<view class="origin_name">目的地</view>
+							<view class="origin_lu_two"></view>
+							<view class="origin_input"><input disabled value="{{end_location.place}}" style="font-size:26rpx;" bindtap="end_location" placeholder="您从哪里搬出"/></view>
+						</view>
+						
+						<view class="type">
+							<view class="type_name">服务类型</view>
+							<view class="radio_box_two">  <!-- 国内搬家  免费 共享 公司 选择-->
+								<radio-group class="radio-group" bindchange="service_type">
+									<label class="radio" wx:for="{{items_three}}">
+										<radio value="{{item.id}}" checked="{{item.checked}}"/>
+										<text class="name">{{item.value}}</text>
+									</label>
+								</radio-group>
+							</view>
+						</view>
+						<view class="floor"> 
+							<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+								<view class="picker">
+									<text space="ensp">楼层 {{floor}} 楼<text class="iconfont icon-moreunfold xia_left"></text></text>
+								</view>
+							</picker>
+							
+							<view class="radio_box_three">
+								<radio-group class="radio-group" bindchange="stairsEvent">
+									<label class="radio" wx:for="{{items_four}}">
+										<radio value="{{item.id}}" checked="{{item.checked}}"/>
+										<text class="name">{{item.value}}</text>
+									</label>
+								</radio-group>
+							</view>
+						</view> 
+						<view class="volume_three" bindtap="choice_time">  
+							<view class="volume_name">时间：<text space="ensp"></text></view> 
+							<view class="volume_time">请选择时间<text class="iconfont icon-more volume_time"></text></view>
+						</view>
+						<text class="details" space="ensp">—— 我的家 ——</text>
+						<view class="house">
+							<view class="room">
+								<text space="ensp">{{hall}}   厅</text>
+								<image src="../../../images/reduce.png" class="plus_reduce" bindtap="plus_reduce" data-name="1" data-index="1" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  	bindtap="plus_reduce" data-name="2" data-index="1" ></image>
+							</view>
+							<view class="room">
+								<text space="ensp">{{room}}   房间</text>
+								<image src="../../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce" data-name="1" data-index="2" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="2" ></image>
+							</view>
+							<view class="room">
+								<text space="ensp">{{toilet}}   卫</text>
+								<image src="../../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce" data-name="1" data-index="3" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="3" ></image>
+							</view>
+							<view class="room">
+								<text space="ensp">{{balcony}}   阳台</text>
+								<image src="../../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce" data-name="1" data-index="4" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="4" ></image>
+							</view>
+						</view>
+						<goods id="goods" data="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!-- 物品星详情的分类 -->
+						<view class="goods_people">
+							<text space="ensp" bindtap="godos_list">物品清单 <text class="iconfont icon-moreunfold "></text></text>
+							<text space="ensp" data-who="2" bindtap="member_map">附近人员及商户<text class="iconfont icon-more "></text></text>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">体积：</view> 
+							<view class="volume_input"><input disabled value="{{volume}}" placeholder="此为预估体积"/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">备注：</view> 
+							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height  bindinput="remarks_input" placeholder=""/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">保价：</view> 
+							<view class="volume_input"><input  bindinput="insuranceEvent"/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">优惠卷：</view> 
+							<view class="volume_input_two"><input disabled bindtap="coupon" value="{{start_location}}" placeholder="暂无优惠卷可使用"/></view>
+						</view>
+						<view>
+							<button class="obtain_price_button" bindtap="obtain_price">获取报价明细</button>
+						</view>
+					</view>
+					
+					
+				</view>
+				<!-- 国内搬家结束 -->
+				
+				
+				
+				<!-- 国际搬家 -->
+				<view class="domestic"hidden="{{carry!=2}}">  
+					<view class="free">   <!--共享搬运和搬家公司-->
+						<view class="origin">  
+							<view class="origin_name_two">起运地</view>
+							<view class="origin_lu"></view>
+							<view class="origin_input_two"><input disabled value="{{start_location.place}}" style="font-size:26rpx;" bindtap="location" placeholder="您从哪里搬出"/></view>
+						</view>
+						<view class="origin">  
+							<view class="origin_name_two">目的国/港口</view>
+							<view class="origin_lu_two"></view>
+							<view class="origin_input_two"><input disabled value="{{end_location.place}}" style="font-size:26rpx;" bindtap="end_location" placeholder="您从哪里搬出"/></view>
+						</view>
+						
+						<view class="type"> 
+							<view class="radio_box_two">  <!-- 国内搬家  免费 共享 公司 选择-->
+								<radio-group class="radio-group_two" bindchange="typeEvent">
+									<label class="radio" wx:for="{{items_six}}">
+										<radio value="{{item.id}}" checked="{{item.checked}}"/>
+										<text class="name">{{item.value}}</text>
+									</label>
+								</radio-group>
+							</view>
+						</view>
+						<view class="type">
+							<view class="type_name">服务类型</view>
+							<view class="radio_box_two">  <!-- 国内搬家  免费 共享 公司 选择-->
+								<radio-group class="radio-group" bindchange="service_type">
+									<label class="radio" wx:for="{{items_three}}">
+										<radio value="{{item.id}}" checked="{{item.checked}}"/>
+										<text class="name">{{item.value}}</text>
+									</label>
+								</radio-group>
+							</view>
+						</view>
+						<view class="floor"> 
+							<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+								<view class="picker">
+									<text space="ensp">楼层 {{floor}} 楼<text class="iconfont icon-moreunfold xia_left"></text></text>
+								</view>
+							</picker>
+							
+							<view class="radio_box_three">
+								<radio-group class="radio-group" bindchange="stairsEvent">
+									<label class="radio" wx:for="{{items_four}}">
+										<radio value="{{item.id}}" checked="{{item.checked}}"/>
+										<text class="name">{{item.value}}</text>
+									</label>
+								</radio-group>
+							</view>
+						</view> 
+						<view class="volume_three" bindtap="choice_time">  
+							<view class="volume_name">时间：<text space="ensp"></text></view>  
+							<view class="volume_time"><timeselect bind:time="time_data"></timeselect><text class="iconfont icon-more volume_time"></text></view>
+						</view>
+						<text class="details" space="ensp">—— 我的家 ——</text>
+						<view class="house">
+							<view class="room">
+								<text space="ensp">{{hall}}   厅</text>
+								<image src="../../../images/reduce.png" class="plus_reduce" bindtap="plus_reduce" data-name="1" data-index="1" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  	bindtap="plus_reduce" data-name="2" data-index="1" ></image>
+							</view>
+							<view class="room">
+								<text space="ensp">{{room}}   房间</text>
+								<image src="../../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce" data-name="1" data-index="2" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="2" ></image>
+							</view>
+							<view class="room">
+								<text space="ensp">{{toilet}}   卫</text>
+								<image src="../../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce" data-name="1" data-index="3" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="3" ></image>
+							</view>
+							<view class="room">
+								<text space="ensp">{{balcony}}   阳台</text>
+								<image src="../../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce" data-name="1" data-index="4" ></image>
+								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="4" ></image>
+							</view>
+						</view>
+						<goods id="goods" data="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!-- 物品星详情的分类 -->
+						<view class="goods_people">
+							<text space="ensp"  bindtap="godos_list">物品清单 <text class="iconfont icon-moreunfold "></text></text>
+							<text space="ensp"  data-who="2" bindtap="member_map">附近人员及商户<text class="iconfont icon-more "></text></text>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">体积：</view> 
+							<view class="volume_input"><input disabled value="{{volume}}" placeholder="此为预估体积"/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">备注：</view> 
+							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height	bindinput="remarks_input" placeholder=""/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">保价：</view> 
+							<view class="volume_input"><input   bindinput="insuranceEvent"/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">优惠卷：</view> 
+							<view class="volume_input_two"><input disabled bindtap="coupon" value="{{start_location}}" placeholder="暂无优惠卷可使用"/></view>
+						</view>
+						<view>
+							<button class="obtain_price_button" bindtap="obtain_price">获取报价明细</button>
+						</view>
+					</view>
+				</view>
+				<!-- 国际搬家结束 -->
+				
+				
+				<!-- 国际快递 -->
+				<view class="domestic" hidden="{{carry!=3}}">  
+					<view class="free">   
+						<view class="origin">  
+							<view class="origin_name">起运地</view>
+							<view class="origin_lu"></view>
+							<view class="origin_input"><input disabled value="{{start_location.place}}" style="font-size:26rpx;" bindtap="location" placeholder="您从哪里搬出"/></view>
+						</view>
+						<view class="origin">  
+							<view class="origin_name">目的地</view>
+							<view class="origin_lu_two"></view>
+							<view class="origin_input"><input disabled value="{{end_location.place}}" style="font-size:26rpx;" bindtap="end_location" placeholder="您从哪里搬出"/></view>
+						</view>
+						
+						<view class="type"> 
+							<view class="radio_box_two">  <!-- 国内搬家  免费 共享 公司 选择-->
+								<radio-group class="radio-group_two" bindchange="typeEvent">
+									<label class="radio" wx:for="{{items_five}}">
+										<radio value="{{item.id}}" checked="{{item.checked}}"/>
+										<text class="name">{{item.value}}</text>
+									</label>
+								</radio-group>
+							</view>
+						</view>
+						 
+						<view class="volume">  
+							<view class="volume_name">重量：</view> 
+							<view class="volume_input"><input bindinput="weightEvent" /></view>
+						</view>
+						<view class="volume_two" bindtap="choice_time">  
+							<view class="volume_name">时间：<text space="ensp"></text></view> 
+							<view class="volume_time">请选择时间<text class="iconfont icon-more volume_time"></text></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">备注：</view> 
+							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height	 bindinput="remarks_input" placeholder=""/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">保价：</view> 
+							<view class="volume_input"><input   bindinput="insuranceEvent"/></view>
+						</view>
+						<view class="volume">  
+							<view class="volume_name">优惠卷：</view> 
+							<view class="volume_input_two"><input disabled bindtap="coupon"   placeholder="暂无优惠卷可使用"/></view>
+						</view>
+						<view>
+							<button class="obtain_price_button" bindtap="obtain_price">查询价格</button>
+						</view>
+					</view>
+				</view>
+				<!-- 国际快递结束 -->
+				
+				
+				<view class="bottom_box"> <!--底部3个-->
+					<view class="bottom">
+						<image src="../../../images/dc85078b0e3749a79eaa189d28dd228.png" class="bottom_image_sf"></image>
+						<view class="bottom_name">收费标准</view>
+					</view>
+					<view class="bottom">
+						<image src="../../../images/1becd77ce10cd9b9b7ac540d1f15143.png" class="bottom_image_bj"></image>
+						<view class="bottom_name">搬家流程</view>
+					</view>
+					<view class="bottom">
+						<image src="../../../images/09fcf2ce21562b42a023c6a82a85c67.png" class="bottom_image_fw"></image>
+						<view class="bottom_name">服务保障</view>
+					</view>
+					
+				</view>
+				
+			</view>
+		</view>
+		
+		<view>
+			<image src="../../../images/gjys.jpg" class="explain"></image>
+		</view>
+		
+	</view>
+	
+	
+	 <view class="" wx:if="{{state}}" catchtouchmove="move"> <!-- 物品清单 -->
+		<view class="curtain"></view>
+		<view class="goods_content">
+			<scroll-view scroll-y="true">
+				<view class="box_two">
+					<view wx:if="{{success_data==''}}" class="no_goods">
+						赶紧去添加物品把！
+					</view> 
+					<block wx:for="{{success_data}}">
+						<view class="commodity">
+							<view><image class="commodity_image" src="{{item.image}}"></image></view>
+							<view class="commodity_name">{{item.name}}</view>
+							<view class="commodity_operation">
+								<image src="../../../images/reduce.png" class="plus_reduce"  bindtap="plus_reduce_two" data-volume="{{item.volume}}" data-number="{{item.number}}" data-ids="{{item.id}}" data-id="{{index}}" data-index="1" ></image>
+								<text space="ensp"><text wx:if="{{item.number==null}}">0</text><text wx:if="{{item.number!=null}}">{{item.number}}</text></text>
+								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce_two" data-volume="{{item.volume}}" data-number="{{item.number}}" data-ids="{{item.id}}" data-id="{{index}}" data-index="2"  ></image>
+							</view>
+							<image src="../../../images/510beee62bf1f87edda0d4b7873f73e.png" class="gb_image" bindtap="delete_goods" data-volume="{{item.volume}}" data-number="{{item.number}}" data-index="{{index}}"></image>
+						</view>
+					</block>
+					 
+					
+				</view>
+			</scroll-view>
+			<view class="button_box"><button class="button" bindtap="sure">确定</button></view>
+		</view>
+	</view>
+	
+	 <i-grid-item i-class="item" wx:if="{{spinShow}}">
+	    <i-spin size="large" fix ></i-spin>
+	</i-grid-item>
+	
+	
+	
+	<image src="../../../images/527c23751950e9d8f8d2e846af65341.jpg" class="background_two"></image>
+	<image src="../../../images/527c23751950e9d8f8d2e846af65341.jpg" class="background_two"></image>
+	<image src="../../../images/527c23751950e9d8f8d2e846af65341.jpg" class="background_two"></image>
+	<image src="../../../images/527c23751950e9d8f8d2e846af65341.jpg" class="background_two"></image>
+</view>
+<i-message id="message" />
+ 
+
+ 

@@ -1,0 +1,91 @@
+@import '../../../utils/wenzi.wxss'; 
+@import '../../../utils/iconfont.wxss'; 
+page{background-color: #FAFAFA;color: rgba(80, 80, 80, 1);}
+.box{width:100%;height:100%;}
+.background{width: 100%;height: 100vh;z-index: 1;}
+.subject{z-index: 2;position:absolute;top: 216rpx;left: 26rpx;}
+.computer_box{width: 700rpx;height: auto;color: rgba(80, 80, 80, 1);background-color: rgba(250, 250, 250, 1);border-radius: 16rpx;font-size: 28rpx; box-shadow: 0px 0px 24rpx 0px rgba(250, 250, 250, 0.4); }
+
+
+
+
+
+.display_box{position: relative;}
+.display{width:641rpx;height:158rpx;margin:28rpx 30rpx;z-index: 4}
+.number{ font-family: 'Digital-7 Mono';color:#FFFFFF ;position: absolute;font-size:116rpx;top:58rpx;right:106rpx;}
+.yuan{position: absolute;font-size:28rpx;top:138rpx;right:58rpx;color: #FFFFFF;}
+.background_two{width: 100%;margin-top:-20rpx;}
+
+.explain{width:700rpx;height: 1176rpx;border-radius: 16px;box-shadow: 0px 0px 12px 0px rgba(250, 250, 250, 0.4);margin-top:40rpx;z-index: 13}
+ 
+.radio-group{display: flex;justify-content: space-around;}
+.radio-group_two{display: flex;justify-content: space-between;margin:10rpx 0;}
+.name{color: rgba(56, 56, 56, 1);font-size: 26rpx;} 
+.radio_box{margin-bottom:18rpx;}
+.origin{display: flex;margin:8rpx 35rpx;align-items: center;position:relative;}
+.origin_input{width:500rpx;}
+.origin_input_two{width:462rpx;}
+.origin_lu{width: 16rpx;height: 16rpx; background-color: rgba(67, 207, 124, 1);border-radius: 16rpx;margin:0 16rpx;}
+.origin_lu_two{width: 16rpx;height: 16rpx; background-color: rgba(237, 59, 72, 1);border-radius: 10rpx;margin:0 16rpx;}
+.origin_name_two{width:184rpx;}
+
+.radio_box_two{width: 100%;}
+.type{display: flex;margin:10rpx 35rpx;align-items: center;}
+.type_name{width:150rpx;}
+
+
+.floor{margin:15rpx 35rpx;display: flex;justify-content: space-between;align-items: center;}
+.radio_box_three{width: 396rpx;}
+.xia_left{margin-top: 4rpx;margin-left:4rpx;}
+.goods_people{display:flex;justify-content: space-between;margin: 0 65rpx;}
+
+.volume{display: flex;padding:10rpx 65rpx;align-items: center;}
+.volume_two{display: flex;padding:10rpx 35rpx 10rpx 65rpx;align-items: center;justify-content: space-between;}
+.volume_three{display: flex;padding:10rpx 35rpx;align-items: center;justify-content: space-between;}
+.volume_input{width:460rpx;} 
+.volume_input_two{width:460rpx; font-size: 20rpx;}
+.volume_name{width: 110rpx;}
+.volume_time{color: rgba(166, 166, 166, 1);font-size: 20rpx;display: flex;align-items: center;}
+
+.button_box{display: flex;margin:0rpx 20rpx;padding-top: 40rpx}
+.now{width: 280rpx;height: 66rpx;color:#FFFFFF;background-color: rgba(237, 59, 72, 1);border-radius: 8rpx;font-size: 28rpx; box-shadow: 0px 6px 6px 0px rgba(237, 59, 72, 0.3);text-align: center;}
+.appointment{ width: 280rpx;height: 66rpx;color: rgba(80, 80, 80, 1);background-color: rgba(255, 255, 255, 1);box-shadow: 0px 0px 12px 0px rgba(237, 59, 72, 0.3);border-radius: 8rpx;font-size: 28rpx; color: #ED3B48;text-align: center;} 
+
+.bottom_box{display: flex;justify-content: space-between;padding:50rpx 35rpx;margin-right:37rpx;}
+.bottom{display: flex;align-items: center;}
+.bottom_image_sf{width: 64rpx;height: 42rpx}
+.bottom_image_bj{width: 40rpx;margin-right:12rpx;height: 40rpx}
+.bottom_image_fw{width: 32rpx;margin-right:12rpx;height: 32rpx}
+.bottom_name{color: rgba(166, 166, 166, 1);font-size: 24rpx}
+
+.details{display: flex;justify-content: center;margin:12rpx 0 20rpx;}
+.house{display: flex;flex-wrap: wrap;}
+.house text{margin-left:34rpx;width:108rpx;}
+.room{display: flex;align-items: center;width: 290rpx;height: 66rpx;color: rgba(80, 80, 80, 1);background-color: rgba(233, 233, 233, 1);border-radius: 8rpx;font-size: 24rpx;margin:14rpx 30rpx;}
+.plus_reduce{width: 40rpx;height:40rpx;margin-left:17rpx;}
+
+
+.obtain_price_button{margin-top:28rpx;width: 636rpx;height: 64rpx;color: rgba(80, 80, 80, 1);background-color: rgba(237, 59, 72, 1);border-radius: 16rpx;font-size: 28rpx; box-shadow: 0px 5px 5px 0px rgba(237, 59, 72, 0.3);text-align: center;color: rgba(255, 255, 255, 1);display: flex;align-items: center;justify-content: center;}
+/* .radio{padding:10rpx 15rpx;} */
+.radio_click{background:rgba(233, 233, 233, 1);border-radius: 8rpx;}
+radio {transform:scale(0.7);}
+
+
+
+
+.curtain{position: fixed;left:0rpx;top: 0rpx;width: 100%;height: 100vh;z-index: 20;background: #000000;opacity: 0.5;}
+.goods_content{animation: viewlinear 20s linear infinite;
+	position:fixed;top:68rpx;left:25rpx;background:#FFFFFF;z-index:999;border-radius:8rpx;background-color: rgba(241, 241, 241, 1);}
+
+.goods_content scroll-view {width:700rpx;height:946rpx;}
+
+.goods_content .box_two{display: flex;flex-wrap: wrap;}
+.goods_content .commodity{width: 30%;display: flex;align-items: center;flex-direction:column;margin:24rpx 11rpx;color: rgba(80, 80, 80, 1);position: relative;}
+.goods_content .commodity_image{height:182rpx;width: 160rpx;}
+.goods_content .commodity_name{font-size: 20rpx;margin:2rpx 0 5rpx 0;}
+.goods_content .commodity_operation{display: flex;width: 160rpx;justify-content: space-between;}
+.goods_content .plus_reduce{width: 40rpx;height:40rpx;margin: 0}
+.goods_content .button_box{margin:20rpx 0;}
+.goods_content .button{width:280rpx;height: 66rpx;color: #FFFFFF;background-color: rgba(237, 59, 72, 1);border-radius: 8rpx;font-size: 28rpx;box-shadow: 0px 6px 6px 0px rgba(237, 59, 72, 0.3);text-align: center;}
+.goods_content .no_goods{text-align: center;width: 100%;margin-top: 96rpx;font-size: 30rpx;color: #999999;}
+.gb_image{position:absolute;top:-17rpx;right:4rpx;width:45rpx;height:45rpx;} 

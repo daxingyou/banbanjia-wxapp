@@ -1,0 +1,121 @@
+<view>
+	<view class="sign_box_image" style="background-image: url({{image}});">
+		<view class="sign_box">
+			<view class="header_box">
+				<view>奖励规则<text class="iconfont icon-daohangshuoming"></text></view>
+				<view>积分记录<text class="iconfont icon-more text"></text></view>
+			</view> 
+			<view class="integral">
+				<view class="info">
+					<image class="head" src="../../images/03426c04ff620269952d6492b2e48c50.jpg"></image>
+					<view><text class="number">200</text>积分</view>
+				</view>
+				<view class="sign_buttom">
+					<image class="qiandao" src="../../images/0751bac2c9e7e54809b4f4135f6ad20.png"></image>
+					<text>立即签到+10</text>
+				</view>
+			</view>
+			<view class="sign_days">
+				已连续签到0天，还差3天可得xxxxx
+			</view>
+			<view class="volume_box">
+				<view class="volume_item">
+					<view class="volume" style="background-image:url({{volume_image}});">
+						<veiw class="content">
+							<view class="">2元打车卷</view>
+							<view class="">+30积分</view>
+							<view class="">0/3</view>
+						</veiw>
+					</view>
+					<view class="continuity">
+						<view>连续签到3天</view>
+					</view>
+				</view>
+			</view>
+			<view class="explain_box">
+				<view class="usage">积分怎么用?</view>
+				<view class="explain_list">
+					<view class="explain_items">
+						<image src="../../images/baobei.png" class="image"></image>
+						<view>积分换宝贝</view>
+					</view>
+					<view class="explain_items">
+						<image src="../../images/zhifu.png" class="image"></image>
+						<view>支付运费</view>
+					</view>
+					<view class="explain_items">
+						<image src="../../images/kuaidi.png" class="image"></image>
+						<view>快递到家</view>
+					</view>
+				</view>
+				
+				<view class="content">所有宝贝免费领，支付运费即可拿走，连续签到可得免邮券，直接减免运费</view>
+			</view>
+		</view>
+	</view>
+	
+	<view class="list">
+		<view class="list_title">
+			<view class="list_name">
+				<view class="red_vertical"></view>
+				<view>用户晒单</view>
+			</view>
+			<view class="more">
+				更多晒单	<text class="iconfont icon-more"></text>
+			</view>
+		</view>
+		<view class="list_content">
+			<view class="title">
+				<view class="user">
+					<image src="../../images/35.jpg" class="image"></image>
+					<view>名称</view>
+				</view>
+				<view class="time">2019-06-20</view>
+			</view>
+			<view class="content">真的号方便，搬家不用亲自动手，包装得非常好，东西没有一点破损</view>
+			<view class="list_image">
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view> 
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+			</view>
+		</view>
+		<view class="list_content">
+			<view class="title">
+				<view class="user">
+					<image src="../../images/35.jpg" class="image"></image>
+					<view>名称</view>
+				</view>
+				<view class="time">2019-06-20</view>
+			</view>
+			<view class="content">真的号方便，搬家不用亲自动手，包装得非常好，东西没有一点破损</view>
+			<view class="list_image">
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view> 
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+			</view>
+		</view>
+		<view class="list_content">
+			<view class="title">
+				<view class="user">
+					<image src="../../images/35.jpg" class="image"></image>
+					<view>名称</view>
+				</view>
+				<view class="time">2019-06-20</view>
+			</view>
+			<view class="content">真的号方便，搬家不用亲自动手，包装得非常好，东西没有一点破损</view>
+			<view class="list_image">
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view> 
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+			</view>
+		</view>
+	</view>
+	
+	
+</view>
