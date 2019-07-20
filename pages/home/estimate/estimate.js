@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+	mask:true,  //禁用textarea input
+	goods_option:null,
 	timerTem:"",
 	spinShow: true,
 	goods:[],
@@ -71,13 +73,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	this.startReportHeart() 
-	this.doms = this.selectComponent('#goods');
+	this.startReportHeart()  
 	var arr1 = new Array(100);
 	for(var i=0;i<arr1.length;i++){
 		arr1[i] = i+1;
 	}
-	this.setData({ array:arr1 })
+	this.setData({
+		array:arr1,
+		goods_option:this.selectComponent('#goods')
+	 })
 	
 	wx.request({
 		url: "http://api.useosc.com/mock/32/goods",
@@ -87,8 +91,6 @@ Page({
 				goods:res.data,
 				spinShow:false
 			})
-			
-			// console.log(res)
 		}
 	}) 
   },
@@ -117,7 +119,7 @@ Page({
 		remarks:e.detail.value
 	  })
   },
-  service_type(e){  //服务类型
+  service_type(e){  //服务类型 
 	this.setData({
 		service_type:e.detail.value
 	})
@@ -126,23 +128,46 @@ Page({
   
   sure(){ 
 	this.setData({
+		mask:false,
 		state:false
 	})  
   },
   godos_list(){
 	this.setData({
+		mask:true,
 		state:true
 	})
   },
   goods_data(e){
-	// console.log(e.detail)
-	this.setData({
-		volume:e.detail[1],
-		success_data:e.detail[0]
-	})
+	if(e.detail != "true"){
+		this.setData({
+			mask:false,
+			volume:e.detail[1],
+			success_data:e.detail[0]
+		})
+	}else{
+		
+		this.setData({
+			mask:true
+		})
+		
+	}
+	
   },
   
-  carry(e){//啥搬家 国内 国际 国际快递
+  carry(e){//啥搬家 国内 国际 国际快递 
+	const index = e.detail.value
+	console.log(index)
+	if(index == 1){
+		this.setData({
+			goods_option:this.selectComponent('#goods')
+		})
+	}else if(index == 2){
+		this.setData({
+			goods_option:this.selectComponent('#goods_four')
+		})
+	} 
+    
 	var that = this 
 	this.setData({
 		carry:e.detail.value,
@@ -160,7 +185,21 @@ Page({
 	})
 	// this.doms.updata_goods()
   },
-  types_handling(e){
+  types_handling(e){ 
+	  const index = e.detail.value
+	  if(index == 1){
+		  this.setData({
+		  		goods_option:this.selectComponent('#goods')
+		  })
+	  }else if(index == 2){
+		  this.setData({
+		  		goods_option:this.selectComponent('#goods_two')
+		  })
+	  }else if(index == 3){
+		  this.setData({
+		  		goods_option:this.selectComponent('#goods_three')
+		  })
+	  }
 	  this.setData({
 	  	carry_type:e.detail.value,
 		service_type:1,
@@ -340,7 +379,7 @@ Page({
 				success_data:this.data.success_data,
 				change_goods:this.data.success_data[index]
 			})
-			this.doms.change_goods();
+			this.data.goods_option.change_goods();
 			
 		}else if(index_two==2){ 
 			this.data.success_data[index].number=this.data.success_data[index].number+1
@@ -349,9 +388,10 @@ Page({
 				success_data:this.data.success_data,
 				change_goods:this.data.success_data[index]
 			})
-			this.doms.change_goods_two();
+			this.data.goods_option.change_goods_two(); 
 		}	
 	},
+	move:function(){},
 	delete_goods(e){   //删除物品
 		let index=e.currentTarget.dataset.index   //物品下标
 		let number=e.currentTarget.dataset.number   //当前物品数量
@@ -365,7 +405,7 @@ Page({
 			volume:this.data.volume-volumes,
 			success_data:this.data.success_data
 		})
-		this.doms.change_goods_three();
+		this.data.goods_option.change_goods_three(); 
 	},
 	
 	

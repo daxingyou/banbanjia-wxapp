@@ -5,7 +5,7 @@
 .location_name{font-size:28rpx;width:100rpx;overflow: hidden;white-space: nowrap;text-overflow: ellipsis}
 
 .calendar_img{width:50rpx;height: 50rpx;margin-left:6rpx;}
-.price{margin: 0 20rpx;background:#ed3b48;color:#FFFFFF;border-radius:20rpx;height:64rpx;display: flex;align-items: center;justify-content: center;width:470rpx;letter-spacing:12rpx;font-weight: 10rpx;font-weight:bolder;}
+.price{margin: 0 20rpx;background:#ed3b48;color:#FFFFFF;border-radius:20rpx;height:64rpx;display: flex;align-items: center;justify-content: center;width:470rpx;letter-spacing:12rpx;font-weight:bolder;font-size:32rpx;}
 
 /* 轮播 */
 .swiper{overflow:hidden;border-radius:16rpx;-webkit-backface-visibility: hidden;-webkit-transform: translate3d(0, 0, 0);box-shadow:1rpx 8rpx 10rpx #a6a6a6;}

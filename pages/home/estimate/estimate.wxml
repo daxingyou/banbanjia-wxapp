@@ -22,7 +22,6 @@
 				
 				<!-- 国内搬家 -->
 				<view class="domestic" hidden="{{carry!=1}}">
-				
 					<view class="radio_box">  <!-- 国内搬家  免费 共享 公司 选择-->
 						<radio-group class="radio-group" bindchange="types_handling">
 							<label class="radio {{carry_type==item.id?'radio_click':''}}" wx:for="{{items_two}}">
@@ -65,7 +64,7 @@
 								</radio-group>
 							</view>
 						</view> 
-						<goods id="goods" data="{{goods}}" updata="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!--  物品星详情的分类  -->
+						<goods catchtouchmove="move" id="goods" data="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!--  物品星详情的分类  -->
 						<view class="goods_people">
 							<text space="ensp" bindtap="godos_list">物品清单 <text class="iconfont icon-moreunfold "></text></text>
 							<text space="ensp" data-who="1" bindtap="member_map">附近人员 <text class="iconfont icon-more "></text></text>
@@ -76,7 +75,7 @@
 						</view>
 						<view class="volume">  
 							<view class="volume_name">备注：</view> 
-							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height	 bindinput="remarks_input" placeholder=""/></view>
+							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height disabled="{{mask}}" bindinput="remarks_input" placeholder=""/></view>
 						</view>
 						<view class="button_box">
 							<button class="now">现在搬运</button>
@@ -147,7 +146,8 @@
 								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="4" ></image>
 							</view>
 						</view>
-						<goods id="goods" data="{{goods}}"  updata="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!-- 物品星详情的分类 -->
+						
+						<goods id="goods_two" data="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!-- 物品星详情的分类 -->
 						<view class="goods_people">
 							<text space="ensp" bindtap="godos_list">物品清单 <text class="iconfont icon-moreunfold "></text></text>
 							<text space="ensp" data-who="2" bindtap="member_map">附近人员及商户<text class="iconfont icon-more "></text></text>
@@ -158,11 +158,11 @@
 						</view>
 						<view class="volume">  
 							<view class="volume_name">备注：</view> 
-							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height bindinput="remarks_input" placeholder=""/></view>
+							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height disabled="{{mask}}" bindinput="remarks_input" placeholder=""/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">保价：</view> 
-							<view class="volume_input"><input  bindinput="insuranceEvent"/></view>
+							<view class="volume_input"><input disabled="{{mask}}" bindinput="insuranceEvent"/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">优惠卷：</view> 
@@ -242,7 +242,7 @@
 								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="4" ></image>
 							</view>
 						</view>
-						<goods id="goods" data="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!-- 物品星详情的分类 -->
+						<goods id="goods_three" data="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!-- 物品星详情的分类 -->
 						<view class="goods_people">
 							<text space="ensp" bindtap="godos_list">物品清单 <text class="iconfont icon-moreunfold "></text></text>
 							<text space="ensp" data-who="2" bindtap="member_map">附近人员及商户<text class="iconfont icon-more "></text></text>
@@ -253,11 +253,11 @@
 						</view>
 						<view class="volume">  
 							<view class="volume_name">备注：</view> 
-							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height  bindinput="remarks_input" placeholder=""/></view>
+							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height disabled="{{mask}}" bindinput="remarks_input" placeholder=""/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">保价：</view> 
-							<view class="volume_input"><input  bindinput="insuranceEvent"/></view>
+							<view class="volume_input"><input disabled="{{mask}}"  bindinput="insuranceEvent"/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">优惠卷：</view> 
@@ -352,7 +352,7 @@
 								<image src="../../../images/plus.png" class="plus_reduce"  bindtap="plus_reduce" data-name="2" data-index="4" ></image>
 							</view>
 						</view>
-						<goods id="goods" data="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!-- 物品星详情的分类 -->
+						<goods id="goods_four" data="{{goods}}" delete_goods="{{delete_goods}}" change_goods="{{change_goods}}"  bind:goods_data="goods_data"></goods> <!-- 物品星详情的分类 -->
 						<view class="goods_people">
 							<text space="ensp"  bindtap="godos_list">物品清单 <text class="iconfont icon-moreunfold "></text></text>
 							<text space="ensp"  data-who="2" bindtap="member_map">附近人员及商户<text class="iconfont icon-more "></text></text>
@@ -363,11 +363,11 @@
 						</view>
 						<view class="volume">  
 							<view class="volume_name">备注：</view> 
-							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height	bindinput="remarks_input" placeholder=""/></view>
+							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height disabled="{{mask}}" bindinput="remarks_input" placeholder=""/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">保价：</view> 
-							<view class="volume_input"><input   bindinput="insuranceEvent"/></view>
+							<view class="volume_input"><input disabled="{{mask}}"   bindinput="insuranceEvent"/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">优惠卷：</view> 
@@ -416,11 +416,11 @@
 						</view>
 						<view class="volume">  
 							<view class="volume_name">备注：</view> 
-							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height	 bindinput="remarks_input" placeholder=""/></view>
+							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height disabled="{{mask}}" 	 bindinput="remarks_input" placeholder=""/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">保价：</view> 
-							<view class="volume_input"><input   bindinput="insuranceEvent"/></view>
+							<view class="volume_input"><input disabled="{{mask}}"  bindinput="insuranceEvent"/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">优惠卷：</view> 

@@ -1,0 +1,87 @@
+<view class="community_box">
+	<view class="tab">
+		<view class="tab_item" wx:for="{{tab}}" bindtap="newChoice" data-index="{{index}}">
+			<view class="border {{new_choice==index?'new':''}}">{{item}}</view>
+		</view>
+	</view>
+	<view class="list">
+		<swiper current="{{new_choice}}" duration="300"  bindchange="switchTab"  style="height:{{winHeight}}rpx">
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h" >
+					
+					<view class="introduce_box">
+						<view class="title">企业简介</view>
+						<view class="content_box">
+							<view class="dian"></view>
+							<view class="content">阿斯顿撒大所大所多11和GV阿斯顿比较好撒大V经安徽省的八点
+								半吧基本上大V看祭敖包111技术开发八块九点半空间宝石东方丽
+								景看不见啊三点半轮播极客比较快仓储部铝扣板这节课VB会计法不肯vbjkqwb
+							</view>
+						</view>
+					</view>
+					
+				</scroll-view>
+			</swiper-item>
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h" >
+					
+					<view class="register_box">
+						<view class="column"><view>公司名称</view><view>广州市般般家</view></view>
+						<view class="column"><view>企业类型</view><view>广州市般般家</view></view>
+						<view class="column"><view>注册地址</view><view>广州市般般家</view></view>
+						<view class="column"><view>注册资金</view><view>广州市般般家</view></view>
+						<view class="column"><view>营业期限</view><view>广州市般般家</view></view>
+						<view class="column"><view>成立日期</view><view>广州市般般家</view></view>
+						<view class="column"><view>登记机关</view><view>广州市般般家</view></view>
+						<view class="column"><view>经营范围</view><view>广州市般般家广州市般般家广州市般般家广州市般般家广州广州市般般家广州市般般家广州市般般家市般般家广州市般般家广州市般般家</view></view>
+						<view class="column"><view>年检日期</view><view>广州市般般家</view></view>
+						<view class="column"><view>注册号</view><view>广州市般般家</view></view>
+						<view class="column"><view>法定代表</view><view>广州市般般家</view></view>
+					</view>
+					
+					
+				</scroll-view>
+			</swiper-item>
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h" >
+					
+					<view class="certificate_box">
+						<view class="certificate">
+							<viwe class="title">营业执照</viwe>
+							<viwe>
+								<block wx:for="{{business}}">
+									<image src="{{item}}" bindtap="open" data-new="{{item}}" data-list="{{business}}"></image>
+								</block>
+							</viwe>
+						</view>
+						
+						<view class="certificate">
+							<viwe class="title">资格证书</viwe>
+							<viwe>
+								<block wx:for="{{qualifications}}">
+									<image src="{{item}}" bindtap="open" data-new="{{item}}" data-list="{{qualifications}}"></image>
+								</block>
+							</viwe>
+						</view>
+						
+						<view class="certificate">
+							<viwe class="title">荣誉证书</viwe>
+							<viwe>
+								<block wx:for="{{honor}}">
+									<image src="{{item}}" bindtap="open" data-new="{{item}}" data-list="{{honor}}"></image>
+								</block>
+							</viwe>
+						</view>
+						
+					</view>
+					
+				</scroll-view>
+			</swiper-item>
+		</swiper>
+		
+	</view>
+	
+	
+	
+	
+</view>

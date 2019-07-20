@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+		"i-rate": "../../dist/rate/index"
+	},
 	"navigationBarTitleText": "签到送大礼",
 	"navigationBarBackgroundColor": "#FAFAFA"
 }

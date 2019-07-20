@@ -77,44 +77,37 @@
 				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
 				<view class="item_image"><image  src="../../images/35.jpg"></image></view> 
 				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
+			</view>
+		</view>
+	</view>
+	
+	<view class="list bj">
+		<view class="list_title">
+			<view class="list_name">
+				<view class="red_vertical"></view>
+				<view>搬家公司</view>
+			</view>
+			<view class="more">
+				 
 			</view>
 		</view>
 		<view class="list_content">
-			<view class="title">
-				<view class="user">
-					<image src="../../images/35.jpg" class="image"></image>
-					<view>名称</view>
+			<view class="list_box">
+				<image class="image_two" src="../../images/35.jpg"></image>
+				<view class="right">
+					<view class="company">广州搬家xx有限公司</view>
+					<view class="evaluate">
+						<view class="number">搬家次数：2</view>
+						<i-rate class="xx" value="4"></i-rate>
+					</view>
+					<view class="region">
+						<text>广州市白云区嘉禾望岗xxxxxx...</text>
+						<text>1.7km</text>
+					</view>
 				</view>
-				<view class="time">2019-06-20</view>
-			</view>
-			<view class="content">真的号方便，搬家不用亲自动手，包装得非常好，东西没有一点破损</view>
-			<view class="list_image">
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view> 
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
 			</view>
 		</view>
-		<view class="list_content">
-			<view class="title">
-				<view class="user">
-					<image src="../../images/35.jpg" class="image"></image>
-					<view>名称</view>
-				</view>
-				<view class="time">2019-06-20</view>
-			</view>
-			<view class="content">真的号方便，搬家不用亲自动手，包装得非常好，东西没有一点破损</view>
-			<view class="list_image">
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view> 
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
-				<view class="item_image"><image  src="../../images/35.jpg"></image></view>
-			</view>
-		</view>
+		
 	</view>
 	
 	

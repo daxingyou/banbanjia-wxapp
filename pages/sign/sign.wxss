@@ -46,11 +46,14 @@ box-shadow: 0px 10rpx 10rpx 0px rgba(236, 65, 73, 0.1);border-radius:0 0 10rpx 1
  .red_vertical{width: 6rpx;height:32rpx;background-color: rgba(236, 65, 73, 1);border-radius: 4rpx;margin-right:10rpx;}
  .list .more{color: rgba(166, 166, 166, 1);font-size: 20rpx;display: flex;align-items: center}
  .list_content{margin-bottom: 48rpx;border-bottom: 1px solid rgba(229, 229, 229, 1);padding-bottom:14rpx;}
+ .list_content:last-child{border:none}
  .list_content .title{display: flex;justify-content: space-between;align-items: center;margin:0 30rpx;}
  .list_content .image{width: 60rpx;height: 60rpx;border-radius: 30rpx;margin-right: 12rpx;}
+ .list_content .image_two{width: 208rpx;height: 160rpx;border-radius: 16rpx}
+ 
  .user{display: flex;align-items:center ;color: rgba(0, 0, 0, 1);font-size: 24rpx;}
  .time{color: rgba(166, 166, 166, 1);font-size: 20rpx;}
- .content{color: rgba(80, 80, 80, 1);font-size: 24rpx;margin:10rpx 30rpx;}
+ .list .content{color: rgba(80, 80, 80, 1);font-size: 24rpx;margin:10rpx 30rpx;}
  .list_image{display: flex;flex-wrap: wrap;margin:0 12rpx;}
  .item_image{width: 33%;text-align:center;}
  .item_image image{width: 208rpx;height: 160rpx;border-radius:16rpx;}
@@ -58,3 +61,15 @@ box-shadow: 0px 10rpx 10rpx 0px rgba(236, 65, 73, 0.1);border-radius:0 0 10rpx 1
  
  
  .header_box .text{font-size: 30rpx;}
+ .xx view{display: flex !important;}
+ .xx i-icon{display: flex;	}
+ .xx i-icon view{font-size:26rpx !important}
+
+ 
+ .list_box{display: flex;margin:0 30rpx 0;}
+ .list_box .right{padding-left:22rpx;color: rgba(80, 80, 80, 1);width:65%;}
+ .company{font-size: 28rpx;margin-top:6rpx;}
+ .evaluate{font-size: 28rpx;padding:14rpx 0;display: flex;align-items: center}
+ .evaluate .number{width:172rpx;}
+ .region{display: flex;align-items: center;justify-content: space-between;color: rgba(128, 128, 128, 1);font-size:20rpx;}
+ .bj{border-top:32rpx solid rgba(229, 229, 229, 1);}

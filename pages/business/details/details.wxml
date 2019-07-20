@@ -68,4 +68,94 @@
 			</view> 
 		</view>
 	</view>
+	
+	
+	
+	<view class="scene_box">
+		<view class="head_box">
+			<view>搬家现场</view>
+			<view bindtap="more">查看更多<text class="iconfont icon-more"></text></view>
+		</view> 
+		<scroll-view  scroll-x="true">
+			<view class="scroll-view">
+				<view class="content_box">
+					<view><image src="../../../images/527c23751950e9d8f8d2e846af65341.jpg" class="image"></image></view>
+					<view>广州搬至呼和浩特</view>
+					<view>2019-07-07</view>
+					<view>申请现场参观</view>
+				</view>
+			</view>
+		</scroll-view> 
+	</view>
+	
+	
+	
+	
+	
+	 <view class="info_box">  <!-- 商家信息 -->
+		<view class="head_box">
+			<view>商家信息</view>
+			<view bindtap="more">更多<text class="iconfont icon-more"></text></view>
+		</view>
+		<view class="list">
+			<view>服务类别：</view>
+			<view>市内搬家、国际搬家、办公室搬迁</view>
+		</view>
+		<view class="list">
+			<view>服务类型：</view>
+			<view>搬运、包装、运输</view>
+		</view>
+		<view class="list">
+			<view>服务范围：</view>
+			<view>广州、深圳、茂名、广州、深圳、茂名、广州、深圳、
+					茂名、广州、深圳、茂名、广州、深圳、茂名、广州、
+					深圳、茂名、广州、深圳、茂名、广州、深圳、茂名、
+					广州、深圳、茂名等
+			</view>
+		</view>
+	</view>
+	
+	
+	
+	
+	<view class="bottom_distance">	
+		<view class="case">
+			<view class="head_box">
+				<view>附近公司案例推荐</view>
+				<view bindtap="more">更多<text class="iconfont icon-more"></text></view>
+			</view>
+			
+			<view class="conent_box"> 
+				<view class="case_item" wx:for="{{case_list}}">
+					<view class="conent_list">
+					<image src="{{item.image}}"></image>
+					<view class="case_item_title">{{item.title}}</view> 
+					</view>
+				</view> 
+			</view>
+		</view>
+	</view>
+	
+	<!-- 底部 -->
+	<view class="bottom_box">
+		<viw class="left buttom">
+			<image src="../../../images/kf.png"></image> 
+			<view class="name">在线咨询</view>
+		</viw>
+		<viw class="center buttom">
+			<view><image src="../../../images/shangjiapingjia.png"></image></view>
+			<view class="name">评价</view>
+		</viw>
+		<viw class="right">
+			<view>免费预约</view>
+			<view>为我报价</view>
+		</viw>
+	</view>
+	
+	
+	
+	
+	
+	
+	
 </view>
