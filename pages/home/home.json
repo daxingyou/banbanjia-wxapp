@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+		 "i-modal": "../../dist/modal/index",
+		 "empower": "../../components/empower/empower"
+	},
+	 "navigationBarTitleText": "搬搬家",
+	 "navigationBarBackgroundColor": "#FAFAFA"
+}

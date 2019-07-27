@@ -1,0 +1,70 @@
+<view class="box">
+	<view class="head">
+		<view class="search">
+			<view class="input_box">
+				<image src="../../images/查询.png" class="search_image"></image>
+				<input class="input"  	bindinput="input"></input>
+			</view>
+		</view>
+		<view class="choice_box">
+			<view class="choice {{index==1?'now':''}}" data-index="1" bindtap="click">
+				<picker bindchange="comprehensive" bindcancel="cancel"   range="{{comprehensive}}">
+					综合<text class="iconfont icon-tubiaozhizuo- xia " wx:if="{{index_two==1?'now':''}}"></text>
+						<text class="iconfont icon-tubiaozhizuo-1 xia " wx:if="{{index_two!=1?'now':''}}"></text>
+				</picker>
+			</view>
+			<view id="123" class="choice {{index==2?'now':''}}" data-index="2" bindtap="click">
+				<picker bindchange="region" bindcancel="cancel"   range="{{region}}">
+					地区<text class="iconfont icon-tubiaozhizuo- xia " wx:if="{{index_two==2?'now':''}}"></text>
+						<text class="iconfont icon-tubiaozhizuo-1 xia " wx:if="{{index_two!=2?'now':''}}"></text>
+				</picker>
+				
+			</view>
+			<view class="choice {{index==3?'now':''}}" data-index="3" bindtap="click">
+				<picker bindchange="comment" bindcancel="cancel"  range="{{comment}}">
+					评分<text class="iconfont icon-tubiaozhizuo- xia " wx:if="{{index_two==3?'now':''}}"></text>
+						<text class="iconfont icon-tubiaozhizuo-1 xia " wx:if="{{index_two!=3?'now':''}}"></text>
+				</picker>
+			</view>
+		</view>
+	</view>
+	<view class="top_hegiht">
+		<navigator class="content_box" url="./details/details">
+			<view class="content_head">
+				<view class="content_head_left">
+					<image src="../../images/t0169ed52127b821764.jpg" class="business_image"></image>
+					<view>广州超极搬家</view>
+				</view>
+				<view class="content_head_right">
+					 <i-rate   disabled="{{true}}" value="{{number}}"></i-rate>
+				</view>
+			</view>
+			<view class="content_head_two">
+				<view>搬家次数:2</view>
+				<view>1.7km</view>
+			</view>
+			
+			
+			<view class="content">
+				<!-- <view class="content_characters">
+					搬家就找我们，我们帮你超级搬家，速度快，不磕碰，搬家就找我们，我们帮你超级搬家，速度快，不磕碰。
+				</view> -->
+				<view class="content_image_box">
+					<image src="../../images/873.jpg" class="content_image"> </image>
+					<image src="../../images/873.jpg" class="content_image"> </image>
+					<image src="../../images/873.jpg" class="content_image"> </image>
+				</view>
+			</view>
+			<view class="content_bottom">
+				<view>快捷、方便</view>
+				<view>标注</view>
+			</view>
+			<!-- <view class="time">2019-06-11 12:00</view> -->
+		</navigator>
+	</view>
+	
+ 
+	
+	
+	
+</view>

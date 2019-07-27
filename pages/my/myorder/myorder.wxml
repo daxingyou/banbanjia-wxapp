@@ -1,0 +1,132 @@
+<view class="tab">
+  <view class="tab_item" wx:for="{{tab}}" bindtap="newChoice" data-index="{{index}}">
+    <view class="border {{new_choice==index?'new':''}}">{{item}}</view>
+  </view>
+</view>
+<view class="list">
+  <swiper current="{{new_choice}}" duration="200"  bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="scroll_list">
+          <navigator>
+            <view class="scroll_li">国际搬家</view>
+            <view class="scroll_li2">
+              <view class="li2_1">
+                <view class="li2_1_name">广州</view>
+                <image src="../../../images/75c309aa7a6b593eca6c7821cd49505.png" class="guoq"></image>
+              </view>
+              <view class="li2_2">
+                <view>开始时间:2019-03-04 12:00</view>
+                <image src="../../../images/180d961520cef8d64854297b2bf5674.png" class="jianto"></image>
+                <view>预计结束时间:2019-03-12 15:00</view>
+              </view>
+              <view class="li2_1 li2_3">
+                <view class="li2_1_name">澳大利亚</view>
+                <image src="../../../images/eb4a5ba348c3b46958cd7304dd78f39.png" class="guoq"></image>
+              </view>
+            </view>
+            <view class="scroll_li3">
+              <view class="li3_name">￥50000.00</view>
+              <view class="li3_name2">详情<text class="iconfont icon-more li3_icon"></text></view>
+            </view>
+          </navigator>
+          <view class="scroll_li4">
+            <view class="li4_name">取消</view>
+            <view class="li4_name2">去付款</view>
+          </view>
+        </view>
+        <view class="scroll_list">
+          <navigator>
+            <view class="scroll_li">国际搬家</view>
+            <view class="scroll_li2">
+              <view class="li2_1">
+                <view class="li2_1_name">广州</view>
+                <image src="../../../images/75c309aa7a6b593eca6c7821cd49505.png" class="guoq"></image>
+              </view>
+              <view class="li2_2">
+                <view>开始时间:2019-03-04 12:00</view>
+                <image src="../../../images/180d961520cef8d64854297b2bf5674.png" class="jianto"></image>
+                <view>预计结束时间:2019-03-12 15:00</view>
+              </view>
+              <view class="li2_1 li2_3">
+                <view class="li2_1_name">澳大利亚</view>
+                <image src="../../../images/eb4a5ba348c3b46958cd7304dd78f39.png" class="guoq"></image>
+              </view>
+            </view>
+            <view class="scroll_li3">
+              <view class="li3_name">￥50000.00</view>
+              <view class="li3_name2">详情<text class="iconfont icon-more li3_icon"></text></view>
+            </view>
+          </navigator>
+          <view class="scroll_li4">
+            <view class="li4_name">退款</view>
+            <view class="li4_name3">已付款</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="scroll_list">
+          <navigator>
+            <view class="scroll_li">国际搬家</view>
+            <view class="scroll_li2">
+              <view class="li2_1">
+                <view class="li2_1_name">广州</view>
+                <image src="../../../images/75c309aa7a6b593eca6c7821cd49505.png" class="guoq"></image>
+              </view>
+              <view class="li2_2">
+                <view>开始时间:2019-03-04 12:00</view>
+                <image src="../../../images/180d961520cef8d64854297b2bf5674.png" class="jianto"></image>
+                <view>预计结束时间:2019-03-12 15:00</view>
+              </view>
+              <view class="li2_1 li2_3">
+                <view class="li2_1_name">澳大利亚</view>
+                <image src="../../../images/eb4a5ba348c3b46958cd7304dd78f39.png" class="guoq"></image>
+              </view>
+            </view>
+            <view class="scroll_li3">
+              <view class="li3_name">￥50000.00</view>
+              <view class="li3_name2">详情<text class="iconfont icon-more li3_icon"></text></view>
+            </view>
+          </navigator>
+          <view class="scroll_li4">
+            <view class="li4_name">去评论</view>
+            <view class="li4_name2">签收</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="scroll_list">
+          <navigator>
+            <view class="scroll_li">国际搬家</view>
+            <view class="scroll_li2">
+              <view class="li2_1">
+                <view class="li2_1_name">广州</view>
+                <image src="../../../images/75c309aa7a6b593eca6c7821cd49505.png" class="guoq"></image>
+              </view>
+              <view class="li2_2">
+                <view>开始时间:2019-03-04 12:00</view>
+                <image src="../../../images/180d961520cef8d64854297b2bf5674.png" class="jianto"></image>
+                <view>预计结束时间:2019-03-12 15:00</view>
+              </view>
+              <view class="li2_1 li2_3">
+                <view class="li2_1_name">澳大利亚</view>
+                <image src="../../../images/eb4a5ba348c3b46958cd7304dd78f39.png" class="guoq"></image>
+              </view>
+            </view>
+            <view class="scroll_li3">
+              <view class="li3_name">￥50000.00</view>
+              <view class="li3_name2">详情<text class="iconfont icon-more li3_icon"></text></view>
+            </view>
+          </navigator>
+          <view class="scroll_li4">
+            <view class="li4_name">再次下单</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

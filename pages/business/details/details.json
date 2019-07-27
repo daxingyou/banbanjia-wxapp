@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-rate": "../../../dist/rate/index"
+  },
+	"navigationBarTitleText": "商家详情",
+	"navigationBarBackgroundColor": "#FAFAFA"
+}

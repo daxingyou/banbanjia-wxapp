@@ -1,0 +1,161 @@
+<view class="business_details">
+	<view class="carousel"> <!--轮播图-->
+		<swiper indicator-dots="{{indicatorDots}}" circular="false"
+		  autoplay="true" interval="2000" duration="1000" previous-margin="60rpx" next-margin="60rpx">
+		  <block wx:for="{{imgUrls}}">
+			<swiper-item>
+			  <image src="{{item}}" class="slide-image" width="355" height="150"/>
+			</swiper-item>
+		  </block>
+		</swiper>
+	</view>
+	<view class="information">  <!--基本信息-->
+		<view class="company">
+			<view><image src="../../../images/03426c04ff620269952d6492b2e48c50.jpg"></image></view>
+			<view class="head_right">
+				<view class="head_right_one">
+					<view class="head_right_name"><view>广州超级搬家</view><i-rate class="xx" value="4"></i-rate></view>
+					<view class="head_right_right">
+						<image src="../../../images/no_collection.png" wx:if="{{ai==1}}"></image>
+						<image src="../../../images/collection.png" wx:if="{{ai==2}}"></image>
+						<image src="../../../images/fenxiang.png" class="share"></image>
+					</view>
+				</view>
+				<view class="case_number">案例：124</view>
+			</view> 
+		</view>
+		<view class="telephone">
+			<view>地址：广州市白云区嘉禾望岗大岗路xx号</view>
+			<view>现场预约</view>
+		</view>
+		<view class="address">电话：1234567895</view>
+	</view>
+	
+	
+	<view class="service_type">  <!-- 服务类型 -->
+		<view class="lable">
+			<view class="name">服务类型：</view>
+			<view class="lable_list">
+				<view wx:for="{{service_type}}" style="border:1px solid {{randomColorArr[index]}};color:{{randomColorArr[index]}} ;" class="lable_items">{{item}}</view>
+			</view>
+		</view>
+		<view class="nav">
+			<view class="nav_items" wx:for="{{service}}">
+				<view>
+					 <view>
+						 <image src="{{item.image}}"></image>
+						 <view>{{item.title}}</view>
+					 </view>
+					 <view class="free">免费</view>
+					 <view class="yuyue">立即预约</view>
+				 </view>
+			</view>
+		</view>
+	</view>
+	
+	<view class="case">
+		<view class="head_box">
+			<view>搬家案例</view>
+			<view bindtap="more">65<text class="iconfont icon-more"></text></view>
+		</view>
+		
+		<view class="conent_box"> 
+			<view class="case_item" wx:for="{{case_list}}">
+				<view class="conent_list">
+				<image src="{{item.image}}"></image>
+				<view class="case_item_title">{{item.title}}</view> 
+				</view>
+			</view> 
+		</view>
+	</view>
+	
+	
+	
+	<view class="scene_box">
+		<view class="head_box">
+			<view>搬家现场</view>
+			<view bindtap="more">查看更多<text class="iconfont icon-more"></text></view>
+		</view> 
+		<scroll-view  scroll-x="true">
+			<view class="scroll-view">
+				<view class="content_box">
+					<view><image src="../../../images/527c23751950e9d8f8d2e846af65341.jpg" class="image"></image></view>
+					<view>广州搬至呼和浩特</view>
+					<view>2019-07-07</view>
+					<view>申请现场参观</view>
+				</view>
+			</view>
+		</scroll-view> 
+	</view>
+	
+	
+	
+	
+	
+	 <view class="info_box">  <!-- 商家信息 -->
+		<view class="head_box">
+			<view>商家信息</view>
+			<view bindtap="more">更多<text class="iconfont icon-more"></text></view>
+		</view>
+		<view class="list">
+			<view>服务类别：</view>
+			<view>市内搬家、国际搬家、办公室搬迁</view>
+		</view>
+		<view class="list">
+			<view>服务类型：</view>
+			<view>搬运、包装、运输</view>
+		</view>
+		<view class="list">
+			<view>服务范围：</view>
+			<view>广州、深圳、茂名、广州、深圳、茂名、广州、深圳、
+					茂名、广州、深圳、茂名、广州、深圳、茂名、广州、
+					深圳、茂名、广州、深圳、茂名、广州、深圳、茂名、
+					广州、深圳、茂名等
+			</view>
+		</view>
+	</view>
+	
+	
+	
+	
+	<view class="bottom_distance">	
+		<view class="case">
+			<view class="head_box">
+				<view>附近公司案例推荐</view>
+				<view bindtap="more">更多<text class="iconfont icon-more"></text></view>
+			</view>
+			
+			<view class="conent_box"> 
+				<view class="case_item" wx:for="{{case_list}}">
+					<view class="conent_list">
+					<image src="{{item.image}}"></image>
+					<view class="case_item_title">{{item.title}}</view> 
+					</view>
+				</view> 
+			</view>
+		</view>
+	</view>
+	
+	<!-- 底部 -->
+	<view class="bottom_box">
+		<viw class="left buttom">
+			<image src="../../../images/kf.png"></image> 
+			<view class="name">在线咨询</view>
+		</viw>
+		<viw class="center buttom">
+			<view><image src="../../../images/shangjiapingjia.png"></image></view>
+			<view class="name">评价</view>
+		</viw>
+		<viw class="right">
+			<view>免费预约</view>
+			<view>为我报价</view>
+		</viw>
+	</view>
+	
+	
+	
+	
+	
+	
+	
+</view>

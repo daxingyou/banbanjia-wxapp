@@ -1,0 +1,26 @@
+@import '../../../utils/iconfont.wxss'; 
+page{background-color: #FAFAFA;}
+.tab{display: flex;border-bottom: 2rpx solid rgba(229, 229, 229, 1);}
+.tab_item{width: 33.33%;text-align: center;font-size: 28rpx;height: 60rpx}
+.new{width: 112rpx;height: 56rpx;border-bottom: 4rpx solid rgba(236, 65, 73, 1);margin: 0 auto;}
+.scroll_swipor{overflow-y: scroll;overflow: hidden;}
+.scroll_list{margin: 30rpx 24rpx;background-color: rgba(255, 255, 255, 1);box-shadow: 0px 0px 12px 0px rgba(166, 166, 166, 0.3214285714285714);border-radius: 16rpx;}
+.scroll_li{text-align: center;font-size: 28rpx;color: rgba(0, 0, 0, 1);padding: 12rpx 0 18rpx;}
+.scroll_li2{display: flex;align-items: center;justify-content: space-between;padding: 0rpx 28rpx}
+.guoq{width: 40rpx;height: 28rpx;margin-top: 10rpx;}
+.jianto{width:300rpx;height: 10rpx;}
+.li2_1{font-size: 28rpx;color: rgba(0, 0, 0, 1);width: 180rpx;}
+.li2_2{color: rgba(80, 80, 80, 1);font-size: 20rpx;}
+.li2_3{text-align: right}
+.li2_1_name{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.scoll-h{height: 100%;}
+
+.scroll_li3{display: flex;align-items: center;justify-content: space-between;padding: 16rpx 28rpx;}
+.li3_name{color: rgba(212, 48, 48, 1);font-size: 24rpx;}
+.li3_name2{color: rgba(80, 80, 80, 1);font-size: 20rpx;}
+.li3_icon{margin-left: 4rpx;vertical-align: middle}
+
+.scroll_li4{overflow: hidden;padding: 8rpx 28rpx 22rpx;}
+.li4_name{float: right;width: 132rpx;height: 44rpx;background-color: rgba(153, 153, 153, 0);border: rgba(236, 65, 73, 1) solid 1px;border-radius: 16rpx;text-align: center;color: rgba(212, 48, 48, 1);font-size: 24rpx;line-height: 44rpx;}
+.li4_name2{float: right;width: 132rpx;height: 44rpx;background-color: rgba(236, 65, 73, 1);border-radius: 16rpx;text-align: center;color: rgba(255, 255, 255, 1);font-size: 24rpx;line-height: 44rpx;border: rgba(236, 65, 73, 1) solid 1px;margin-right: 20rpx}
+.li4_name3{float: right;width: 132rpx;height: 44rpx;background-color: rgba(229, 229, 229, 1);border-radius: 16rpx;text-align: center;color: rgba(166, 166, 166, 1);font-size: 24rpx;line-height: 44rpx;border: rgba(229, 229, 229, 1) solid 1px;margin-right: 20rpx}

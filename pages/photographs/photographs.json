@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+		"editors":"../../components/editor/editor",
+		 "i-message": "../../dist/message/index",
+		 "i-rate": "../../dist/rate/index"
+	},
+	 "navigationBarTitleText": "拍照"
+}

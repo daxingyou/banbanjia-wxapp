@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+			"goods": "../../../components/goods/goods",
+			"i-message": "../../../dist/message/index",
+			"i-icon": "../../../dist/icon/index",
+			"i-spin": "../../../dist/spin/index",
+			"timeselect": "../../../components/timeSelector/timeSelector"
+	},
+	
+	 "navigationBarTitleText": "搬搬家",
+	"navigationBarBackgroundColor": "#FAFAFA"
+}

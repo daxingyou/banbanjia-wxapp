@@ -1,0 +1,37 @@
+<view class="community_box">
+	<view class="tab">
+		<view class="tab_item" wx:for="{{tab}}" bindtap="newChoice" data-index="{{index}}">
+			<view class="border {{new_choice==index?'new':''}}">{{item}}</view>
+		</view>
+	</view>
+	<view class="list">
+		<swiper current="{{new_choice}}" duration="300"  bindchange="switchTab"  style="height:{{winHeight}}rpx">
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h" >
+					1
+				</scroll-view>
+			</swiper-item>
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h" >
+					2
+				</scroll-view>
+			</swiper-item>
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h" >
+					3
+				</scroll-view>
+			</swiper-item>
+			<swiper-item>
+				<scroll-view scroll-y="true" class="scoll-h" >
+					4
+				</scroll-view>
+			</swiper-item>
+		   
+		</swiper>
+		
+	</view>
+	
+	
+	
+	
+</view>

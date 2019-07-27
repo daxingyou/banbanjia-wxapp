@@ -1,0 +1,12 @@
+.switch{height: 100vh;background: rgba(237, 59, 72, 0.5);display:flex;flex-direction: column;justify-content: center;align-items: center;}
+
+
+
+.border{width: 306rpx;height: 306rpx;border-radius:300rpx;text-align:center;color: rgba(255, 255, 255, 1);display: flex;align-items: center;justify-content: center;}
+
+
+
+.switch .border:nth-child(1){background: rgba(42, 130, 228, 0.3);margin-bottom:130rpx;}
+.switch .border:nth-child(2){background: rgba(42, 130, 228, 0.3);}
+
+.circular{width: 254rpx;height: 254rpx;border-radius:220rpx;background:rgba(42, 130, 228, 0.5);writing-mode: tb-rl;letter-spacing:10rpx;}

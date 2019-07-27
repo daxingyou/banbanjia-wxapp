@@ -1,0 +1,81 @@
+<!--pages/my/homepage/homepage.wxml-->
+<view class="top_box">
+  <image src="../../../images/b8f622e15251e14bfa0579a6c12970a.jpg" class="top_img"></image>
+  <view class="top_nr">
+    <image src="../../../images/t0169ed52127b821764.jpg" class="user_img"></image>
+    <view>
+      <view class="user_name">小明明家</view>
+      <view class="user_jj">个人简介：</view>
+      <view class="user_text">
+        <textarea placeholder="请输入个人简介" value="{{profile}}" bindinput="bindprofile"/>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="box">
+  <view class="nr_box">
+    <view class="nr_li nr_lione">
+      <view>性别</view>
+      <picker bindchange="sexclick" value="{{sex_index}}" range="{{sex_list}}">
+        <view>
+          {{sex_list[sex_index]}}<text class="iconfont icon-more icon1"></text>
+        </view>
+      </picker>
+    </view>
+    <view class="nr_li">
+      <view>出生日期</view>
+      <picker mode="date" value="{{date}}" start="2000-01-01" end="2019-07-25" bindchange="bindDateChange">
+        <view>
+          {{date}}<text class="iconfont icon-more icon1"></text>
+        </view>
+      </picker>
+    </view>
+    <view class="nr_li">
+      <view>手机号码</view>
+      <view class="nr_li_input">
+        <input type="number" placeholder="请输入手机号码" value="{{phone}}" bindinput="bindphone"/><text class="iconfont icon-more icon1"></text>
+      </view>
+    </view>
+    <view class="nr_li">
+      <view>地区</view>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view>
+          {{region[0]}}{{region[1]}}{{region[2]}}<text class="iconfont icon-more icon1"></text>
+        </view>
+      </picker>
+    </view>
+    <view class="nr_li">
+      <view>地址</view>
+      <view class="nr_li_input">
+        <input placeholder="请输入地址" value="{{address}}" bindinput="bindaddress"/><text class="iconfont icon-more icon1"></text>
+      </view>
+    </view>
+    <view class="nr_li nr_lilast">
+      <view>收货地址</view>
+      <view class="nr_li_input">
+        <input placeholder="请输入收货地址" value="{{goods_address}}" bindinput="bindgoods_address"/><text class="iconfont icon-more icon1"></text>
+      </view>
+    </view>
+  </view>
+  <view class="nr_box">
+    <view class="nr_name">联系卡</view>
+    <view class="nr_box_1">
+      <image src="../../../images/16c3b9c78ceb797a6e3338d84f22dad.jpg" class="nr_img"></image>
+      <view class="contact_text">
+        <view class="contact_text_1">
+          <image src="../../../images/5cfbbcd44832898af6c5b01442d7550.png" class="contact_img1"></image>
+          <view>电话:13245678921</view>
+        </view>
+        <view class="contact_text_1">
+          <image src="../../../images/b49826e67678578ec7a00b3a135824e.png" class="contact_img2"></image>
+          <view>微信号:13245678921</view>
+        </view>
+        <view class="contact_text_1">
+          <image src="../../../images/194d85049dbd63df50642bc24f4376d.png" class="contact_img3"></image>
+          <view>QQ:13245678921</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

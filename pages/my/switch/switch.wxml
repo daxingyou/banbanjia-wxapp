@@ -1,0 +1,4 @@
+<view class="switch">
+	<view class="border"><view  class="circular">商户</view></view>
+	<view class="border"><view  class="circular">搬运工</view></view> 
+</view>

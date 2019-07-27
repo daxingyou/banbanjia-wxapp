@@ -1,0 +1,53 @@
+<view class="tab">
+  <view class="tab_item" wx:for="{{tab}}" bindtap="newChoice" data-index="{{index}}">
+    <view class="border {{new_choice==index?'new':''}}">{{item}}</view>
+  </view>
+</view>
+<view class="list">
+  <swiper current="{{new_choice}}" duration="200"  bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="scroll_list">
+          <image src="../../../images/t0169ed52127b821764.jpg" class="scroll_img"></image>
+          <view class="scroll_b">
+            <view class="scroll_text">
+              <view class="scroll_text_1">广州搬家公司</view>
+              <view class="scroll_text_2">昨天20:15</view>
+            </view>
+            <view class="scroll_text2">请确定订单</view>
+          </view>
+        </view>
+        <view class="scroll_list">
+          <image src="../../../images/t0169ed52127b821764.jpg" class="scroll_img"></image>
+          <view class="scroll_b">
+            <view class="scroll_text">
+              <view class="scroll_text_1">广州搬家公司</view>
+              <view class="scroll_text_2">昨天20:15</view>
+            </view>
+            <view class="scroll_text2">请确定订单</view>
+          </view>
+        </view>
+        <view class="scroll_list">
+          <image src="../../../images/t0169ed52127b821764.jpg" class="scroll_img"></image>
+          <view class="scroll_b">
+            <view class="scroll_text">
+              <view class="scroll_text_1">广州搬家公司</view>
+              <view class="scroll_text_2">昨天20:15</view>
+            </view>
+            <view class="scroll_text2">请确定订单xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        2
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        3
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
