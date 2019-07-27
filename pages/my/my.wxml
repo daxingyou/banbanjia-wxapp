@@ -44,7 +44,6 @@
 		</view>
 		<image class="set" src="../../images/seizi.png" mode="scaleToFill" ></image>
 	</view> -->
-	
 	<!-- 普通用户 -->
 	<view class="content_box">
 		<view class="gn">常用功能</view>
