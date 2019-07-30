@@ -1,5 +1,5 @@
 {
-  "pages": [    
+  "pages": [
     "pages/my/my",
     "pages/my/myorder/myorder",
     "pages/my/ringing/ringing",
@@ -10,11 +10,8 @@
     "pages/my/switch/switch",
     "pages/business/details/details",
     "pages/business/details/business_details/business_details",
-    
     "pages/home/estimate/estimate",
     "pages/home/estimate/port/port",
-    
-    
     "pages/sign/sign",
     "pages/home/estimate/country/country",
     "pages/community/community",
@@ -22,9 +19,9 @@
     "pages/photographs/photographs",
     "pages/photograph/photograph",
     "pages/personnel_map/personnel_map",
-    
     "pages/home/location/location",
-    "pages/coupon/coupon"
+    "pages/coupon/coupon",
+    "pages/public/footer"
   ],
   "window": {
     "backgroundTextStyle": "light",

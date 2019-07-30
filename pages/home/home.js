@@ -69,7 +69,11 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-	
+    wx.login({
+      success: function(res){
+        console.log(res);
+      }
+    })
   },
 
   /**
@@ -88,6 +92,13 @@ Page({
 			city:val
 		})
 	}
+
+  app.util.request({
+    url: '/system/common/mine',
+    success: function(res){
+      console.log(res);
+    }
+  })
 	  
 	
   },
