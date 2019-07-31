@@ -17,7 +17,7 @@
         <navigator url="./ringing/ringing">
           <image class="set" src="../../images/消息.png" mode="scaleToFill" ></image>
         </navigator>
-        <navigator>
+        <navigator url="./setup/setup">
           <image class="set" src="../../images/seizi.png" mode="scaleToFill" ></image>
         </navigator>
       </view>
@@ -30,8 +30,10 @@
         </navigator>
       </view>
       <view>
-        <image src="../../images/钱包 (1).png" class="name_image"></image>
-        <view class="name">我的钱包</view>
+        <navigator url="./mywallet/mywallet">
+          <image src="../../images/钱包 (1).png" class="name_image"></image>
+          <view class="name">我的钱包</view>
+        </navigator>
       </view>
     </view>
 	</view>
@@ -48,7 +50,7 @@
 	<view class="content_box">
 		<view class="gn">常用功能</view>
 		<view class="button">
-			<navigator class="button_box">
+			<navigator class="button_box" url="./consultation/consultation">
 				<image src="../../images/我的咨询.png"  class="name_image"></image>
 				<div class="name">我的咨询</div>
 			</navigator>

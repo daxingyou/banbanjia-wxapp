@@ -100,6 +100,7 @@
     <swiper-item>
       <scroll-view scroll-y="true" class="scoll-h">
         <view class="scroll_list">
+          <view class="scroll_del" bindtap="delOrder">N</view>
           <navigator>
             <view class="scroll_li">国际搬家</view>
             <view class="scroll_li2">

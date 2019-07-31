@@ -10,3 +10,11 @@
 .scroll_text_2{color: rgba(166, 166, 166, 1);font-size: 20rpx;}
 .scroll_text2{width: 555rpx;color: rgba(80, 80, 80, 1);font-size: 24rpx;margin-top: 10rpx;text-overflow:ellipsis;overflow: hidden;white-space:nowrap;}
 .scoll-h{height: 100%;}
+.scroll_ly{display: flex;padding-top: 25rpx;}
+.ly_img{width: 52rpx;height: 52rpx;border-radius: 50%;margin:0 18rpx 0 24rpx;}
+.ly_text{width: 658rpx;border-bottom: 2rpx solid rgba(229, 229, 229, 1);padding-bottom: 25rpx}
+.ly_text_1{display: flex;align-items: center;justify-content: space-between;padding-right: 24rpx;}
+.ly_text_name{color: rgba(18, 77, 167, 1);font-size: 24rpx;}
+.ly_text_time{color: rgba(166, 166, 166, 1);font-size: 16rpx;}
+.ly_text_2{color: rgba(80, 80, 80, 1);font-size: 24rpx;padding:16rpx 24rpx 18rpx 0;}
+.ly_text_3{color: rgba(80, 80, 80, 1);font-size: 24rpx;background-color: rgba(239, 239, 239, 1);border-radius: 16rpx;padding: 14rpx 16rpx 16rpx;margin-right: 24rpx;line-height: 38rpx;overflow: hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;}

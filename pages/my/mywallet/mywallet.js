@@ -1,11 +1,11 @@
-// pages/my/myorder/myorder.js
+// pages/my/mywallet/mywallet.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tab: ['进行中', '已完成', '已取消'],
+    tab: ['我的现金', '我的积分', '优惠券'],
     new_choice: 0,
     winHeight: "",
   },
@@ -19,19 +19,6 @@ Page({
     const index = e.detail.current
     this.setData({
       new_choice: index
-    })
-  },
-  delOrder(){
-    wx.showModal({
-      title: '提示',
-      content: '永久删除订单',
-      success(res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
     })
   },
   /**

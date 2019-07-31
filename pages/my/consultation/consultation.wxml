@@ -1,0 +1,29 @@
+<view class="contation_b">
+  <navigator class="contation">
+    <view class="contation_1">我要搬运</view>
+    <image src="../../../images/t0169ed52127b821764.jpg" class="contation_img"></image>
+    <view class="contation_2">
+      <view class="text_1">广州搬搬家</view>
+      <view class="text_2">请问搬家时的箱子是自己准备的吗？还是怎么样,还XXXXX</view>
+      <view class="text_time">2019-07-01 20:20</view>
+    </view>
+  </navigator> 
+  <navigator class="contation">
+    <view class="contation_1">国际搬家</view>
+    <image src="../../../images/t0169ed52127b821764.jpg" class="contation_img"></image>
+    <view class="contation_2">
+      <view class="text_1">广州搬搬家</view>
+      <view class="text_2">请问搬家时的箱子是自己准备的吗？还是怎么样,还XXXXX</view>
+      <view class="text_time">2019-07-01 20:20</view>
+    </view>
+  </navigator> 
+  <navigator class="contation">
+    <view class="contation_1">国际快递</view>
+    <image src="../../../images/t0169ed52127b821764.jpg" class="contation_img"></image>
+    <view class="contation_2">
+      <view class="text_1">广州搬搬家</view>
+      <view class="text_2">请问搬家时的箱子是自己准备的吗？还是怎么样,还XXXXX</view>
+      <view class="text_time">2019-07-01 20:20</view>
+    </view>
+  </navigator> 
+</view>

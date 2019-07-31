@@ -1,6 +1,9 @@
 {
   "pages": [    
     "pages/my/my",
+    "pages/my/consultation/consultation",
+    "pages/my/setup/setup",
+    "pages/my/mywallet/mywallet",
     "pages/my/myorder/myorder",
     "pages/my/ringing/ringing",
     "pages/my/changing_over/changing_over",

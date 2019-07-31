@@ -41,12 +41,66 @@
     </swiper-item>
     <swiper-item>
       <scroll-view scroll-y="true" class="scoll-h">
-        2
+        <view class="scroll_list">
+          <image src="../../../images/t0169ed52127b821764.jpg" class="scroll_img"></image>
+          <view class="scroll_b">
+            <view class="scroll_text">
+              <view class="scroll_text_1">广州搬家公司</view>
+              <view class="scroll_text_2">昨天20:15</view>
+            </view>
+            <view class="scroll_text2">你可以考虑考虑</view>
+          </view>
+        </view>
+        <view class="scroll_list">
+          <image src="../../../images/t0169ed52127b821764.jpg" class="scroll_img"></image>
+          <view class="scroll_b">
+            <view class="scroll_text">
+              <view class="scroll_text_1">广州搬家公司</view>
+              <view class="scroll_text_2">7月3日</view>
+            </view>
+            <view class="scroll_text2">我不知道什么时候可以搬</view>
+          </view>
+        </view>
+        <view class="scroll_list">
+          <image src="../../../images/t0169ed52127b821764.jpg" class="scroll_img"></image>
+          <view class="scroll_b">
+            <view class="scroll_text">
+              <view class="scroll_text_1">广州搬家公司</view>
+              <view class="scroll_text_2">6月2日</view>
+            </view>
+            <view class="scroll_text2">哈哈哈哈哈</view>
+          </view>
+        </view>
       </scroll-view>
     </swiper-item>
     <swiper-item>
       <scroll-view scroll-y="true" class="scoll-h">
-        3
+        <view class="scroll_ly">
+          <image src="../../../images/t0169ed52127b821764.jpg" class="ly_img"></image>
+          <view class="ly_text">
+            <view class="ly_text_1">
+              <view class="ly_text_name">小月月</view>
+              <view class="ly_text_time">2019-07-01 20:20</view>
+            </view>
+            <view class="ly_text_2">回复我：应该就是这样的价钱，我的和你差不多</view>
+            <view>
+              <navigator class="ly_text_3">好想知道我上次国内搬家有没有搬贵啊，三房一厅一阳一卫，广州搬到深圳花了一万多，有没有人</navigator>
+            </view>
+          </view>
+        </view>
+        <view class="scroll_ly">
+          <image src="../../../images/t0169ed52127b821764.jpg" class="ly_img"></image>
+          <view class="ly_text">
+            <view class="ly_text_1">
+              <view class="ly_text_name">小月月</view>
+              <view class="ly_text_time">2019-07-01 20:20</view>
+            </view>
+            <view class="ly_text_2">评论：你家东西真多哈哈</view>
+            <view>
+              <navigator class="ly_text_3">我的搬家记：这么完整地搬一次家还真是第一次，觉得东西好多哇，你们看看我的图片，是不是觉得这么多东西一次都搬不完吧，但是搬搬家真的很专业，他们看到那么多东西也没有惊讶，有条不紊的装箱打包，真的搬家不错额xxx</navigator>
+            </view>
+          </view>
+        </view>
       </scroll-view>
     </swiper-item>
   </swiper>
