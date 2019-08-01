@@ -1,16 +1,18 @@
 //app.js
 App({
+  util: require("static/js/util.js"),
   onLaunch: function() {
     console.log("==================初始化================");
   },
   globalData: { //全局数据
     searchWord: '', //城市
-    url: ""
+    url: "",
   },
   onShow() {
     console.log("==================启动中================");
+    //获取用户信息
+    this.util.getUserOpenid()
   },
-  util: require("static/js/util.js"),
   ext: { //微擎相关配置
     siteInfo: {
       uniacid: "1",

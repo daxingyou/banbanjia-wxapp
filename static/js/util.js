@@ -171,7 +171,7 @@ util.getUserOpenid = function (cb) {
               userInfo.sessionid = res1.data.data.sessionid;
               wx.setStorageSync('userInfo', userInfo);
               if (typeof cb == 'function') {
-                cb();
+                cb(userInfo);
               }
             }
           },

@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    empower: true, //是否授权
+    empower: false, //是否授权
     visible: false,
     city: '选择',
     current: 1,
@@ -109,13 +109,6 @@ Page({
     //     console.log(res);
     //   }
     // })
-
-    //获取用户信息
-    app.util.getUserInfo(
-      function (){
-        console.log('getUserInfo_call_back');
-      }
-    )
 
   },
 
