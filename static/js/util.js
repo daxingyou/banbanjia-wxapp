@@ -5,14 +5,14 @@ import {
 import md5 from 'md5';
 var util = {}; //工具包
 
-util.base64_encode = function(str) {
+util.base64_encode = function (str) {
   return base64_encode(str);
 }
-util.base64_decode = function(str) {
+util.base64_decode = function (str) {
   return base64_decode(str)
 };
 
-util.md5 = function(str) {
+util.md5 = function (str) {
   return md5(str)
 };
 
@@ -21,7 +21,7 @@ util.md5 = function(str) {
 	@params action 微擎系统中的controller, action, do，格式为 'wxapp/home/navs'
 	@params querystring 格式为 {参数名1 : 值1, 参数名2 : 值2}
 */
-util.url = function(action, querystring) {
+util.url = function (action, querystring) {
   var app = getApp();
   var ext = app.ext;
   var url = ext.siteInfo.siteroot + '?i=' + ext.siteInfo.uniacid + '&t=' + ext.siteInfo.multiid + '&v=' + ext.siteInfo.version + '&m=' + ext.siteInfo.module + '&c=entry&do=mobile&';
@@ -87,9 +87,10 @@ function getQuery(url) {
 
 		cachetime : 缓存周期，在此周期内不重复请求http，默认不缓存
 	}
-*/
-util.request = function(option) {
-  var option = option || {};
+*///(去掉初始化授权弹框)
+util.request = function (option) {
+  console.log('util.request');
+  var option = option ? option : {};
   var sessionid = wx.getStorageSync('userInfo').sessionid;
   var url = option.url;
   if (url.indexOf('http://') == -1 && url.indexOf('https://') == -1) {
@@ -99,57 +100,210 @@ util.request = function(option) {
   if (!state && !(option.data && option.data.state) && sessionid) {
     url = url + '&state=we7sid-' + sessionid;
   }
-  option.data = option.data || {};
-  if (1 == option.forceOauth || !sessionid) { //没有sessionid或者强制重新授权
-    wx.request({
-      'url': url,
-      'data': option.data ? option.data : {},
-      'header': option.header ? option.header : {},
-      'method': option.method ? option.method : 'GET',
-      'header': {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      'success': function(response) {
-        wx.hideNavigationBarLoading();
-        wx.hideLoading();
-        // response.data.message || console.log(response.data.message);
-        if (response.data.errno == '-3e3') {
-          return response.data.message.message;
-        } else if (response.data.errno == '41009') {
-          wx.setStorageSync('userInfo', '');
-          util.getUserInfo(function() {
-            util.request(option)
-          });
-          return;
-        }
+  // if (1 == option.forceOauth || !sessionid) { //没有sessionid或者强制重新授权
+  //   util.getUserInfo(function () {
+  //     util.request(option);
+  //   })
+  // } else {
+  wx.request({
+    'url': url,
+    'data': option.data ? option.data : {},
+    'header': option.header ? option.header : {},
+    'method': option.method ? option.method : 'GET',
+    'header': {
+      'content-type': 'application/x-www-form-urlencoded'
+    },
+    'success': function (response) {
+      // wx.hideNavigationBarLoading();
+      // wx.hideLoading();
+      // response.data.message || console.log(response.data.message);
+      if (response.data.errno == '-3e3') {
+        return response.data.message.message;
+      } else if (response.data.errno == '41009') { //生成用户信息
+        wx.setStorageSync('userInfo', '');
+        util.getUserOpenid(function () {
+          util.request(option)
+        });
+        return;
+      } else {
         if (option.success && option.success == 'function') {
           option.success(response);
         }
-      },
-      'fail': function(response) {
-        wx.hideNavigationBarLoading();
-        wx.hideLoading();
-        if (option.fail && typeof option.fail == 'function') {
-          option.fail(response);
-        }
-      },
-      'complete': function(response) {
-        // wx.hideNavigationBarLoading();
-        // wx.hideLoading();
-        if (option.complete && typeof option.complete == 'function') {
-          option.complete(response);
-        }
       }
-    });
-  } else {
-    util.getUserInfo(function() {
-      util.request(option);
+    },
+    'fail': function (response) {
+      wx.hideNavigationBarLoading();
+      wx.hideLoading();
+      if (option.fail && typeof option.fail == 'function') {
+        option.fail(response);
+      }
+    },
+    'complete': function (response) {
+      // wx.hideNavigationBarLoading();
+      // wx.hideLoading();
+      if (option.complete && typeof option.complete == 'function') {
+        option.complete(response);
+      }
+    }
+  });
+  // }
+}
+//获得openid和sessionid
+util.getUserOpenid = function (cb) {
+  var login = function () {
+    var userInfo = {
+      'sessionid': '',
+    };
+    wx.login({
+      success: function (res) {
+        util.request({
+          url: 'system/common/session/openid',
+          data: {
+            code: res.code
+          },
+          success: function (res1) {
+            console.log('res1: ', res1)
+            if (res1.data.errno) {
+              wx.showModal({
+                content: res1.data.message
+              })
+            } else {
+              userInfo.sessionid = res1.data.data.sessionid;
+              wx.setStorageSync('userInfo', userInfo);
+              if (typeof cb == 'function') {
+                cb();
+              }
+            }
+          },
+          fail: function (res) {
+            console.log('fail: ', res)
+          }
+        })
+      }
     })
   }
+  login();
 }
 
+// 获取用户信息
+util.getUserInfo = function (cb) {
+  var login = function () {
+    console.log('start login');
+    var userInfo = {
+      'sessionid': '',
+      'wxInfo': '',
+      'memberInfo': '',
+    };
+    wx.login({
+      success: function (res) {
+        console.log('wx.login: ', res);
+        util.request({
+          url: 'system/common/session/openid',
+          data: {
+            code: res.code
+          },
+          cachetime: 0,
+          success: function (res1) {
+            console.log('openid: ', res1);
+            if (res1.data.errno) {
+              wx.showModal({
+                content: res1.data.message
+              })
+            } else {
+              userInfo.sessionid = res1.data.data.sessionid;
+              wx.setStorageSync('userInfo', userInfo);
+              if (typeof cb == 'function') {
+                cb(userInfo);
+              }
+              wx.getUserInfo({
+                success: function (res2) {
+                  console.log('成功');
+                  console.log(res2);
+                  userInfo.wxInfo = res2.userInfo;
+                  wx.setStorageSync('userInfo', userInfo);
+                  util.request({
+                    showLoading: !1,
+                    url: 'system/common/session/userinfo',
+                    data: {
+                      signature: res2.signature,
+                      rawData: res2.rawData,
+                      iv: res2.iv,
+                      encrytedData: res2.encrytedData
+                    },
+                    method: 'POST',
+                    header: {
+                      'content-type': 'application/x-www-form-urlencoded'
+                    },
+                    cachetime: 0,
+                    success: function (res3) {
+                      if (res3.data.errno) {
+                        wx.showModal({
+                          content: res3.data.message
+                        })
+                      } else {
+                        userInfo.memberInfo = res3.data.data;
+                        wx.setStorageSync('userInfo', userInfo);
+                      }
+                    }
+                  })
+                },
+                fail: function (res) {
+                  console.log('失败');
+                  console.log(res);
+                  if (res) {
+                    if ('getUserInfo:fail scope unauthorized' == res.errMsg) {
+                      util.showOauth();
+                    } else {
+                      if ('getUserInfo:fail auth deny' == res.errMsg) {
+                        wx.showModal({
+                          title: '授权提示',
+                          content: '若需登录平台，平台需要获取您的公开信息（昵称、头像等）',
+                          confirmText: '授权',
+                          showCancel: !1,
+                          success: function (res1) {
+                            if (res1.confirm) {
+                              wx.openSetting({
+                                success: function () { }
+                              })
+                            } else {
+                              res1.cancel;
+                            }
+                          }
+                        })
+                      }
+                    }
+                  }
+                }
+              })
+            }
+          },
+          fail: function (res) {
+            console.log('fail: ', res)
+          }
+        })
+      }
+    });
+  }
+  var user = wx.getStorageSync('userInfo');
+  if (user.sessionid) {
+    wx.checkSession({
+      success: function () {
+        'function' == typeof cb && cb(user);
+      },
+      fail: function () {
+        // user.sessionid = '';
+        // console.log('relogin');
+        // wx.removeStorageSync('userInfo');
+        // login();
+      }
+    })
+  } else {
+    //调用登录接口
+    login();
+  }
+}
 //js事件处理
-util.jsEvent = function(e) {
+util.jsEvent = function (e) {
   var eventType = e.currentTarget.dataset.eventType || "jsPost";
   if ("jsPost" == eventType) util.jsPost(e);
   else if ("jsOauth" == eventType) {
@@ -171,7 +325,7 @@ util.jsEvent = function(e) {
           'content-type': 'application/x-www-form-urlencoded'
         },
         cachetime: 0,
-        success: function(response) {
+        success: function (response) {
 
         }
       })
@@ -181,109 +335,15 @@ util.jsEvent = function(e) {
         content: "若需登录平台，平台需要获取您的公开信息（昵称、头像等）",
         confirmText: "授权",
         showCancel: !1,
-        success: function(response) {
+        success: function (response) {
           response.confirm ? wx.openSetting({
-            success: function() {}
+            success: function () { }
           }) : response.cancel;
         }
       })
     }
   }
 }
-// 获取用户信息
-util.getUserInfo = function(cb) {
-  var login = function() {
-    console.log('start login');
-    var userInfo = {
-      'sessionid': '',
-      'wxInfo': '',
-      'memberInfo': '',
-    };
-    wx.login({
-      success: function(res) {
-        util.request({
-          url: 'system/common/session/openid',
-          data: {
-            code: res.code
-          },
-          cachetime: 0,
-          success: function(res1) {
-            if (res1.data.errno) {
-              wx.showModal({
-                content: res1.data.message
-              })
-            } else {
-              userInfo.sessionid = res1.data.data.sessionid;
-              wx.setStorageSync('userInfo', userInfo);
-              if (typeof cb == 'function') {
-                cb(userInfo);
-              }
-              wx.getUserInfo({
-                success: function(res2) {
-                  console.log('成功');
-                  console.log(res2);
-                  userInfo.wxInfo = res2.userInfo;
-                  wx.setStorageSync('userInfo', userInfo);
-                  util.request({
-                    showLoading: !1,
-                    url: 'system/common/session/userinfo',
-                    data: {
-                      signature: res2.signature,
-                      rawData: res2.rawData,
-                      iv: res2.iv,
-                      encrytedData: res2.encrytedData
-                    },
-                    method: 'POST',
-                    header: {
-                      'content-type': 'application/x-www-form-urlencoded'
-                    },
-                    cachetime: 0,
-                    success: function(res3) {
-                      if (res3.data.errno) {
-                        wx.showModal({
-                          content: res3.data.message
-                        })
-                      } else {
-                        userInfo.memberInfo = res3.data.data;
-                        wx.setStorageSync('userInfo', userInfo);
-                      }
-                    }
-                  })
-                },
-                fail: function(res) {
-                  console.log('失败');
-                  console.log(res);
-                  if (res) {
-                    if ('getUserInfo:fail scope unauthorized' == res.errMsg) {
-                      util.showOauth();
-                    } else {
-                      if ('getUserInfo:fail auth deny' == res.errMsg) {
-                        wx.showModal({
-                          title: '授权提示',
-                          content: '若需登录平台，平台需要获取您的公开信息（昵称、头像等）',
-                          confirmText: '授权',
-                          showCancel: !1,
-                          success: function(res1) {
-                            if (res1.confirm) {
-                              wx.openSetting({
-                                success: function() {}
-                              })
-                            } else {
-                              res1.cancel;
-                            }
-                          }
-                        })
-                      }
-                    }
-                  }
-                }
-              })
-            }
-          }
-        })
-      }
-    })
-  }
-}
+
 
 module.exports = util;
