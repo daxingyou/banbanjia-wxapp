@@ -9,3 +9,10 @@ page{background-color: #FAFAFA;}
 .scoll_text_2{color: rgba(166, 166, 166, 1);font-size: 20rpx;}
 .scoll_text2{width: 526rpx;margin-left: 20rpx;color: rgba(80, 80, 80, 1);font-size: 24rpx;margin-top: 14rpx;text-overflow:ellipsis;overflow: hidden;white-space:nowrap;}
 .scoll-h{height: 100%;}
+.collect_list{margin: 26rpx 32rpx;padding-bottom: 26rpx;border-bottom: 2rpx solid rgba(229, 229, 229, 1);}
+.collect_text{display: flex;justify-content: space-between;align-items: center}
+.collect_text_1{color: rgba(0, 0, 0, 1);font-size: 28rpx;}
+.collect_text_2{color: rgba(166, 166, 166, 1);font-size: 20rpx;}
+.collect_text2{text-overflow:ellipsis;overflow: hidden;white-space:nowrap;color: rgba(80, 80, 80, 1);font-size: 24rpx;margin-top: 18rpx}
+.collect_tp{display: flex;justify-content: space-between;margin-top: 20rpx;}
+.collect_img{width: 210rpx;height: 160rpx;border-radius: 16rpx;}

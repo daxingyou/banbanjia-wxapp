@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/my/my",
+    "pages/my/security/security",
+    "pages/my/security/clickalarm/clickalarm",
     "pages/my/consultation/consultation",
+    "pages/my/consultation/seek/seek",
     "pages/my/setup/setup",
     "pages/my/mywallet/mywallet",
     "pages/my/myorder/myorder",

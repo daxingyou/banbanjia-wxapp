@@ -1,0 +1,31 @@
+<view>
+ <scroll-view scroll-y scroll-into-view='{{toView}}' style='height: {{scrollHeight}};'>
+  <!-- <view class='scrollMsg'> -->
+  <block wx:key wx:for='{{msgList}}' wx:for-index="index">
+   <!--客服发出（左） -->
+   <view class="seek_time">08:12</view>
+   <view wx:if='{{item.speaker=="server"}}' id='msg-{{index}}' class="seek_1">
+    <image class="seek_img1" src='../../../../images/t0169ed52127b821764.jpg'></image>
+    <view class="seek_nr1">
+      <view class="seek_text1">{{item.content}}</view>
+    </view>
+   </view>
+   <!--用户发出（右） -->
+   <view wx:else class="seek_2" id='msg-{{index}}'>
+    <image src='../../../../images/t0169ed52127b821764.jpg' class="seek_img2"></image>
+    <view class="seek_nr2" wx:if='{{item.content !=""}}'>
+      <view class="seek_text2">{{item.content}}</view>
+    </view>
+    <view class="content_images" wx:if='{{item.images !=""}}'><image src='{{item.images}}' class="content_img" bindtap="enlarge_image" data-idx="{{index}}"></image></view>
+    <view class="state_b">
+      <text class="state_1">已读</text>
+      <text class="state_2">未读</text>
+    </view>
+   </view>
+  </block>
+ </scroll-view>
+ <view class='inputRoom' style='bottom: {{inputBottom}}'>
+  <input bindconfirm='sendClick' adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send' bindfocus='focus' bindblur='blur'></input>
+  <image src="../../../../images/jia.png" class="upload_img" bindtap="photo_image"></image>
+ </view>
+</view>

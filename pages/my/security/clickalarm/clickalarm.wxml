@@ -1,0 +1,23 @@
+<view class="alarm_name1">遇到危险，向警方求助</view>
+<view class="alarm_name2">谎报警情将被依法追究法律责任</view>
+<view class="alarm_wz">
+  <view class="alarm_wz_1">当前参考位置</view>
+  <view class="alarm_wz_2">广东省广州市白云区白云大道中xxxzxx</view>
+</view>
+<view class="alarm_b">
+  <view class="alarm_text1">当您报警后，我们将会尝试：</view>
+  <view class="alarm_text2">
+    <image src="../../../../images/e651b7fae9cc5c981eb8592fde41951.png" class="alarm_img"></image>
+    <view>将行程信息根据警方要求提供给警方</view>
+  </view>
+  <view class="alarm_text2">
+    <image src="../../../../images/627d61c7976ddbd74d1e9f534ac08e9.png" class="alarm_img"></image>
+    <view>通知紧急联系人</view>
+  </view>
+  <view class="alarm_text2">
+    <image src="../../../../images/e1df2824c1cd4de626a44af4a33c801.png" class="alarm_img"></image>
+    <view>整理电话、信息录音给警方查询</view>
+  </view>
+  <view class="alarm_text3" bindtap="bj_telephone">呼叫110</view>
+  <view class="alarm_text4">功能说明<text class="iconfont icon-more alarm_icon"></text></view>
+</view>

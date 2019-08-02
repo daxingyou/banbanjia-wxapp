@@ -1,0 +1,38 @@
+@import '../../../../utils/iconfont.wxss'; 
+.seek_time{text-align: center;color: rgba(166, 166, 166, 1);font-size: 20rpx;margin-top: 20rpx;}
+.seek_1{display: flex;margin-top: 25rpx;padding-left: 24rpx;}
+.seek_img1{width: 72rpx; height: 72rpx;border-radius: 50%;}
+.seek_nr1{max-width: 450rpx;margin-left: 15rpx;}
+.seek_text1{margin-top: 8rpx;padding: 14rpx 24rpx;color: rgba(80, 80, 80, 1);font-size: 24rpx;background-color: rgba(228, 228, 236, 1);border-radius: 20rpx;}
+.seek_2{overflow: hidden;margin-top: 25rpx;padding-right: 24rpx;}
+.seek_img2{width: 72rpx; height: 72rpx;border-radius: 50%;float: right}
+.seek_nr2{max-width: 450rpx;margin-right: 15rpx;float: right}
+.seek_text2{margin-top: 8rpx;padding: 14rpx 24rpx;color: rgba(255, 255, 255, 1);font-size: 24rpx;background-color: rgba(60, 172, 252, 1);border-radius: 20rpx;}
+.state_b{font-size: 20rpx;float: right;margin: 33rpx 10rpx 0;}
+.state_1{color: rgba(166, 166, 166, 1);}
+.state_2{color: rgba(236, 65, 73, 1);}
+.inputRoom {
+ width: 100vw;
+ height: 16vw;
+ border-top: 1px solid #cdcdcd;
+ background-color: #f1f1f1;
+ position: fixed;
+ bottom: 0;
+ display: flex;
+ align-items: center;
+ z-index: 20;
+}
+ 
+input {
+ width: 76vw;
+ height: 9.33vw;
+ background-color: #fff;
+ border-radius: 40rpx;
+ margin-left: 2vw;
+ padding: 0 3vw;
+ font-size: 28rpx;
+ color: #444;
+}
+.upload_img{width: 60rpx;height: 60rpx;margin-left: 30rpx}
+.content_images{max-width: 450rpx;float: right}
+.content_img{width:400rpx;height: 300rpx;margin-right: 15rpx}

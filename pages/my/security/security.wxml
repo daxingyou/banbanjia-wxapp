@@ -1,0 +1,18 @@
+<view class="secutity_b">
+  <image src="../../../images/63a4552ad5b2ee5b6075bf20ff4ffa5.png" class="secutity_bj"></image>
+  <image src="../../../images/63a4552ad5b2ee5b6075bf20ff4ffa5.png" class="secutity_bj"></image>
+  <view class="secutity_1">
+    <view class="secutity_text text_bj1">
+      <image src="../../../images/3c60f27b8f917bf7c1217dea731ff51.png" class="secutity_img"></image>
+    </view>
+    <view class="secutity_name">紧急求助</view>
+    <navigator class="secutity_text text_bj2" url="./clickalarm/clickalarm">
+      <image src="../../../images/6bb051d83c0c4ab3e9cd167127d99d1.png" class="secutity_img"></image>
+    </navigator>
+    <view class="secutity_name">一键报警</view>
+    <view class="secutity_text text_bj3">
+      <image src="../../../images/1b14439693f8f9564d7f77799d252cf.png" class="secutity_img"></image>
+    </view>
+    <view class="secutity_name">安全专线</view>
+  </view>
+</view>
