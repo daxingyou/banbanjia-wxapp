@@ -89,7 +89,7 @@ function getQuery(url) {
 	}
 *///(去掉初始化授权弹框)
 util.request = function (option) {
-  console.log('util.request');
+  // console.log('util.request');
   var option = option ? option : {};
   var sessionid = wx.getStorageSync('userInfo').sessionid;
   var url = option.url;
@@ -126,7 +126,7 @@ util.request = function (option) {
         });
         return;
       } else {
-        if (option.success && option.success == 'function') {
+        if (option.success && typeof option.success == 'function') {
           option.success(response);
         }
       }
@@ -162,7 +162,7 @@ util.getUserOpenid = function (cb) {
             code: res.code
           },
           success: function (res1) {
-            console.log('res1: ', res1)
+            // console.log('res1: ', res1)
             if (res1.data.errno) {
               wx.showModal({
                 content: res1.data.message

@@ -10,11 +10,7 @@ Page({
     visible: false,
     city: '选择',
     current: 1,
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ], //轮播
+    imgUrls: [], //轮播
     msgList: [{
         url: "url",
         origin: "广州",
@@ -109,7 +105,13 @@ Page({
     //     console.log(res);
     //   }
     // })
-
+    //轮播图
+    app.util.request({
+      url: 'mall/home/api/slide',
+      success: function(res){
+        console.log('res: ',res);
+      }
+    })
   },
 
   /**
