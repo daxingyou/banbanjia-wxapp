@@ -1,0 +1,8 @@
+.detailsnei{border-top: 2rpx solid rgba(229, 229, 229, 1);}
+.detailsnei_1{border-bottom: 2rpx solid rgba(229, 229, 229, 1);padding: 90rpx 0;text-align: center}
+.detailsnei_name{color: rgba(0, 0, 0, 1);font-size: 32rpx;}
+.detailsnei_num{color: rgba(0, 0, 0, 1);font-size: 52rpx;font-weight: bold;padding-top: 25rpx;}
+.detailsnei_2{padding: 30rpx 42rpx;}
+.detailsnei_text{display: flex;padding-bottom: 20rpx;}
+.detailsnei_text_1{color: rgba(166, 166, 166, 1);font-size: 28rpx;min-width: 140rpx;}
+.detailsnei_text_2{color: rgba(80, 80, 80, 1);font-size: 28rpx;text-align: justify;word-wrap:break-word;width: 526rpx}

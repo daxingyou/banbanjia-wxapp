@@ -1,0 +1,8 @@
+@import '../../../../../utils/iconfont.wxss'; 
+.cashdetails{border-top: 2rpx solid rgba(229, 229, 229, 1);}
+.cashdetails_1{border-bottom: 2rpx solid rgba(229, 229, 229, 1);padding: 26rpx;display: flex;align-items: center;justify-content: space-between;}
+.cashdetails_name{color: rgba(80, 80, 80, 1);font-size: 28rpx;}
+.cashdetails_time{color: rgba(166, 166, 166, 1);font-size: 20rpx;padding-top: 8rpx;}
+.cashdetails_num1{color: rgba(80, 80, 80, 1);font-size: 28rpx;font-weight: bold}
+.cashdetails_num2{color: rgba(255, 195, 0, 1);font-size: 28rpx;font-weight: bold}
+.cashdetails_icon{color: rgba(56, 56, 56, 1);margin-left: 5rpx;}

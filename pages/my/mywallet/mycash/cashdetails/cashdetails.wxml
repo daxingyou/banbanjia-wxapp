@@ -1,0 +1,20 @@
+<view class="cashdetails">
+  <navigator class="cashdetails_1" url="./detailsnei/detailsnei">
+    <view>
+      <view class="cashdetails_name">提现</view>
+      <view class="cashdetails_time">2019-07-01 10:20</view>
+    </view>
+    <view>
+      <view class="cashdetails_num1"><text>-</text>200<text class="iconfont icon-more cashdetails_icon"></text></view>
+    </view>
+  </navigator>
+  <navigator class="cashdetails_1">
+    <view>
+      <view class="cashdetails_name">充值</view>
+      <view class="cashdetails_time">2019-07-01 10:10</view>
+    </view>
+    <view>
+      <view class="cashdetails_num2"><text>+</text>200<text class="iconfont icon-more cashdetails_icon"></text></view>
+    </view>
+  </navigator>
+</view>

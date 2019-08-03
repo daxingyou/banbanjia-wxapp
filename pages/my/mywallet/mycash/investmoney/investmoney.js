@@ -1,12 +1,13 @@
-// pages/my/mywallet/mywallet.js
+// pages/my/mywallet/mycash/investmoney/investmoney.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+
   },
+
   /**
    * 生命周期函数--监听页面加载
    */

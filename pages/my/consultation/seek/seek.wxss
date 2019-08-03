@@ -1,5 +1,6 @@
 @import '../../../../utils/iconfont.wxss'; 
-.seek_time{text-align: center;color: rgba(166, 166, 166, 1);font-size: 20rpx;margin-top: 20rpx;}
+.seek{border-top: 2rpx solid rgba(229, 229, 229, 1);}
+.seek_time{text-align: center;color: rgba(166, 166, 166, 1);font-size: 20rpx;padding-top: 20rpx;}
 .seek_1{display: flex;margin-top: 25rpx;padding-left: 24rpx;}
 .seek_img1{width: 72rpx; height: 72rpx;border-radius: 50%;}
 .seek_nr1{max-width: 450rpx;margin-left: 15rpx;}

@@ -1,0 +1,14 @@
+<view class="rules">
+  <navigator class="rules_b" url="./userprotocol/userprotocol">
+    <view>用户协议</view>
+    <view><text class="iconfont icon-more"></text></view>
+  </navigator>
+  <navigator class="rules_b">
+    <view>论坛协议</view>
+    <view><text class="iconfont icon-more"></text></view>
+  </navigator>
+  <navigator class="rules_b">
+    <view>邀请规则</view>
+    <view><text class="iconfont icon-more"></text></view>
+  </navigator>
+</view>

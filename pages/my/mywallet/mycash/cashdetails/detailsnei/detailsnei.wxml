@@ -1,0 +1,24 @@
+<view class="detailsnei">
+  <view class="detailsnei_1">
+    <view class="detailsnei_name">广州搬搬家搬家费用</view>
+    <view class="detailsnei_num">-200</view>
+  </view>
+  <view class="detailsnei_2">
+    <view class="detailsnei_text">
+      <view class="detailsnei_text_1">类型</view>
+      <view class="detailsnei_text_2">支出</view>
+    </view>
+    <view class="detailsnei_text">
+      <view class="detailsnei_text_1">时间</view>
+      <view class="detailsnei_text_2">2019-07-01 10:20</view>
+    </view>
+    <view class="detailsnei_text">
+      <view class="detailsnei_text_1">交易单号</view>
+      <view class="detailsnei_text_2">1234567894563214587895624855555</view>
+    </view>
+    <view class="detailsnei_text">
+      <view class="detailsnei_text_1">备注</view>
+      <view class="detailsnei_text_2">搬家费用搬家费用</view>
+    </view>
+  </view>
+</view>

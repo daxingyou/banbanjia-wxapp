@@ -1,0 +1,2 @@
+.investmoney{border-top: 2rpx solid rgba(229, 229, 229, 1);padding: 40rpx 34rpx 0}
+.investmoney_1{background-color: rgba(255, 255, 255, 1);border-radius: 16rpx;box-shadow: 0px 0px 12px 0px rgba(215, 215, 215, 1);}

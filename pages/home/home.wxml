@@ -2,14 +2,14 @@
 	<empower wx:if="{{empower}}" bind:state="state"></empower> <!-- 授权组件 -->
 	<view class="head"> <!--头部-->
 		<view class="location"  bindtap="choose_city"> <!-- 定位 -->
-			<viwe ><image src="../../images/定位.png" class='location_img'  mode="scaleToFill"></image></viwe>
+			<viwe ><image src="../../images/dw111.png" class='location_img'  mode="scaleToFill"></image></viwe>
 			<view class="location_name">{{city}}</view>
 		</view>
 		<view span="17">  <!-- 价格估算 -->
 			<button bindtap="estimate" class="price">价格估算</button>
 		</view>
 		<view span="4">	<!-- 日历 签到 -->
-			<image src="../../images/签到 (1).png" class='calendar_img' mode="scaleToFill"></image>
+			<image src="../../images/qd11.png" class='calendar_img' mode="scaleToFill"></image>
 		</view>
 	</view>
 	
@@ -39,23 +39,23 @@
 	
 	<view class="nav">	<!--菜单-->
 		<navigator class="nav_box">
-			<view class="image_box"><image src="../../images/货车.png" class="image"></image></view>
+			<view class="image_box"><image src="../../images/hc11.png" class="image"></image></view>
 			<view class="nav_name">国内搬家</view>
 		</navigator>
 		<navigator url="" class="nav_box">
-			<view class="image_box"><image src="../../images/国际搬家.png" class="image"></image></view>
+			<view class="image_box"><image src="../../images/gjbj11.png" class="image"></image></view>
 			<view class="nav_name">国际搬家</view>
 		</navigator>
 		<navigator url="" class="nav_box">
-			<view class="image_box"><image src="../../images/国际快递.png" class="image"></image></view>
+			<view class="image_box"><image src="../../images/gjkd11.png" class="image"></image></view>
 			<view class="nav_name">国际快递</view>
 		</navigator>
 		<navigator url="" class="nav_box">
-			<view class="image_box"><image src="../../images/晒单评论.png" class="image"></image></view>
+			<view class="image_box"><image src="../../images/sdpl11.png" class="image"></image></view>
 			<view class="nav_name">晒单评论</view>
 		</navigator>
 		<navigator url="" class="nav_box">
-			<view class="image_box"><image src="../../images/问答攻略.png" class="image"></image></view>
+			<view class="image_box"><image src="../../images/wdgl11.png" class="image"></image></view>
 			<view class="nav_name">问答攻略</view>
 		</navigator>
 	</view>
@@ -104,11 +104,11 @@
 	
 	<view class="carry_diary_box"> <!--附近搬运工 和 搬家日记-->
  		<view class="carry_diary">
-			<view><image mode="scaleToFill" class="carry_diary_image" src="../../images/人.png"></image></view>
+			<view><image mode="scaleToFill" class="carry_diary_image" src="../../images/ren11.png"></image></view>
 			<view class="carry_diary_name">附近的搬运工</view>
 		</view>
 		<view class="carry_diary">
-			<view><image mode="scaleToFill" class="carry_diary_image" src="../../images/记录.png"></image></view>
+			<view><image mode="scaleToFill" class="carry_diary_image" src="../../images/jl222.png"></image></view>
 			<view class="carry_diary_name">最新搬家记</view>
 		</view>
 	</view>
