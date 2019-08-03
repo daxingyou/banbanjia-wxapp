@@ -9,14 +9,14 @@
 			<button bindtap="estimate" class="price">价格估算</button>
 		</view>
 		<view span="4">	<!-- 日历 签到 -->
-			<image src="../../images/签到 (1).png" class='calendar_img' mode="scaleToFill"></image>
+			<image src="../../images/签到 (1).png" class='calendar_img' mode="scaleToFill" bindtap="calendar"></image>
 		</view>
 	</view>
 	
 	<view class="carousel">	<!--轮播-->
 		<swiper autoplay="true" interval="1000" class="swiper">
 			<block wx:for="{{imgUrls}}">
-			  <swiper-item class="swiper_item"><image src="{{item}}" class="slide-image" /></swiper-item>
+			  <navigator><swiper-item class="swiper_item"><image src="{{item}}" class="slide-image" /> </swiper-item></navigator>
 			</block>
 		</swiper>
 	</view>
@@ -38,15 +38,15 @@
 	</viwe>
 	
 	<view class="nav">	<!--菜单-->
-		<navigator class="nav_box">
+		<navigator url="./estimate/estimate" class="nav_box" >
 			<view class="image_box"><image src="../../images/货车.png" class="image"></image></view>
 			<view class="nav_name">国内搬家</view>
 		</navigator>
-		<navigator url="" class="nav_box">
+		<navigator url="./estimate/estimate?int=1" class="nav_box">
 			<view class="image_box"><image src="../../images/国际搬家.png" class="image"></image></view>
 			<view class="nav_name">国际搬家</view>
 		</navigator>
-		<navigator url="" class="nav_box">
+		<navigator url="./estimate/estimate?int=2" class="nav_box">
 			<view class="image_box"><image src="../../images/国际快递.png" class="image"></image></view>
 			<view class="nav_name">国际快递</view>
 		</navigator>

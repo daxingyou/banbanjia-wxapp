@@ -1,0 +1,51 @@
+<!--pages/changing_over/changing_over.wxml-->
+<view class='changing_over'>
+  <view class='changing'>
+    <view class='changing_son merchant_box'>
+      <view class='changing_son_son merchant_son'>
+        <view class='text'>商户</view>
+      </view>
+    </view>
+  </view>
+  <view class='changing'>
+    <view class='changing_son porter_box'>
+      <view class='changing_son_son porter_son'>
+        <view class='text'>搬运工</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='changing_over'>
+  <view class='changing'>
+    <view class='changing_son domestic_box'>
+      <view class='changing_son_son domestic_son'>
+        <view class='text'>普通用户</view>
+      </view>
+    </view>
+  </view>
+  <view class='changing'>
+    <view class='changing_son porter_box'>
+      <view class='changing_son_son porter_son'>
+        <view class='text'>搬运工</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='changing_over'>
+  <view class='changing'>
+    <view class='changing_son merchant_box'>
+      <view class='changing_son_son merchant_son'>
+        <view class='changing_son_son merchant_son'>
+          <view class='text'>商户</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='changing'>
+    <view class='changing_son domestic_box'>
+      <view class='changing_son_son domestic_son'>
+        <view class='text'>普通用户</view>
+      </view>
+    </view>
+  </view>
+</view>

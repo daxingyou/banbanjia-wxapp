@@ -3,7 +3,8 @@
 			"goods": "../../../components/goods/goods",
 			"i-message": "../../../dist/message/index",
 			"i-icon": "../../../dist/icon/index",
-			"i-spin": "../../../dist/spin/index",
+			"i-spin": "../../../dist/spin/index", 
+			"i-toast": "../../../dist/toast/index",
 			"timeselect": "../../../components/timeSelector/timeSelector"
 	},
 	

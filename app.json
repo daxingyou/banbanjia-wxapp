@@ -1,16 +1,15 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/my/switch/switch",
-    "pages/my/my",
+    "pages/home/estimate/estimate",
+    "pages/home/measure/measure",
     
+    "pages/my/changing_over/changing_over",
+    "pages/my/switch/switch",
+    "pages/my/my", 
     "pages/business/details/details",
     "pages/business/details/business_details/business_details",
-    
-    "pages/home/estimate/estimate",
     "pages/home/estimate/port/port",
-    
-    
     "pages/sign/sign",
     "pages/home/estimate/country/country",
     "pages/community/community",
@@ -18,7 +17,6 @@
     "pages/photographs/photographs",
     "pages/photograph/photograph",
     "pages/personnel_map/personnel_map",
-    
     "pages/home/location/location",
     "pages/coupon/coupon"
   ],

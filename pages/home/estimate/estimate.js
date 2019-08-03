@@ -1,13 +1,17 @@
 var QQMapWX = require('../../../utils/qqmap-wx-jssdk.js');
+var Verification = require('../../../utils/evaluationVerification.js');
 var qqmapsdk = new QQMapWX({key: 'ZXLBZ-XK5RI-WLJGO-55MKH-P2YKT-TFB5G' ,});// 必填
-const { $Message } = require('../../../dist/base/index'); 
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-	mask:true,  //禁用textarea input
+	rooms:{bedroom:0,parlour:0},
+	volume:0,
+	current:0,  //估算弹出框的第几张
+	estimate:true, //估算弹出框
+	mask:false,  //禁用textarea input
 	goods_option:null,
 	timerTem:"",
 	spinShow: true,
@@ -21,23 +25,18 @@ Page({
 	floor:1, //楼层
 	stairs:1, // 电梯还是步梯
 	array:[],  //楼层数组
-	hall:0,//厅
-	room:0,//房间
-	toilet:0,//卫生间
-	balcony:0,//阳台
-	success_data:[], //物品详情
-	volume:"", //体积
 	remarks:"", //备注
 	international:1,//国际搬家和国际快递的第一个单选
+	typeExpress:1, //快递类型
 	weight:0, //国际快递 重量
 	times_data:"", //时间
 	number:0, 
 	min:1000,
 	max:99999,
-	state:false,
 	change_goods:"",
 	delete_goods:"",
 	insurance:0,
+	bedroomArray:[0,1,2,3,4,5,6,7,8,9,10],
 	items: [
 		{id: '1', value: '国内搬家', checked: 'true'},
 		{id: '2', value: '国际搬家'},
@@ -68,11 +67,59 @@ Page({
 		{id: '3', value: '门到港'},
 	],
   },
+  international_obtain_price(){
+	let start_location=this.data.start_location.place	//发
+	let end_location=this.data.end_location.place	//收
+	let international=this.data.international	//门 集中 港	
+	// let service_type = this.data.service_type	//服务类型
+	let floor=this.data.floor	//楼层
+	let stairs=this.data.stairs	//电梯 步梯
+	let times_data = this.data.times_data	//时间
+	let weight = this.data.weight	//体积
+	let remarks =this.data.remarks	//备注
+	let insurance = this.data.insurance	//保价
+	
+	console.log(choice_data)
+	Verification.international(start_location,end_location,times_data,choice_data,insurance)
+  },
+  
+  express_obtain_price(){	//国际快递
+	let start_location=this.data.start_location.place	//发
+	let end_location=this.data.end_location.place	//收
+	let type	//快递类型
+	let items_five =this.data.items_five 
+	let weight =this.data.weight		//重量
+	let times_data = this.data.times_data  //时间
+	
+	for(let i=0;i<items_five.length;i++){
+		if(items_five[i].id==this.data.typeExpress){
+			type=items_five[i].value 
+		}
+	}
+	Verification.express(start_location,end_location,weight,times_data);
+  },
+ 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+	if(options.int){
+		if(options.int==1){
+			this.setData({
+				carry:2,
+				items: [{id:'1',value:'国内搬家'},{id:'2',value:'国际搬家',checked: 'true'},{id:'3',value:'国际快递'},],
+				
+			})
+		}else{
+			this.setData({
+				carry:3,
+				items: [{id:'1',value:'国内搬家'},{id:'2',value:'国际搬家'},{id:'3',value:'国际快递',checked: 'true'},],
+				
+			})
+		}
+	}
+	
 	this.startReportHeart()  
 	var arr1 = new Array(100);
 	for(var i=0;i<arr1.length;i++){
@@ -94,6 +141,58 @@ Page({
 		}
 	}) 
   },
+  measure(){
+	  if(this.data.estimate){
+		this.setData({
+			estimate:false
+		})
+	  }else{
+		this.setData({
+			estimate:true
+		})  
+	  }
+	
+  },
+  sure(e){
+		let index=e.currentTarget.dataset.index
+		if(index == 1){
+			this.setData({
+				current:1
+			})
+		  
+		}else{
+			let state =Verification.volume(this.data.volume)
+			if(state){
+				this.setData({
+					weight:this.data.volume,
+					estimate:true
+				})
+			}
+		}
+  },
+  nextStep(){
+	wx.navigateTo({
+		url:`../measure/measure?bedroom=${this.data.rooms.bedroom}&parlour=${this.data.rooms.parlour}`
+	});
+	this.setData({
+		current:0,
+		estimate:true
+	})
+  },
+  
+  
+  volume(e){ //输入体积框
+  let value=e.detail.value
+	this.setData({
+		volume:value
+	})
+  },
+  
+  typeExpress(e){  //快递类型
+	  this.setData({
+	   	typeExpress:e.detail.value
+	  })
+  },
   weightEvent(e){
 	  this.setData({
 	   	weight:e.detail.value
@@ -104,7 +203,7 @@ Page({
 	   	international:e.detail.value
 	  })
   },
-  insuranceEvent(e){
+  insuranceEvent(e){  //保价
 	 this.setData({
 	  	insurance:e.detail.value
 	 })
@@ -124,97 +223,40 @@ Page({
 		service_type:e.detail.value
 	})
   },
-  
-  
-  sure(){ 
-	this.setData({
-		mask:false,
-		state:false
-	})  
-  },
-  godos_list(){
-	this.setData({
-		mask:true,
-		state:true
-	})
-  },
-  goods_data(e){
-	if(e.detail != "true"){
-		this.setData({
-			mask:false,
-			volume:e.detail[1],
-			success_data:e.detail[0]
-		})
-	}else{
-		
+  prohibit(e){  //禁止输入框和传值
+	if(e.detail.stata == "true"){
 		this.setData({
 			mask:true
 		})
+	}else{ 
+		this.setData({
+			weight:e.detail.volume,
+			choice_data:e.detail.data,
+			mask:false,
+			
+		})
 		
 	}
-	
   },
   
-  carry(e){//啥搬家 国内 国际 国际快递 
-	const index = e.detail.value
-	console.log(index)
-	if(index == 1){
-		this.setData({
-			goods_option:this.selectComponent('#goods')
-		})
-	}else if(index == 2){
-		this.setData({
-			goods_option:this.selectComponent('#goods_four')
-		})
-	} 
-    
+  carry(e){//啥搬家 国内 国际 国际快递 c
 	var that = this 
 	this.setData({
-		carry:e.detail.value,
-		carry_type:1,
-		service_type:1,
-		floor:1, //楼层
-		stairs:1,
-		success_data:[],
-		remarks:'',
-		volume:'',
-		weight:'',
-		times_data:"",
-		insurance:0
+		carry:e.detail.value
 		
 	})
-	// this.doms.updata_goods()
+	 
   },
   types_handling(e){ 
-	  const index = e.detail.value
-	  if(index == 1){
-		  this.setData({
-		  		goods_option:this.selectComponent('#goods')
-		  })
-	  }else if(index == 2){
-		  this.setData({
-		  		goods_option:this.selectComponent('#goods_two')
-		  })
-	  }else if(index == 3){
-		  this.setData({
-		  		goods_option:this.selectComponent('#goods_three')
-		  })
-	  }
 	  this.setData({
-	  	carry_type:e.detail.value,
-		service_type:1,
-		floor:1, //楼层
-		stairs:1,
-		success_data:[],
-		remarks:'',
-		volume:'',
-		times_data:"",
-		insurance:0
+	  	carry_type:e.detail.value
 	  })
-	// this.doms.updata_goods()
   },
-  time_data(e){
-	  times_data:e.detail
+  time_data(e){  //预约时间
+		this.setData({
+			times_data:e.detail
+		})
+	 
   },
   member_map(e){ 
 	   wx.navigateTo({
@@ -225,6 +267,20 @@ Page({
 	  wx.navigateTo({
 	  	url:"../../coupon/coupon"
 	  })
+  },
+  bedroomChange(e){
+	  console.log(this.data.bedroomArray[e.detail.value]  )
+		this.data.rooms.bedroom=this.data.bedroomArray[e.detail.value]  
+		this.setData({
+			rooms:this.data.rooms
+		})
+  },
+  parlourChange(e){
+	   this.data.rooms.parlour=this.data.bedroomArray[e.detail.value]  
+	    this.setData({
+	    rooms:this.data.rooms
+	  })
+	  
   },
   bindPickerChange(e){  //选择楼层
 		let num=e.detail.value
@@ -354,67 +410,15 @@ Page({
 						}
 					})
 				}
-			}
-			
+			} 
 		})
 		
 		
 	},
 	get_end(e){  //获取目的地
 		
-	}, 
-	plus_reduce_two(e){  //物品清单加减
-		let id=e.currentTarget.dataset.ids   //物品id
-		let index=e.currentTarget.dataset.id   //物品下标
-		let index_two=e.currentTarget.dataset.index  //1减2加
-		let number=e.currentTarget.dataset.number  //当前物品数量
-		let volume=e.currentTarget.dataset.volume  //当前物品重量  
-		
-		if(index_two==1 && number==1){
-				$Message({content: '至少要有一件哦！',type: 'warning'});
-		}else if(index_two==1 && number>1){
-			this.data.success_data[index].number=this.data.success_data[index].number-1
-			this.setData({
-				volume:this.data.volume-volume,
-				success_data:this.data.success_data,
-				change_goods:this.data.success_data[index]
-			})
-			this.data.goods_option.change_goods();
-			
-		}else if(index_two==2){ 
-			this.data.success_data[index].number=this.data.success_data[index].number+1
-			this.setData({
-				volume:this.data.volume+volume,
-				success_data:this.data.success_data,
-				change_goods:this.data.success_data[index]
-			})
-			this.data.goods_option.change_goods_two(); 
-		}	
 	},
-	move:function(){},
-	delete_goods(e){   //删除物品
-		let index=e.currentTarget.dataset.index   //物品下标
-		let number=e.currentTarget.dataset.number   //当前物品数量
-		let volume=e.currentTarget.dataset.volume   //当前物品重量 
-		let volumes=volume*number
-		this.data.delete_goods=this.data.success_data[index]
-		this.data.success_data.splice(index,1)
-		 
-		this.setData({
-			delete_goods:this.data.delete_goods,
-			volume:this.data.volume-volumes,
-			success_data:this.data.success_data
-		})
-		this.data.goods_option.change_goods_three(); 
-	},
-	
-	
-	move:function(){},
-	
-	
-	
-	
-	
+	move:function(){},  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -430,6 +434,15 @@ Page({
 	this.setData({ 
 		spinShow:false
 	})
+	if(wx.getStorageSync("volume")!=""){
+		this.setData({
+			weight:wx.getStorageSync("volume")
+		})
+		  wx.removeStorageSync('volume')
+		
+	}
+	
+	
   },
 
   /**

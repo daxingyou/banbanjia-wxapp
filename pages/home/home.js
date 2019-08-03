@@ -1,12 +1,11 @@
 var amapFile = require('../../utils/amap-wx.js');
 var app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-		empower:true,  //是否授权
+		empower:false,  //是否授权
 		visible:false,
 		city:'选择',
 		current:1,
@@ -28,6 +27,11 @@ Page({
 		actions: [{name: '确定'}],
 				
   },
+    calendar(){
+		wx.navigateTo({
+			url:"../sign/sign"
+		}) 
+	},
 	currents(e){
 		this.setData({
 			current:e.currentTarget.dataset.index
@@ -59,7 +63,7 @@ Page({
    */
   onLoad: function (options) {
     this.Automatic_positioning()  //获取定位
-		
+	
   
 
 

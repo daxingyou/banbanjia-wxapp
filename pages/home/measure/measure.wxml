@@ -1,0 +1,47 @@
+<view>
+	<view class="head">
+		<view class="list">
+			<view>{{bedroomNumber}}</view>
+			<view>卧室数量</view>
+		</view>
+		<view class="list">
+			<view>{{officeNumber}}</view>
+			<view>客厅数量</view>
+		</view>
+	</view>
+	<view class="choiceBox">
+		<view class="menu">
+			<block wx:for="{{goods}}">
+				<view class="box  {{curInex==index?'current':''}}" bindtap="cur" data-index="{{index}}">
+					<image src="{{item.image}}" ></image>
+					<view class="name">{{item.type}}</view>
+					<view class="numbers" hidden="{{item.numbers<1}}">{{item.numbers}}</view>
+				</view>
+			</block>
+			
+		</view>
+		<view class="contentBox">
+			<block wx:for="{{curArray}}">
+				<view class="curContent">
+					<view class="curContent_left">
+						<image src="{{item.image}}" ></image>
+						<view class="name">{{item.name}}</view>
+					</view>
+					<view class="curContent_fight">
+						<view bindtap="plusReduce" data-index="{{index}}" data-plusreduce="1" data-volume="{{item.volume}}">-</view>
+						<view>{{item.number}}</view>
+						<view bindtap="plusReduce" data-index="{{index}}" data-plusreduce="2" data-volume="{{item.volume}}">+</view>
+					</view>
+					
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="totalVolume_box">
+		 <view>预估总体积: <text>{{totalVolume}}</text>m³</view>
+		 <view class="sure" bindtap="sure">确定</view>
+		
+	</view>
+	
+	
+</view>

@@ -233,8 +233,13 @@ Component({
 		  var day = monthDay.split("-")[1]; // 返回日
 		  monthDay = month + "月" + day + "日";
 		}
-
-		var startDate = monthDay + " " + hours + ":" + minute;
+		 //自己改的
+		var timestamp = Date.parse(new Date());
+		var dates = new Date(timestamp);
+		var year =dates.getFullYear(); 
+		//结束
+		
+		var startDate = year+"年"+monthDay + " " + hours + ":" + minute;
 		this.triggerEvent("time",startDate)
 		that.setData({
 		  startDate: startDate
