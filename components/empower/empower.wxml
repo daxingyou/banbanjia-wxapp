@@ -1,16 +1,22 @@
 <view>
-	<view class="curtain" bindtap="close"></view>
-	<view class="empower_box">
-		<view class="empower_image_box">
-			<image src="../../images/bc6b295a76745e148c0d72ad9989b58.png" class="empower_image"></image>
-		</view>
-		<view class="one_box"><view class="one">亲~为了给您提供更好地服务我们需要您的授权哦~</view> </view>
-		<view class="two_box"><view class="two">授权后我们将获会取您的用户名、头像等信息</view> </view>
-		<view class="button_box">
-			<button  open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="yes_button">去授权</button>
-		</view>
-		<view class="close_box" bindtap="close"> <image src="../../images/b3b86fb1a358e58921c70017c700dc7.png" class="close"></image></view>
-	</view>
-	
-	
+  <view class="curtain" bindtap="close"></view>
+  <view class="empower_box">
+    <view class="empower_image_box">
+      <image src="../../images/bc6b295a76745e148c0d72ad9989b58.png" class="empower_image"></image>
+    </view>
+    <view class="one_box">
+      <view class="one">亲~为了给您提供更好地服务我们需要您的授权哦~</view>
+    </view>
+    <view class="two_box">
+      <view class="two">授权后我们将获会取您的用户名、头像等信息</view>
+    </view>
+    <view class="button_box">
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="yes_button">去授权</button>
+    </view>
+    <view class="close_box" bindtap="close">
+      <image src="../../images/b3b86fb1a358e58921c70017c700dc7.png" class="close"></image>
+    </view>
+  </view>
+
+
 </view>

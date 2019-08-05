@@ -1,46 +1,84 @@
+<view class="header_b"></view>
+<view class="header_b_1">
+		<view class="header_b_1_1">
+      <view class="yh_box">
+        <navigator url="./homepage/homepage" class="user_head">
+          <image src="../../images/t0169ed52127b821764.jpg" class="user_head"></image>
+        </navigator>
+        <view>
+          <view class="xm_b">
+            <view class="name_xm">小明家</view>
+            <image src="../../images/sm1.png" class="xm_img"></image>
+          </view>
+          <view class="dj_name">等级：LV.1</view>
+        </view>
+      </view>
+      <view class="set_box">
+        <navigator url="./ringing/ringing">
+          <image class="set" src="../../images/ringing.png" mode="scaleToFill" ></image>
+        </navigator>
+        <navigator url="./setup/setup">
+          <image class="set" src="../../images/seizi.png" mode="scaleToFill" ></image>
+        </navigator>
+      </view>
+    </view>
+    <view class="header_b_1_2">
+      <view class="dingd_b">
+        <navigator url="./myorder/myorder">
+          <image src="../../images/myorder.png" class="name_image"></image>
+          <view class="name">我的订单</view>
+        </navigator>
+      </view>
+      <view>
+        <navigator url="./mywallet/mywallet">
+          <image src="../../images/mywallet.png" class="name_image"></image>
+          <view class="name">我的钱包</view>
+        </navigator>
+      </view>
+    </view>
+	</view>
 <view class="box">
 	<!-- 头像名称 -->
-	<view class="head_box">
+	<!-- <view class="head_box">
 		<view class="user_box">
 			<image class="user_head" src="../../images/t0169ed52127b821764.jpg"></image>
 			<view class="name_xm">小明家</view>
 		</view>
 		<image class="set" src="../../images/seizi.png" mode="scaleToFill" ></image>
-	</view>
-	
+	</view> -->
 	<!-- 普通用户 -->
 	<view class="content_box">
 		<view class="gn">常用功能</view>
 		<view class="button">
-			<navigator class="button_box">
-				<image src="../../images/签到管理.png"  class="name_image"></image>
-				<div class="name">我的签到</div>
-			</navigator>
-			<navigator class="button_box">
-				<image src="../../images/qianbao.png" class="name_image"></image>
-				<div class="name">我的钱包</div>
-			</navigator>
-			<navigator class="button_box">
-				<image src="../../images/采购订单_1.png" class="name_image dd"></image>
-				<div class="name">我的订单</div>
-			</navigator>
-			<navigator class="button_box">
-				<image src="../../images/我的收藏 (1).png" class="name_image"></image>
-				<div class="name">我的收藏</div>
-			</navigator>
-			<navigator class="button_box">
-				<image src="../../images/我的咨询.png" class="name_image"></image>
+			<navigator class="button_box" url="./consultation/consultation">
+				<image src="../../images/consultation.png"  class="name_image"></image>
 				<div class="name">我的咨询</div>
 			</navigator>
+			<navigator class="button_box" url="./myrecord/myrecord">
+				<image src="../../images/myrecord.png" class="name_image"></image>
+				<div class="name">我的记录</div>
+			</navigator>
 			<navigator class="button_box">
-				<image src="../../images/晒单.png" class="name_image saidan"></image>
+				<image src="../../images/jbi11.png" class="name_image dd"></image>
+				<div class="name">报价中心</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/ht11.png" class="name_image"></image>
+				<div class="name">合同中心</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/bbj11.png" class="name_image"></image>
+				<div class="name">我的搬家记</div>
+			</navigator>
+			<navigator class="button_box">
+				<image src="../../images/sd111.png" class="name_image saidan"></image>
 				<div class="name">晒单评论</div>
 			</navigator>
 			<navigator class="button_box">
-				<image src="../../images/工具.png" class="name_image gj"></image>
+				<image src="../../images/gjx11.png" class="name_image gj"></image>
 				<div class="name">工具箱</div>
 			</navigator>
-			<navigator class="button_box">
+			<navigator class="button_box" url="./changing_over/changing_over">
 				<image src="../../images/qiehuan.png" class="name_image"></image>
 				<div class="name">身份切换</div>
 			</navigator>
@@ -49,27 +87,33 @@
 	<view class="content_box">
 		<view class="gn">更多服务</view>
 		<view class="button">
-			<navigator class="button_box">
-				<image src="../../images/账户安全1.png"  class="name_image"></image>
+			<navigator class="button_box" url="./security/security">
+				<image src="../../images/security.png"  class="name_image"></image>
 				<div class="name">安全中心</div>
 			</navigator>
 			<navigator class="button_box">
-				<image src="../../images/客服 @2x.png" class="name_image"></image>
+				<image src="../../images/kf22.png" class="name_image"></image>
 				<div class="name">客服中心</div>
 			</navigator>
 			<navigator class="button_box">
-				<image src="../../images/首页ICON_商家入驻敬请期待.png" class="name_image"></image>
+				<image src="../../images/rz111.png" class="name_image"></image>
 				<div class="name">我要入驻</div>
 			</navigator>
 			<navigator class="button_box">
-				<image src="../../images/更多.png" class="name_image gd"></image>
+				<image src="../../images/gduo.png" class="name_image gd"></image>
 				<div class="name">更多</div>
 			</navigator>
 		</view>
 	</view>
-
+  <view class="feedback">
+    <navigator>意见反馈</navigator>
+  </view>
+  <view class="platform_b">
+    <view>平台规则</view>
+    <image src="../../images/fii.png"></image>
+  </view>
 	<!-- 商户 -->
-	<view class="content_box">
+	<!-- <view class="content_box">
 		<view class="gn"></view>
 		<view class="button">
 			<navigator class="button_box_two">
@@ -114,7 +158,7 @@
 				<div class="name">身份切换</div>
 			</navigator>
 		</view>
-	</view>
+	</view> -->
 
 
 
@@ -122,7 +166,7 @@
 
 
 	<!-- 搬运工 -->
-	<view class="content_box">
+	<!-- <view class="content_box">
 		<view class="gn"></view>
 		<view class="button">
 			<navigator class="button_box_two">
@@ -154,5 +198,5 @@
 				<div class="name">身份切换</div>
 			</navigator>
 		</view>
-	</view>
+	</view> -->
 </view>

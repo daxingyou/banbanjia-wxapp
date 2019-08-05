@@ -1,0 +1,9 @@
+.secutity_b{position: relative}
+.secutity_bj{width: 750rpx;height: 610rpx;opacity: 0.3}
+.secutity_1{position: absolute;left: 271rpx;right: 271rpx;top: 50rpx}
+.secutity_text{width: 208rpx;height: 208rpx;border-radius: 50%;text-align: center;}
+.secutity_img{width: 108rpx;height: 108rpx;margin-top: 54rpx;}
+.text_bj1{background-color: rgba(255, 255, 255, 1);box-shadow: 0px 0px 23px 6px rgba(229, 229, 229, 1);}
+.text_bj2{background-color: rgba(236, 65, 73, 1);box-shadow: 0px 0px 23px 6px rgba(236, 65, 73, 0.5);}
+.text_bj3{background-color: rgba(188, 255, 215, 1);box-shadow: 0px 0px 23px 6px rgba(67, 207, 124, 0.5);}
+.secutity_name{text-align: center;color: rgba(0, 0, 0, 1);font-size: 32rpx;padding: 20rpx 0 100rpx}

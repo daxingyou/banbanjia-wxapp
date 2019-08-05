@@ -22,6 +22,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+		// options.bedroom=3
+		// options.parlour=2
 		this.setData({
 			bedroomNumber:options.bedroom,
 			officeNumber:options.parlour
@@ -36,11 +38,13 @@ Page({
 			var bedroomNumber = options.bedroom-1;
 			var officeNumber = options.parlour-1;
 			var bedroom=res.data[0]
+			// var office=res.data[1]
 			
-			// 我需要唯一标识！！！！加一字段判断是否为卧室和客厅，这里
+			// 我需要唯一标识！！！！加一字段判断是否为卧室和客厅，这里错误的示范，很容易改
 			 for(let i=0;i<goods.length;i++){
 				goods[i].numbers=0  
 			 	if(goods[i].type=="卧室1"){
+					var bedroom=res.data[i]
 					let  index=i+1 
 					for(let f=bedroomNumber;f>0;f--){
 						bedroom.tid=goods.length+1
@@ -50,7 +54,7 @@ Page({
 					}
 				}
 				if(goods[i].type=="客厅1"){
-					var office=res.data[1]
+					var office=res.data[i]
 					let  index=i+1
 					for(let f=officeNumber;f>0;f--){
 						office.tid=goods.length+1

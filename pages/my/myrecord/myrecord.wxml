@@ -1,0 +1,80 @@
+<view class="tab">
+  <view class="tab_item" wx:for="{{tab}}" bindtap="newChoice" data-index="{{index}}">
+    <view class="border {{new_choice==index?'new':''}}">{{item}}</view>
+  </view>
+</view>
+<view class="list">
+  <swiper current="{{new_choice}}" duration="200"  bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h" >
+        <view class="scoll_list">
+          <image src="../../../images/b8f622e15251e14bfa0579a6c12970a.jpg" class="scoll_img"></image>
+          <view>
+            <view class="scoll_text">
+              <view class="scoll_text_1">广州搬搬家</view>
+              <view class="scoll_text_2">16个小时前</view>
+            </view>
+            <view class="scoll_text2">广州搬搬家是XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</view>
+          </view>
+        </view>
+        <view class="scoll_list">
+          <image src="../../../images/b8f622e15251e14bfa0579a6c12970a.jpg" class="scoll_img"></image>
+          <view>
+            <view class="scoll_text">
+              <view class="scoll_text_1">广州搬搬家</view>
+              <view class="scoll_text_2">16个小时前</view>
+            </view>
+            <view class="scoll_text2">广州搬搬家是XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h" >
+        <view class="scoll_list">
+          <image src="../../../images/b8f622e15251e14bfa0579a6c12970a.jpg" class="scoll_img"></image>
+          <view>
+            <view class="scoll_text">
+              <view class="scoll_text_1">广州搬搬家</view>
+              <view class="scoll_text_2">16个小时前</view>
+            </view>
+            <view class="scoll_text2">广州搬搬家是XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</view>
+          </view>
+        </view>
+        <view class="scoll_list">
+          <image src="../../../images/b8f622e15251e14bfa0579a6c12970a.jpg" class="scoll_img"></image>
+          <view>
+            <view class="scoll_text">
+              <view class="scoll_text_1">广州搬搬家</view>
+              <view class="scoll_text_2">16个小时前</view>
+            </view>
+            <view class="scoll_text2">广州搬搬家是XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h" >
+        <view class="collect_list">
+          <view class="collect_text">
+            <view class="collect_text_1">如何收拾东西更快捷</view>
+            <view class="collect_text_2">2019-07-01</view>
+          </view>
+          <view class="collect_text2">广州搬搬家公司是广州搬搬家公司是xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</view>
+          <view class="collect_tp">
+            <image src="../../../images/b8f622e15251e14bfa0579a6c12970a.jpg" class="collect_img"></image>
+            <image src="../../../images/b8f622e15251e14bfa0579a6c12970a.jpg" class="collect_img"></image>
+            <image src="../../../images/b8f622e15251e14bfa0579a6c12970a.jpg" class="collect_img"></image>
+          </view>
+        </view>
+        <view class="collect_list">
+          <view class="collect_text">
+            <view class="collect_text_1">如何收拾东西更快捷</view>
+            <view class="collect_text_2">2019-07-01</view>
+          </view>
+          <view class="collect_text2">广州搬搬家公司是广州搬搬家公司是xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

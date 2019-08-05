@@ -1,24 +1,41 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/photographs/photographs",
+    
     "pages/home/estimate/estimate",
     "pages/home/measure/measure",
     
+    
+    "pages/my/security/security",
+    "pages/my/security/clickalarm/clickalarm",
+    "pages/my/consultation/consultation",
+    "pages/my/consultation/seek/seek",
+    "pages/my/setup/setup",
+    "pages/my/mywallet/mywallet",
+    "pages/my/myorder/myorder",
+    "pages/my/ringing/ringing",
     "pages/my/changing_over/changing_over",
+    "pages/my/myrecord/myrecord",
+    "pages/my/homepage/homepage",
+    
+   
     "pages/my/switch/switch",
     "pages/my/my", 
     "pages/business/details/details",
     "pages/business/details/business_details/business_details",
+
     "pages/home/estimate/port/port",
     "pages/sign/sign",
     "pages/home/estimate/country/country",
     "pages/community/community",
     "pages/business/business",
-    "pages/photographs/photographs",
+    
     "pages/photograph/photograph",
     "pages/personnel_map/personnel_map",
     "pages/home/location/location",
-    "pages/coupon/coupon"
+    "pages/coupon/coupon",
+    "pages/public/footer"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -61,7 +78,7 @@
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的",
+        "text": "个人中心",
         "iconPath": "/images/我的 (1).png",
         "selectedIconPath": "/images/我的.png"
       }

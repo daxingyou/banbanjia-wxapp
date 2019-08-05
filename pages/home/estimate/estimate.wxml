@@ -66,15 +66,15 @@
 						</view>
 						<view class="volume">  
 							<view class="volume_name">体积：</view> 
-							<view class="volume_input" bindtap="measure"><input disabled value="{{weight}}" placeholder="此为预估体积"/></view>
+							<view class="volume_input" bindtap="measure"><input disabled value="{{volume}}" placeholder="此为预估体积"/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">备注：</view> 
 							<view class="volume_input"><textarea maxlength="120" style="width:469rpx;" auto-height disabled="{{mask}}" bindinput="remarks_input" placeholder=""/></view>
 						</view>
 						<view class="button_box">
-							<button class="now">现在搬运</button>
-							<button class="appointment">预约</button>
+							<button class="now" bindtap="domestic_free">现在搬运</button>
+							<view class="appointment"><timeselect button="预约" bind:time="order"></timeselect></view>
 						</view>
 					</view> 
 					
@@ -120,7 +120,7 @@
 						</view> 
 						<view class="volume">  
 							<view class="volume_name">体积：</view> 
-							<view class="volume_input" bindtap="measure"><input disabled value="{{weight}}" placeholder="此为预估体积"/></view>
+							<view class="volume_input" bindtap="measure"><input disabled value="{{volume}}" placeholder="此为预估体积"/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">备注：</view> 
@@ -135,8 +135,8 @@
 							<view class="volume_input_two"><input disabled bindtap="coupon" value="{{start_location}}" placeholder="暂无优惠卷可使用"/></view>
 						</view>
 						<view class="button_box">
-							<button class="now">现在搬运</button>
-							<button class="appointment">预约</button>
+							<button class="now" bindtap="domestic_share">现在搬运</button>
+							<view class="appointment"><timeselect button="预约" bind:time="order_two"></timeselect></view>
 						</view>
 					</view>
 					
@@ -182,12 +182,12 @@
 							</view>
 						</view> 
 						<view class="volume_three" bindtap="choice_time">  
-							<view class="volume_name">时间：<text space="ensp"></text></view> 
-							<view class="volume_time">请选择时间<text class="iconfont icon-more volume_time"></text></view>
+							<view class="volume_name">时间：<text space="ensp"></text></view>  
+							<view class="volume_time"><timeselect bind:time="time_data"></timeselect><text class="iconfont icon-more volume_time"></text></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">体积：</view> 
-							<view class="volume_input" bindtap="measure"><input disabled value="{{weight}}" placeholder="此为预估体积"/></view>
+							<view class="volume_input" bindtap="measure"><input disabled value="{{volume}}" placeholder="此为预估体积"/></view>
 						</view>
 						<view class="volume">  
 							<view class="volume_name">备注：</view> 
@@ -202,7 +202,7 @@
 							<view class="volume_input_two"><input disabled bindtap="coupon" value="{{start_location}}" placeholder="暂无优惠卷可使用"/></view>
 						</view>
 						<view>
-							<button class="obtain_price_button" bindtap="obtain_price">获取报价明细</button>
+							<button class="obtain_price_button" bindtap="domestic_company">获取报价明细</button>
 						</view>
 					</view>
 					
@@ -258,7 +258,7 @@
 						</view>
 						<view class="volume">  
 							<view class="volume_name">体积：</view> 
-							<view class="volume_input" bindtap="measure"><input disabled value="{{weight}}" placeholder="此为预估体积"/></view>
+							<view class="volume_input" bindtap="measure"><input disabled value="{{volume}}" placeholder="此为预估体积"/></view>
 						</view>
 						
 						<view class="volume">  

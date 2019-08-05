@@ -8,7 +8,7 @@ Page({
    */
   data: {
 	rooms:{bedroom:0,parlour:0},
-	volume:0,
+	volume:"",
 	current:0,  //估算弹出框的第几张
 	estimate:true, //估算弹出框
 	mask:false,  //禁用textarea input
@@ -67,20 +67,86 @@ Page({
 		{id: '3', value: '门到港'},
 	],
   },
-  international_obtain_price(){
+  order(e){	//免费预约
+  	this.setData({
+  		times_data:e.detail
+  	})
+	this.domestic_free()
+	
+  },
+  order_two(e){	 //共享预约
+	this.setData({
+		times_data:e.detail
+	})
+	this.domestic_share()
+  },
+  domestic_free(){  //免费
 	let start_location=this.data.start_location.place	//发
-	let end_location=this.data.end_location.place	//收
-	let international=this.data.international	//门 集中 港	
-	// let service_type = this.data.service_type	//服务类型
+	let service_type=this.data.service_type //服务类型
 	let floor=this.data.floor	//楼层
 	let stairs=this.data.stairs	//电梯 步梯
-	let times_data = this.data.times_data	//时间
-	let weight = this.data.weight	//体积
+	let volume = this.data.volume	//体积
+	let remarks =this.data.remarks	//备注
+	let times_data =this.data.times_data	//时间
+	
+	const state =Verification.free(start_location,volume)
+	if(state){
+		console.log(1123)
+	}
+	
+  },
+   domestic_share(){  //共享
+	let start_location=this.data.start_location.place	//发
+	let end_location=this.data.end_location.place	//收
+	let service_type=this.data.service_type //服务类型
+	let floor=this.data.floor	//楼层
+	let stairs=this.data.stairs	//电梯 步梯
+	let volume = this.data.volume	//体积
 	let remarks =this.data.remarks	//备注
 	let insurance = this.data.insurance	//保价
 	
-	console.log(choice_data)
-	Verification.international(start_location,end_location,times_data,choice_data,insurance)
+	const state =Verification.share(start_location,end_location,volume,insurance)
+	if(state){
+		console.log(1123)
+	}
+  	
+  },
+   domestic_company(){  //公司
+  	let start_location=this.data.start_location.place	//发
+  	let end_location=this.data.end_location.place	//收
+	let service_type=this.data.service_type //服务类型
+	let floor=this.data.floor	//楼层
+	let stairs=this.data.stairs	//电梯 步梯
+	let times_data = this.data.times_data	//时间
+	let volume = this.data.volume	//体积
+	let remarks =this.data.remarks	//备注
+	let insurance = this.data.insurance	//保价
+	const state =  Verification.international(start_location,end_location,times_data,volume,insurance)
+	if(state){
+		console.log(1123)
+	}
+  },
+  
+  
+  
+  
+  
+  
+  international_obtain_price(){  //国际
+	let start_location=this.data.start_location.place	//发
+	let end_location=this.data.end_location.place	//收
+	let international=this.data.international	//门 集中 港
+	let floor=this.data.floor	//楼层
+	let stairs=this.data.stairs	//电梯 步梯
+	let times_data = this.data.times_data	//时间
+	let volume = this.data.volume	//体积
+	let remarks =this.data.remarks	//备注
+	let insurance = this.data.insurance	//保价
+	 
+	const state =  Verification.international(start_location,end_location,times_data,volume,insurance)
+	if(state){
+		console.log(1123)
+	}
   },
   
   express_obtain_price(){	//国际快递
@@ -96,7 +162,11 @@ Page({
 			type=items_five[i].value 
 		}
 	}
-	Verification.express(start_location,end_location,weight,times_data);
+	const state =  Verification.express(start_location,end_location,weight,times_data);
+	if(state){
+		console.log(1123)
+	}
+	
   },
  
 
@@ -164,7 +234,7 @@ Page({
 			let state =Verification.volume(this.data.volume)
 			if(state){
 				this.setData({
-					weight:this.data.volume,
+					volume:this.data.volume,
 					estimate:true
 				})
 			}
@@ -288,9 +358,6 @@ Page({
 			floor:++num
 		})
 		
-  }, 
-  choice_time(){  //选择时间
-	  
   },
   plus_reduce(e){   //加减
 	let name=e.currentTarget.dataset.name
