@@ -1,0 +1,29 @@
+<view class="mypoints">
+  <image src="../../../../images/dfbf2784b33231fb8cff4d9668aa324.jpg" class="mypoints_bj"></image>
+  <view class="mypoints_1">
+    <view class="mypoints_text1">
+      <view class="name1">当前积分</view>
+      <view class="name2">积分说明</view>
+    </view>
+    <view class="mypoints_text2">
+      <image src="../../../../images/14e983642c7dbcbe9b528987635b715.png" class="img"></image>
+      <view class="mypoints_text2_2">3540<text class="text">分</text></view>
+    </view>
+    <view class="mypoints_text3">积分提现</view>
+  </view>
+  <view class="mypoints_2">积分明细</view>
+  <view class="mypoints_3">
+    <view>
+      <view class="mypoints_3_name">签到</view>
+      <view class="mypoints_3_time">2019-07-04 20：20</view>
+    </view>
+    <view class="mypoints_3_num">+10</view>
+  </view>
+  <view class="mypoints_3">
+    <view>
+      <view class="mypoints_3_name">签到</view>
+      <view class="mypoints_3_time">2019-07-03 20：20</view>
+    </view>
+    <view class="mypoints_3_num">+10</view>
+  </view>
+</view>

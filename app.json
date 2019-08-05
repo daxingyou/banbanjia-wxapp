@@ -1,6 +1,8 @@
 {
-  "pages": [
+  "pages": [ 
     "pages/my/my",
+    "pages/my/feedback/feedback",
+    "pages/my/joiningin/joiningin",
     "pages/my/platformrules/platformrules",
     "pages/my/platformrules/userprotocol/userprotocol",
     "pages/my/security/security",
@@ -9,6 +11,7 @@
     "pages/my/consultation/seek/seek",
     "pages/my/setup/setup",
     "pages/my/mywallet/mywallet",
+    "pages/my/mywallet/mypoints/mypoints",
     "pages/my/mywallet/mycash/mycash",
     "pages/my/mywallet/mycash/investmoney/investmoney",
     "pages/my/mywallet/mycash/cashdetails/cashdetails",

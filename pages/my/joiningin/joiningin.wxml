@@ -1,0 +1,48 @@
+<view class="joiningin">
+  <view class="joiningin_1">
+    <view class="joiningin_text">
+      <view class="joiningin_text_1">公司名称：</view>
+      <input placeholder="请输入公司名称" class="joiningin_text_2"></input>
+    </view>
+    <view class="joiningin_text">
+      <view class="joiningin_text_1">公司地址：</view>
+      <input placeholder="请输入公司地址" class="joiningin_text_2"></input>
+    </view>
+    <view class="joiningin_text">
+      <view class="joiningin_text_1">联系电话：</view>
+      <input placeholder="请输入公司联系电话" class="joiningin_text_2"></input>
+    </view>
+  </view>
+  <view class="joiningin_1">
+    <view class="joiningin_text_1">公司介绍：</view>
+    <textarea class="textarea" placeholder="请输入公司介绍"/>
+  </view>
+  <view class="joiningin_1">
+    <view class="joiningin_sc">
+      <view class="joiningin_sc_1">
+        <view class="sc_name" bindtap="photo_image1">选择图片</view>
+        <view class="sc_box">
+          <image wx:if="{{xz_images1 == ''}}" src="../../../images/8a1472d88f96215c34077f3a71352e8.png" class="sc_img"></image>
+          <image wx:else src="{{xz_images1}}" class="sc_img2" bindtap="bigimg" data-list="{{xz_images1}}" data-src="{{xz_images1}}"></image>
+        </view>
+        <view class="sc_text">公司营业执照</view>
+      </view>
+      <view class="joiningin_sc_1">
+        <view class="sc_name" bindtap="photo_image2">选择图片</view>
+        <view class="sc_box">
+          <image wx:if="{{xz_images2 == ''}}" src="../../../images/8a1472d88f96215c34077f3a71352e8.png" class="sc_img"></image>
+          <image wx:else src="{{xz_images2}}" class="sc_img2" bindtap="bigimg" data-list="{{xz_images2}}" data-src="{{xz_images2}}"></image>
+        </view>
+        <view class="sc_text">其他资质证照 </view>
+      </view>
+    </view>
+  </view>
+  <view class="joiningin_2">
+    <view class="joiningin_2_1">
+      <image src="../../../images/f09efefe28f82d4d647d6adbaae744b.png" class="joiningin_2_img"></image>
+      <text>我已阅读并同意</text>
+    </view>
+    <view class="joiningin_2_2">《入驻需知》</view>
+  </view>
+  <view class="joiningin_3">申请入驻</view>
+</view>
