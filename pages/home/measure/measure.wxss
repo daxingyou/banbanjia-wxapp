@@ -1,0 +1,30 @@
+.head{display: flex;color: #FFFFFF;background: #ec4149;opacity: 0.8;font-size: 24rpx;}
+.list{width: 50%;height:145rpx;display: flex;flex-direction: column;align-items: center;justify-content: center;}
+.list:nth-child(1){border-right:1px solid #FFFFFF}
+.list view:nth-child(1){margin-bottom:10rpx;font-size:28rpx;}
+.choiceBox{display: flex;margin-bottom:100rpx;}
+.menu {width:155rpx;}
+.menu .box{width:155rpx;display: flex;flex-direction: column;align-items: center;font-size:23rpx;height:140rpx;
+background: #f8f8f8;border-bottom:1px solid #ccc}
+.menu image{width: 50rpx;height: 50rpx;margin-top:26rpx;}
+.menu .name{margin-top: 10rpx;}
+
+.current{border-left:5rpx solid #d9302b;background: #FFFFFF !important;}
+.contentBox{margin-left:15rpx;}
+.curContent{display:flex;font-size:24rpx;height: 130rpx;align-items: center;border-bottom:1px dotted #ccc;justify-content: space-between;	width:560rpx;}
+.curContent image{width:90rpx;height:90rpx;margin-right:16rpx;border: 2px solid #e4e4e4}
+.curContent_left{display: flex;align-items: center;}
+
+.curContent_fight{display: flex;width: 140rpx;border:1px solid #ccc;border-radius: 5rpx;height:42rpx;}
+.curContent_fight view{width: 33%;display: flex;align-items: center;justify-content: center;font-size:24rpx;}
+.curContent_fight view:nth-child(1){border-right:1px solid #ccc;font-size:34rpx;}
+.curContent_fight view:nth-child(3){border-left:1px solid #ccc;font-size:34rpx;}
+
+
+.totalVolume_box{width: 100%;height: 92rpx;position: fixed;bottom:0;left:0;display: flex;background: #FFFFFF;font-size:27rpx;}
+.totalVolume_box view:nth-child(1){width: 70%;border-top:1rpx solid #ccc;height: 100%;line-height: 92rpx;text-align: center;}
+.totalVolume_box view:nth-child(1) text{color:#e52f22;}
+.totalVolume_box view:nth-child(2){width: 30%;background: #e52f22;height: 100%;line-height: 92rpx;text-align: center;color: #FFFFFF;}
+
+.box{position: relative;}
+.numbers{position: absolute;top: 9rpx;right: 9rpx;color: #FFFFFF;background: #ED3B48;width: 35rpx;height: 35rpx;display: flex;justify-content: center;align-items: center;border-radius: 30rpx;}

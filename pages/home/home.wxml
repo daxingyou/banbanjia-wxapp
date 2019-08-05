@@ -14,9 +14,9 @@
 	</view>
 	
 	<view class="carousel">	<!--轮播-->
-		<swiper autoplay="true" interval="1000" class="swiper">
+		<swiper autoplay="true" interval="2000" class="swiper">
 			<block wx:for="{{imgUrls}}">
-			  <swiper-item class="swiper_item"><image src="{{item}}" class="slide-image" /></swiper-item>
+			  <swiper-item class="swiper_item"><image bindtap="Jump" data-link="{{item.wxapp_link}}" src="{{item.thumb}}" class="slide-image" /> </swiper-item>
 			</block>
 		</swiper>
 	</view>
