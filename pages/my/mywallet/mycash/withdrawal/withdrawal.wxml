@@ -1,7 +1,7 @@
-<view class="investmoney">
-  <view class="investmoney_1">
+<view class="withdrawal">
+  <view class="withdrawal_1">
     <view class="bank">
-      <view class="bank_1">储蓄卡</view>
+      <view class="bank_1">提现至</view>
       <picker bindchange="bankclick" value="{{bank_index}}" range="{{bank_list}}">
         <view class="bank_2">
           <view class="bank_2_name">{{bank_list[bank_index]}}</view>
@@ -9,14 +9,14 @@
         </view>
       </picker>
     </view>
-    <view class="investmoney_text">
-      <view class="text1">充值金额</view>
+    <view class="withdrawal_text">
+      <view class="text1">提现金额</view>
       <view class="text2">
         <view>￥</view>
         <input type="digit" class="text2_inutp" focus="{{focus}}"></input>
       </view>
-      <view class="text3">现金余额￥200.00</view>
-      <view class="text4">充值</view>
+      <view class="text3">现金余额￥200.00,<text class="text3_qb">全部提现</text></view>
+      <view class="text4">提现</view>
     </view>
   </view>
 </view>

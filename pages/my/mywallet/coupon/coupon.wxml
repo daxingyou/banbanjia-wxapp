@@ -1,0 +1,39 @@
+<view class="tab">
+  <view class="tab_item" wx:for="{{tab}}" bindtap="newChoice" data-index="{{index}}">
+    <view class="border {{new_choice==index?'new':''}}">{{item}}</view>
+  </view>
+</view>
+<view class="list">
+  <swiper current="{{new_choice}}" duration="200"  bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="scoll_list" wx:for="{{3}}">
+          <image src="../../../../images/935c4434baee1865b706019e9cea660.jpg" class="scoll_bj"></image>
+          <view class="scoll_text">
+            <view class="name">广州搬搬家（店名）</view>
+            <view class="text">
+              <view class="text_1">100元优惠券</view>
+              <view class="text_2">去使用</view>
+            </view>
+            <view class="time">2019-07-01 00:00-2019-08-01 23:59</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="scoll_list" wx:for="{{3}}">
+          <image src="../../../../images/189fb4d79521a5005c77d8c8f4da5db.jpg" class="scoll_bj"></image>
+          <view class="scoll_text">
+            <view class="name">广州搬搬家（店名）</view>
+            <view class="text">
+              <view class="text_1">100元优惠券</view>
+              <view class="sx_text_2">已失效</view>
+            </view>
+            <view class="time">2019-07-01 00:00-2019-08-01 23:59</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

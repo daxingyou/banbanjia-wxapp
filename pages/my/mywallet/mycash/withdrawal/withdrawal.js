@@ -1,4 +1,4 @@
-// pages/my/mywallet/mycash/investmoney/investmoney.js
+// pages/my/mywallet/mycash/withdrawal/withdrawal.js
 Page({
 
   /**
@@ -7,7 +7,7 @@ Page({
   data: {
     bank_list: ['中国银行（2525）', '银行xxx'],
     bank_index: 0,
-    focus:true
+    focus: true,
   },
   bankclick: function (e) {
     //console.log(e)

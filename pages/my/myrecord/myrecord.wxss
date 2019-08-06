@@ -1,6 +1,6 @@
 page{background-color: #FAFAFA;}
 .tab{display: flex;border-bottom: 2rpx solid rgba(229, 229, 229, 1);}
-.tab_item{width: 33.33%;text-align: center;font-size: 28rpx;height: 60rpx}
+.tab_item{width: 33.33%;text-align: center;font-size: 28rpx;}
 .new{width: 112rpx;height: 56rpx;border-bottom: 4rpx solid rgba(236, 65, 73, 1);margin: 0 auto;}
 .scoll_list{margin: 26rpx 32rpx;padding-bottom: 26rpx;border-bottom: 2rpx solid rgba(229, 229, 229, 1);display: flex;align-items: center;}
 .scoll_img{width: 136rpx !important;height: 116rpx;border-radius: 16rpx;}

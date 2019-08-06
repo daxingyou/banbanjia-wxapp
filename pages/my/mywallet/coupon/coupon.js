@@ -1,28 +1,44 @@
-// pages/my/mywallet/mycash/investmoney/investmoney.js
+// pages/my/mywallet/coupon/coupon.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    bank_list: ['中国银行（2525）', '银行xxx'],
-    bank_index: 0,
-    focus:true
+    tab: ['优惠券', '失效优惠券'],
+    new_choice: 0,
+    winHeight: "",
   },
-  bankclick: function (e) {
-    //console.log(e)
-    const index = e.detail.value
+  newChoice(e) {
+    const index = e.currentTarget.dataset.index
     this.setData({
-      bank_index: e.detail.value,
+      new_choice: index
+    })
+  },
+  switchTab(e) {
+    const index = e.detail.current
+    this.setData({
+      new_choice: index
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      focus: focus
-    })
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        //console.log(res)
+        var clientHeight = res.windowHeight,
+          clientWidth = res.windowWidth,
+          rpxR = 750 / clientWidth;
+        var calc = clientHeight * rpxR - 67;
+        console.log(calc)
+        that.setData({
+          winHeight: calc
+        });
+      }
+    });
   },
 
   /**

@@ -10,7 +10,7 @@
       <view class="mywallet_num">30</view>
       <view class="mywallet_name">我的积分</view>
     </navigator>
-    <navigator class="mywallet_text">
+    <navigator class="mywallet_text" url="./coupon/coupon">
       <image src="../../../images/952269e19b4097eb5fcb64972640a8c.png" class="mywallet_img"></image>
       <view class="mywallet_num">3</view>
       <view class="mywallet_name">优惠券</view>

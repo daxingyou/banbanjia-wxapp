@@ -4,7 +4,7 @@
   <view class="mycash_num">￥200.00</view>
   <view class="mycash_text">
     <navigator class="mycash_text_1" url="./investmoney/investmoney">充值</navigator>
-    <view class="mycash_text_2">提现</view>
+    <navigator class="mycash_text_2" url="./withdrawal/withdrawal">提现</navigator>
     <navigator class="mycash_text_3" url="./cashdetails/cashdetails">现金明细</navigator> 
   </view>
 </view>
