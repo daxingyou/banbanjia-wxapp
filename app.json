@@ -1,12 +1,15 @@
 {
   "pages": [
-    "pages/home/home",
+	  "pages/home/estimate/estimate",
+	  "pages/home/measure/measure",
+    
+    "pages/my/my",
+    "pages/my/homepage/homepage",
+    "pages/personnel_map/personnel_map",
+    "pages/logon/phone/phone",
+    "pages/logon/logon",
     "pages/photographs/photographs",
-    
-    "pages/home/estimate/estimate",
-    "pages/home/measure/measure",
-    
-    
+    "pages/home/home",
     "pages/my/security/security",
     "pages/my/security/clickalarm/clickalarm",
     "pages/my/consultation/consultation",
@@ -17,22 +20,16 @@
     "pages/my/ringing/ringing",
     "pages/my/changing_over/changing_over",
     "pages/my/myrecord/myrecord",
-    "pages/my/homepage/homepage",
-    
-   
     "pages/my/switch/switch",
-    "pages/my/my", 
     "pages/business/details/details",
     "pages/business/details/business_details/business_details",
-
     "pages/home/estimate/port/port",
     "pages/sign/sign",
     "pages/home/estimate/country/country",
     "pages/community/community",
     "pages/business/business",
-    
     "pages/photograph/photograph",
-    "pages/personnel_map/personnel_map",
+    
     "pages/home/location/location",
     "pages/coupon/coupon",
     "pages/public/footer"

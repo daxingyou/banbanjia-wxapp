@@ -1,10 +1,11 @@
 <!--pages/my/homepage/homepage.wxml-->
 <view class="top_box">
-  <image src="../../../images/b8f622e15251e14bfa0579a6c12970a.jpg" class="top_img"></image>
+  <image src="../../../images/.jpg" class="top_img"></image>
   <view class="top_nr">
-    <image src="../../../images/t0169ed52127b821764.jpg" class="user_img"></image>
+	<view wx:if="{{!image}}" class="iconfont icon-touxiang user_img_two"></view>
+    <image wx:if="{{image}}"  src="{{image}}" class="user_img"></image>
     <view>
-      <view class="user_name">小明明家</view>
+      <view class="user_name">{{username}}</view>
       <view class="user_jj">个人简介：</view>
       <view class="user_text">
         <textarea placeholder="请输入个人简介" value="{{profile}}" bindinput="bindprofile"/>
@@ -15,12 +16,10 @@
 <view class="box">
   <view class="nr_box">
     <view class="nr_li nr_lione">
-      <view>性别</view>
-      <picker bindchange="sexclick" value="{{sex_index}}" range="{{sex_list}}">
-        <view>
-          {{sex_list[sex_index]}}<text class="iconfont icon-more icon1"></text>
+      <view>性别</view>	
+        <view  class="nr_li_input">
+           <view>{{sex_list}}</view><text class="iconfont icon-more icon1"></text>
         </view>
-      </picker>
     </view>
     <view class="nr_li">
       <view>出生日期</view>
@@ -33,7 +32,7 @@
     <view class="nr_li">
       <view>手机号码</view>
       <view class="nr_li_input">
-        <input type="number" placeholder="请输入手机号码" value="{{phone}}" bindinput="bindphone"/><text class="iconfont icon-more icon1"></text>
+       <text>{{phone}}</text><text class="iconfont icon-more icon1"></text>
       </view>
     </view>
     <view class="nr_li">
@@ -64,7 +63,7 @@
       <view class="contact_text">
         <view class="contact_text_1">
           <image src="../../../images/5cfbbcd44832898af6c5b01442d7550.png" class="contact_img1"></image>
-          <view>电话:13245678921</view>
+          <view>电话:{{phone}}</view>
         </view>
         <view class="contact_text_1">
           <image src="../../../images/b49826e67678578ec7a00b3a135824e.png" class="contact_img2"></image>

@@ -13,8 +13,8 @@
 		<view class="menu">
 			<block wx:for="{{goods}}">
 				<view class="box  {{curInex==index?'current':''}}" bindtap="cur" data-index="{{index}}">
-					<image src="{{item.image}}" ></image>
-					<view class="name">{{item.type}}</view>
+					<image src="{{url}}{{item.rthumb}}" ></image>
+					<view class="name">{{item.rtitle}}</view>
 					<view class="numbers" hidden="{{item.numbers<1}}">{{item.numbers}}</view>
 				</view>
 			</block>
@@ -24,13 +24,13 @@
 			<block wx:for="{{curArray}}">
 				<view class="curContent">
 					<view class="curContent_left">
-						<image src="{{item.image}}" ></image>
-						<view class="name">{{item.name}}</view>
+						<image src="{{url}}{{item.thumb}}" ></image>
+						<view class="name">{{item.title}}</view>
 					</view>
 					<view class="curContent_fight">
-						<view bindtap="plusReduce" data-index="{{index}}" data-plusreduce="1" data-volume="{{item.volume}}">-</view>
+						<view bindtap="plusReduce" data-index="{{index}}" data-id="{{item.id}}" data-plusreduce="1" data-volume="{{item.volume}}">-</view>
 						<view>{{item.number}}</view>
-						<view bindtap="plusReduce" data-index="{{index}}" data-plusreduce="2" data-volume="{{item.volume}}">+</view>
+						<view bindtap="plusReduce" data-index="{{index}}" data-id="{{item.id}}" data-plusreduce="2" data-volume="{{item.volume}}">+</view>
 					</view>
 					
 				</view>

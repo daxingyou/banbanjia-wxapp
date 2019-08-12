@@ -156,6 +156,7 @@ util.getUserOpenid = function (cb) {
     };
     wx.login({
       success: function (res) {
+		console.log("已调用wx.login")
         util.request({
           url: 'system/common/session/openid',
           data: {
@@ -168,9 +169,10 @@ util.getUserOpenid = function (cb) {
                 content: res1.data.message
               })
             } else {
-              userInfo.sessionid = res1.data.data.sessionid;
-              wx.setStorageSync('userInfo', userInfo);
-              if (typeof cb == 'function') {
+			userInfo.phone = res1.data.data.member.mobile
+            userInfo.sessionid = res1.data.data.sessionid;
+            wx.setStorageSync('userInfo', userInfo);
+            if (typeof cb == 'function') {
                 cb(userInfo);
               }
             }

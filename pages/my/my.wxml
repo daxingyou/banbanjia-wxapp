@@ -1,42 +1,52 @@
 <view class="header_b"></view>
 <view class="header_b_1">
+	<view wx:if="{{start==1}}">
 		<view class="header_b_1_1">
-      <view class="yh_box">
-        <navigator url="./homepage/homepage" class="user_head">
-          <image src="../../images/t0169ed52127b821764.jpg" class="user_head"></image>
-        </navigator>
-        <view>
-          <view class="xm_b">
-            <view class="name_xm">小明家</view>
-            <image src="../../images/sm1.png" class="xm_img"></image>
-          </view>
-          <view class="dj_name">等级：LV.1</view>
-        </view>
-      </view>
-      <view class="set_box">
-        <navigator url="./ringing/ringing">
-          <image class="set" src="../../images/ringing.png" mode="scaleToFill" ></image>
-        </navigator>
-        <navigator url="./setup/setup">
-          <image class="set" src="../../images/seizi.png" mode="scaleToFill" ></image>
-        </navigator>
-      </view>
-    </view>
-    <view class="header_b_1_2">
-      <view class="dingd_b">
-        <navigator url="./myorder/myorder">
-          <image src="../../images/myorder.png" class="name_image"></image>
-          <view class="name">我的订单</view>
-        </navigator>
-      </view>
-      <view>
-        <navigator url="./mywallet/mywallet">
-          <image src="../../images/mywallet.png" class="name_image"></image>
-          <view class="name">我的钱包</view>
-        </navigator>
-      </view>
-    </view>
+			<view class="yh_box">
+				<navigator url="./homepage/homepage" class="user_head">
+					<view wx:if="{{!headPortrait}}" class="iconfont icon-touxiang user_head_two"></view>
+					<image wx:if="{{headPortrait}}" src="{{headPortrait}}" class="user_head"></image>
+				</navigator>
+				<view>
+					<view class="xm_b">
+						
+						<view class="name_xm ">{{username}}</view>
+						
+						<image src="../../images/sm1.png" class="xm_img"></image>
+					</view>
+					<view class="dj_name">等级：LV.1</view>
+				</view>
+			</view>
+			<view class="set_box">
+				<navigator url="./ringing/ringing">
+					<image class="set" src="../../images/ringing.png" mode="scaleToFill"></image>
+				</navigator>
+				<navigator url="./setup/setup">
+					<image class="set" src="../../images/seizi.png" mode="scaleToFill"></image>
+				</navigator>
+			</view>
+		</view>
+		<view class="header_b_1_2">
+			<view class="dingd_b">
+				<navigator url="./myorder/myorder">
+					<image src="../../images/myorder.png" class="name_image"></image>
+					<view class="name">我的订单</view>
+				</navigator>
+			</view>
+			<view>
+				<navigator url="./mywallet/mywallet">
+					<image src="../../images/mywallet.png" class="name_image"></image>
+					<view class="name">我的钱包</view>
+				</navigator>
+			</view>
+		</view>
+		
 	</view>
+	<button wx:if="{{start==2}}" class="logon"  open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+		<view><image src="{{image}}"></image></view>
+		<view>点击登录</view>
+	</button>
+</view>
 <view class="box">
 	<!-- 头像名称 -->
 	<!-- <view class="head_box">
@@ -51,7 +61,7 @@
 		<view class="gn">常用功能</view>
 		<view class="button">
 			<navigator class="button_box" url="./consultation/consultation">
-				<image src="../../images/consultation.png"  class="name_image"></image>
+				<image src="../../images/consultation.png" class="name_image"></image>
 				<div class="name">我的咨询</div>
 			</navigator>
 			<navigator class="button_box" url="./myrecord/myrecord">
@@ -88,7 +98,7 @@
 		<view class="gn">更多服务</view>
 		<view class="button">
 			<navigator class="button_box" url="./security/security">
-				<image src="../../images/security.png"  class="name_image"></image>
+				<image src="../../images/security.png" class="name_image"></image>
 				<div class="name">安全中心</div>
 			</navigator>
 			<navigator class="button_box">
@@ -105,13 +115,13 @@
 			</navigator>
 		</view>
 	</view>
-  <view class="feedback">
-    <navigator>意见反馈</navigator>
-  </view>
-  <view class="platform_b">
-    <view>平台规则</view>
-    <image src="../../images/fii.png"></image>
-  </view>
+	<view class="feedback">
+		<navigator>意见反馈</navigator>
+	</view>
+	<view class="platform_b">
+		<view>平台规则</view>
+		<image src="../../images/fii.png"></image>
+	</view>
 	<!-- 商户 -->
 	<!-- <view class="content_box">
 		<view class="gn"></view>

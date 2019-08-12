@@ -1,4 +1,5 @@
 // components/editor/editor.js
+
 Component({
   /**
    * 组件的属性列表
@@ -34,7 +35,11 @@ Component({
       success: console.log
     })	
   },
-  methods: {
+  methods: { 
+	  content(e){
+	  	let content = e.detail.html
+		this.triggerEvent("data",content)
+	  },
 	readOnlyChange() {
 		this.setData({
 		  readOnly: !this.data.readOnly
@@ -59,7 +64,7 @@ Component({
 		// console.log('format', name, value)
 		this.editorCtx.format(name, value)
 	},
-	onStatusChange(e) {
+	onStatusChange(e) { 
 		const formats = e.detail
 		this.setData({ formats })
 	},

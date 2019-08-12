@@ -1,0 +1,13 @@
+@import "../../../utils/icon.wxss";
+.icon{text-align: center;font-size: 150rpx;margin:84rpx 0 55rpx 0}
+.phone{width: 668rpx;height: 80rpx;line-height: 80rpx;border: 1rpx solid #CCCCCC;text-align: center;margin: 0 auto;border-radius: 10rpx;font-size: 28rpx;color: #FFFFFF;}
+
+.content{font-size:32rpx;margin :0 42rpx;}
+.name{width:160rpx;}
+.pone{display: flex;align-items: center;padding-bottom:24rpx;border-bottom:1px solid #cccccc;margin-bottom:42rpx;}
+.pone input{width:75%;}
+.code{display: flex;align-items: center;padding-bottom:24rpx;border-bottom:1px solid #cccccc;margin-bottom:42rpx;}
+.code_1{display: flex;align-items: center;}
+.code input{width:40%;}
+.obtain{color: #CCCCCC;}
+.obtainyes{color: #0066CC;}

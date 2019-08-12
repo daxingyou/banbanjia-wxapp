@@ -1,21 +1,21 @@
 var QQMapWX = require('../../../utils/qqmap-wx-jssdk.js');
 var Verification = require('../../../utils/evaluationVerification.js');
 var qqmapsdk = new QQMapWX({key: 'ZXLBZ-XK5RI-WLJGO-55MKH-P2YKT-TFB5G' ,});// 必填
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-	rooms:{bedroom:0,parlour:0},
+	goods:{bedroom:"",living:""},	//估算体积的房间和客厅名称
+	rooms:{bedroom:0,parlour:0},	//卧室客厅 数量
 	volume:"",
 	current:0,  //估算弹出框的第几张
 	estimate:true, //估算弹出框
 	mask:false,  //禁用textarea input
-	goods_option:null,
 	timerTem:"",
 	spinShow: true,
-	goods:[],
 	slide:true,
 	carry:1,
 	carry_type:1,
@@ -174,43 +174,70 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+	
 	if(options.int){
 		if(options.int==1){
 			this.setData({
 				carry:2,
 				items: [{id:'1',value:'国内搬家'},{id:'2',value:'国际搬家',checked: 'true'},{id:'3',value:'国际快递'},],
-				
 			})
 		}else{
 			this.setData({
 				carry:3,
 				items: [{id:'1',value:'国内搬家'},{id:'2',value:'国际搬家'},{id:'3',value:'国际快递',checked: 'true'},],
-				
 			})
 		}
 	}
-	
 	this.startReportHeart()  
 	var arr1 = new Array(100);
 	for(var i=0;i<arr1.length;i++){
 		arr1[i] = i+1;
 	}
 	this.setData({
-		array:arr1,
-		goods_option:this.selectComponent('#goods')
+		array:arr1
 	 })
 	
-	wx.request({
-		url: "http://api.useosc.com/mock/32/goods",
-		method:'GET', 
-		success:res=>{
-			this.setData({
-				goods:res.data,
-				spinShow:false
-			})
-		}
-	}) 
+	this.goods()
+	
+	 
   },
+  
+  goods(){
+	app.util.request({
+	  url: 'system/config/goods/list',
+	  success:res=>{
+		  const goods = res.data.data.message
+		for(let i=0;i<goods.length;i++){
+			if(goods[i].rid==10){
+				var bedroom=goods[i].rtitle 
+				app.goodsData.bedroom_parlour.bedroom =goods[i]
+				
+			}else if(goods[i].rid==11){
+				var living=goods[i].rtitle
+				app.goodsData.bedroom_parlour.parlour =goods[i]
+				console.log(app.goodsData.bedroom_parlour.parlour)
+				break;
+			}
+		}
+		this.data.goods.bedroom=bedroom
+		this.data.goods.living=living
+		this.setData({
+			goods:this.data.goods, 
+		})
+		app.goodsData.goods=goods
+	  }
+	})
+	
+	
+  },
+  
+  
+  
+  
+  
+  
+  
+  
   measure(){
 	  if(this.data.estimate){
 		this.setData({
@@ -240,7 +267,57 @@ Page({
 			}
 		}
   },
-  nextStep(){
+  nextStep(){	//下一步
+	console.log(this.data.rooms)
+	if(app.goodsData.state==1){
+		let goods = app.goodsData.goods
+		
+		let bedroom=this.data.rooms.bedroom
+		let parlour=this.data.rooms.parlour  
+		let bedroom_number=app.goodsData.bedroom_parlour.bedroom_number
+		let parlour_number=app.goodsData.bedroom_parlour.parlour_number
+		
+		let bedroom_name_index = app.goodsData.bedroom_parlour.bedroom_name_index
+		let parlour_name_index = app.goodsData.bedroom_parlour.parlour_name_index
+		let bedroom_index=app.goodsData.bedroom_parlour.bedroom_index
+		let parlour_index=app.goodsData.bedroom_parlour.parlour_index
+		 
+		if(bedroom_number>bedroom){
+			let number = bedroom_number-bedroom
+			for(let i=0;i<number;i++){
+				bedroom_index=bedroom_index-1
+				parlour_index=parlour_index-1
+				goods.splice(bedroom_index,1)
+				bedroom_name_index=bedroom_name_index-1
+				bedroom_number=bedroom_number-1
+			}
+			app.goodsData.goods = goods
+			app.goodsData.bedroom_parlour.bedroom_index=bedroom_index
+			app.goodsData.bedroom_parlour.bedroom_name_index=bedroom_name_index
+			app.goodsData.bedroom_parlour.bedroom_number=bedroom_number
+			
+		}
+		
+		if(parlour_number>parlour){
+			let number_two = parlour_number-parlour
+			for(let i=0;i<number_two;i++){
+				parlour_index=parlour_index-1
+				goods.splice(parlour_index,1)
+				console.log(goods)
+				parlour_name_index=parlour_name_index-1
+				parlour_number=parlour_number-1
+			}
+			app.goodsData.goods = goods
+			app.goodsData.bedroom_parlour.parlour_index=parlour_index
+			app.goodsData.bedroom_parlour.parlour_name_index=parlour_name_index
+			app.goodsData.bedroom_parlour.parlour_number=parlour_number
+			
+		}
+		
+	}
+	
+	
+	
 	wx.navigateTo({
 		url:`../measure/measure?bedroom=${this.data.rooms.bedroom}&parlour=${this.data.rooms.parlour}`
 	});
@@ -460,7 +537,6 @@ Page({
 				that.setData({
 					end_location:that.data.end_location
 				})
-				
 				if(that.data.start_location.latitude !=""){ 
 					console.log([that.data.end_location.latitude,that.data.end_location.longitude])
 					qqmapsdk.calculateDistance({
@@ -498,14 +574,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+	  
 	this.setData({ 
 		spinShow:false
-	})
-	if(wx.getStorageSync("volume")!=""){
+	}) 
+	if(app.goodsData.volume!=0){
 		this.setData({
-			weight:wx.getStorageSync("volume")
+			volume:app.goodsData.volume
 		})
-		  wx.removeStorageSync('volume')
 		
 	}
 	
@@ -524,7 +600,11 @@ Page({
    */
   onUnload: function () { 
 	 var that=this
-	clearTimeout(that.data.timerTem) 
+	clearTimeout(that.data.timerTem)
+	console.log(123)
+	app.goodsData.goods=[],
+	app.goodsData.volume=0,
+	app.goodsData.new_array=[]
   },
 
   /**

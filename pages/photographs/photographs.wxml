@@ -47,7 +47,7 @@
 				<input placeholder-class="size" bindinput="titleinput" placeholder="标题" />
 			</view>
 			<view class="diary_content">
-				<editors></editors>
+				<editors bind:data="editorsData"></editors>
 			</view>
 		</view>
 		
@@ -73,7 +73,7 @@
 	
 	
 	<i-message id="message" />
-	
+	<i-toast id="toast" />	
 	
 	
 	
