@@ -1,6 +1,7 @@
+@import "../../utils/icon.wxss";
 page{background-color: #FAFAFA;}
 .header_b{height: 200rpx;background-color: rgba(236, 65, 73, 0.7428571428571428)}
-.header_b_1{background-color:#fff;box-shadow:0rpx 0rpx 20rpx #d8d5d5 ;border-radius: 18rpx;padding: 10rpx 0 20rpx;margin:-150rpx 30rpx 40rpx;}
+.header_b_1{background-color:#fff;box-shadow:0rpx 0rpx 20rpx #d8d5d5 ;border-radius: 18rpx;margin:-150rpx 30rpx 40rpx;height:260rpx;}
 .header_b_1_1{display: flex;padding: 11px;justify-content: space-between;align-items: center;}
 .yh_box{display: flex;align-items: center;}
 .xm_b{display: flex;}
@@ -14,6 +15,7 @@ page{background-color: #FAFAFA;}
 .user_box{display: flex;align-items: center;}
 
 .user_head{width: 90rpx;height: 90rpx;border-radius: 50rpx;}
+.user_head_two{width:90rpx;height:90rpx;border-radius:50rpx;font-size:98rpx;margin-top:-7rpx;margin-left:-4rpx;}
 .name_xm{font-size:32rpx;margin-left:16rpx;}
 .set_box{display: flex;align-items: center;}
 .set{width: 46rpx;height: 46rpx;margin-right:16rpx;margin-left: 20rpx}
@@ -33,3 +35,7 @@ page{background-color: #FAFAFA;}
 /* .saidan{height:64rpx;margin-top:-10rpx;margin-bottom:-7rpx;} */
 .gj{width:50rpx;height:50rpx;margin-top:4rpx;}
 .gd{width:58rpx;height:58rpx;margin-top:-4rpx;}
+
+
+.logon {display: flex;align-items: center;font-size: 30rpx;align-items: center;height: 100%;background:#ffffff;border: none}
+.logon image{width:80rpx;height:80rpx;margin: 0 20rpx 0 10rpx;border-radius: 30rpx;}

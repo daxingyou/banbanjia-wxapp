@@ -387,7 +387,7 @@
 			<view class="roomBox">
 				<view class="numbers">选择房间数</view>
 				<view class="select">
-					<text>卧室</text>
+					<text>{{goods.bedroom}}</text>
 					<picker bindchange="bedroomChange" value="{{rooms.bedroom}}" range="{{bedroomArray}}">
 						<view class="picker">
 						{{bedroomArray[rooms.bedroom]}}
@@ -395,7 +395,7 @@
 					</picker>
 				</view>
 				<view class="select">
-					<text>客厅</text>
+					<text>{{goods.living}}</text>
 					<picker bindchange="parlourChange" value="{{rooms.parlour}}" range="{{bedroomArray}}">
 						<view class="picker">
 						{{bedroomArray[rooms.parlour]}}

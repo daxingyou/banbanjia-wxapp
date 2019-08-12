@@ -6,7 +6,7 @@
 .menu {width:155rpx;}
 .menu .box{width:155rpx;display: flex;flex-direction: column;align-items: center;font-size:23rpx;height:140rpx;
 background: #f8f8f8;border-bottom:1px solid #ccc}
-.menu image{width: 50rpx;height: 50rpx;margin-top:26rpx;}
+.menu image{width: 42rpx;height: 42rpx;margin-top:34rpx;}
 .menu .name{margin-top: 10rpx;}
 
 .current{border-left:5rpx solid #d9302b;background: #FFFFFF !important;}

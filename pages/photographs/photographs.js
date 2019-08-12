@@ -1,4 +1,5 @@
 const { $Message } = require('../../dist/base/index');
+const { $Toast } = require('../../dist/base/index');
 var app = getApp();
 Page({
 
@@ -7,16 +8,55 @@ Page({
    */
   data: {
 	list:['晒单','搬家记','问答'],
+	orders:[{id:1,title:"2019 2 20  广州东浦到广州车陂"},{id:2,title:"2019 2 20  广州天河到美国"},{id:3,title:"2019 2 20  河南到广东"}],
 	evaluate_list:[],
 	evaluate_list_two:[],
-	orders:[{id:1,title:"2019 2 20  广州东浦到广州车陂"},{id:2,title:"2019 2 20  广州天河到美国"},{id:3,title:"2019 2 20  河南到广东"}],
-	new_select:0,
+	new_select:0,  //当前选择的
 	orders_item:null, //订单 id
 	fraction:0,  //评分
 	evaluate_list_new:[], //好评7*
+	editorsContent:"",
 	images: [],
 	title:"",
 	text:"",
+  },
+  sub(){
+	// if(this.data.images.length==0){
+	// 	return $Toast({ content: '图片不能为空',type: 'warning' });
+	// }
+	console.log(this.data.title)
+  	if(this.data.new_select==0){
+		if(this.data.new_select==null){
+			return $Toast({ content: '请选择一个订单',type: 'warning' });
+		}else if(this.data.fraction==""){
+			return $Toast({ content: '评分不能为空',type: 'warning' });
+		}else if(this.data.text==""){
+			return $Toast({ content: '评论不能为空',type: 'warning' });
+		}
+	}else if(this.data.new_select==1){
+		if(this.data.title==""){
+			return $Toast({ content: '标题不能为空',type: 'warning' });
+		}else if(this.data.editorsContent==""){
+			return $Toast({ content: '评论不能为空',type: 'warning' });
+		}
+	}else{
+		
+		if(this.data.title==""){
+			return $Toast({ content: '标题不能为空',type: 'warning' });
+		}else if(this.data.text==""){
+			return $Toast({ content: '评论不能为空',type: 'warning' });
+		}
+	}
+	
+	
+	
+	
+  },
+  editorsData(e){//获取富文本内容
+	const content = e.detail
+	this.setData({
+		editorsContent:content
+	}) 
   },
   delete_image(e){   //删除图片
 	let array=this.data.images 
@@ -26,21 +66,24 @@ Page({
 	})
   },
   enlarge_image(e){	//放大图片
-	console.log(e.target.dataset.idx)
+	const index = e.target.dataset.idx
 	wx.previewImage({
-		current:this.data.images[e.target.dataset.idx]  , // 当前显示图片的http链接
+		current:this.data.images[index]  , // 当前显示图片的http链接
 		urls: this.data.images // 需要预览的图片http链接列表
 	})  
   },
   orderSelect(e){
 	  const index=e.detail.value
+	  console.log(index)
 	  this.setData({
 		  orders_item:this.data.orders[index]
 	  })
   },
   
   select_type(e){ 
-		const new_index=e.currentTarget.dataset.index 
+		
+		const new_index=e.currentTarget.dataset.index
+		console.log(new_index)
 		if(new_index!=0){
 			this.setData({
 				orders_item:null,
@@ -50,10 +93,13 @@ Page({
 				text:""
 			})
 		}else if(new_index!=1){
+			console.log("搬家日记")
 			this.setData({
 				title:"",
+				editorsContent:""
 			})
-		}if(new_index!=2){
+		}else if(new_index!=2){
+			console.log("问答")
 			this.setData({ 
 				text:"",
 				title:"",
@@ -88,8 +134,8 @@ Page({
         })
   },
   select_evaluate(e){
-	  let select=e.currentTarget.dataset.select 
-	  let index =e.currentTarget.dataset.index 
+	  const select=e.currentTarget.dataset.select 
+	  const index =e.currentTarget.dataset.index 
 	  if(select){
 			this.data.evaluate_list_new.push(e.currentTarget.dataset.name) 
 			this.data.evaluate_list[index].select=false

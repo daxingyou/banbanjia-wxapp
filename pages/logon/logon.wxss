@@ -1,0 +1,4 @@
+@import "../../utils/icon.wxss";
+.icon{text-align: center;font-size: 150rpx;margin:84rpx 0 55rpx 0}
+.wx{width: 668rpx;height: 80rpx;line-height: 80rpx;border: 1rpx solid #CCCCCC;background-color:#0dc00c ;color:#FFFFFF;text-align: center;margin:32rpx auto;border-radius: 10rpx;font-size: 28rpx;}
+.phone{width: 668rpx;height: 80rpx;line-height: 80rpx;background-color: #fbfbfd;border: 1rpx solid #CCCCCC;text-align: center;margin: 0 auto;border-radius: 10rpx;font-size: 28rpx;}

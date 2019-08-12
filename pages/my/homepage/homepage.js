@@ -5,12 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sex_list:['女','男'],
+	image:"",
+	username:"",
+    sex_list:"",
     sex_index:0,
     date: '2000-01-01',
     region: ['广东省', '广州市', '天河区'],
     profile:'文字文字文字文字文字文字文字文字',
-    phone:'12345678921',
+    phone:'',
     address:'天河区XXXXXX',
     goods_address:'广东省广州市天河区XXXXXX'
   },
@@ -51,7 +53,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+	const info =  wx.getStorageSync("info");
+	const userinfo =  wx.getStorageSync("userInfo");
+	console.log(info)
+	if(info){
+		this.setData({
+			sex_list:info.sex,
+			phone:userinfo.phone,
+			image:info.image,
+			username:info.username
+		})
+	}else{
+		this.setData({
+			username:userinfo.phone
+		})
+	}
+	 
+	
   },
 
   /**
