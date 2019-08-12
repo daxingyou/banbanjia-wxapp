@@ -1,4 +1,4 @@
-<view>
+<view class="seek">
  <scroll-view scroll-y scroll-into-view='{{toView}}' style='height: {{scrollHeight}};'>
   <!-- <view class='scrollMsg'> -->
   <block wx:key wx:for='{{msgList}}' wx:for-index="index">

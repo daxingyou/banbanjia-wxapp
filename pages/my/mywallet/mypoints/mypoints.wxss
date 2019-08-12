@@ -1,0 +1,16 @@
+.mypoints{position: relative}
+.mypoints_bj{width: 750rpx;height: 468rpx;}
+.mypoints_1{position: absolute;left: 40rpx;right: 40rpx;top: 44rpx;background-color: rgba(255, 255, 255, 1);border-radius: 16rpx;box-shadow: 0px 0px 12px 0px rgba(229, 229, 229, 1);padding-bottom: 45rpx}
+.mypoints_text1{display: flex;align-items: center;justify-content: space-between;padding: 40rpx 44rpx 28rpx 58rpx}
+.name1{color: rgba(255, 141, 26, 1);font-size: 28rpx;}
+.name2{color: rgba(42, 130, 228, 1);font-size: 24rpx;}
+.mypoints_text2{display: flex;align-items: center;padding:15rpx 0 50rpx 58rpx;}
+.img{width: 98rpx;height: 98rpx;margin-right: 50rpx;box-shadow: 0px 0px 12px 0px rgba(255, 235, 59, 1);border-radius: 50%}
+.mypoints_text2_2{color: rgba(255, 141, 26, 1);font-size: 76rpx;font-weight: bold}
+.text{font-size: 32rpx;margin-left: 15rpx;font-weight:normal}
+.mypoints_text3{margin: 0 36rpx 0 44rpx;text-align: center;background-color: rgba(236, 65, 73, 1);border-radius: 16rpx;box-shadow: 0px 5px 5px 0px rgba(236, 65, 73, 0.3);color: #fff;font-size: 32rpx;padding: 18rpx 0;}
+.mypoints_2{color: rgba(80, 80, 80, 1);font-size: 28rpx;margin: 10rpx 38rpx 0;border-bottom: 4rpx solid rgba(236, 65, 73, 1);width: 124rpx;text-align: center;padding-bottom: 10rpx;}
+.mypoints_3{display: flex;align-items: center;justify-content: space-between;padding: 24rpx 44rpx;border-bottom: 2rpx solid rgba(229, 229, 229, 1);}
+.mypoints_3_name{color: rgba(128, 128, 128, 1);font-size: 28rpx;}
+.mypoints_3_time{color: rgba(166, 166, 166, 1);font-size: 20rpx;padding-top: 8rpx;}
+.mypoints_3_num{color: rgba(255, 141, 26, 1);font-size: 32rpx; font-weight: bold}

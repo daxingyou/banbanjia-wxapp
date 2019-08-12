@@ -5,40 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tab: ['我的现金', '我的积分', '优惠券'],
-    new_choice: 0,
-    winHeight: "",
-  },
-  newChoice(e) {
-    const index = e.currentTarget.dataset.index
-    this.setData({
-      new_choice: index
-    })
-  },
-  switchTab(e) {
-    const index = e.detail.current
-    this.setData({
-      new_choice: index
-    })
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        //console.log(res)
-        var clientHeight = res.windowHeight,
-          clientWidth = res.windowWidth,
-          rpxR = 750 / clientWidth;
-        var calc = clientHeight * rpxR - 67;
-        console.log(calc)
-        that.setData({
-          winHeight: calc
-        });
-      }
-    });
+
   },
 
   /**

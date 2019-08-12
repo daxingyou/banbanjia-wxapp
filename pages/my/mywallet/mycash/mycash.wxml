@@ -1,0 +1,10 @@
+<view class="mycash">
+  <image src="../../../../images/792b78760298761f030015f2f6f38ee.png" class="mycash_img"></image>
+  <view class="mycash_name">我的现金</view>
+  <view class="mycash_num">￥200.00</view>
+  <view class="mycash_text">
+    <navigator class="mycash_text_1" url="./investmoney/investmoney">充值</navigator>
+    <navigator class="mycash_text_2" url="./withdrawal/withdrawal">提现</navigator>
+    <navigator class="mycash_text_3" url="./cashdetails/cashdetails">现金明细</navigator> 
+  </view>
+</view>

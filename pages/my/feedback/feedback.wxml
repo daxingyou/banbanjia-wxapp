@@ -1,0 +1,26 @@
+<view class="feedback">
+  <view class="feedback_1">
+    <view class="feedback_name"><text wx:if="{{category_index == ''}}">选择反馈栏目</text>{{category_list[category_index]}}</view>
+    <picker bindchange="categoryclick" value="{{category_index}}" range="{{category_list}}">
+      <view class="feedback_xl"><text class="iconfont icon-moreunfold feedback_icon"></text></view>
+    </picker>
+  </view>
+  <view class="feedback_2">
+    <view class="feedback_name">反馈内容：</view>
+    <view>
+      <textarea class="textarea" placeholder="请输入反馈内容"/>
+    </view>
+    <view class="feedback_name">上传图片：</view>
+    <view class="images_list"> 
+			<view class="image_box" wx:for="{{images}}"> 
+			  <image src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="enlarge_image"></image>
+			  <image src="../../../images/510beee62bf1f87edda0d4b7873f73e.png" bindtap="delete_image" class="images_close" data-index="{{index}}"></image>
+			</view> 
+			<view class="upload_image" bindtap="photo_image">
+				<image src="../../../images/paizhao.png" class="photo_image"></image>
+				<view class="photo_tp">添加照片</view>
+			</view>
+		</view>
+  </view>
+</view>
+<view class="feedback_tj">提交</view>

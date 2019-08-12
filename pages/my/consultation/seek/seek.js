@@ -150,7 +150,8 @@ Page({
     msgList.push({
       speaker: 'customer',
       contentType: 'text',
-      content: e.detail.value
+      content: e.detail.value,
+      images: ''
     })
     inputVal = '';
     this.setData({

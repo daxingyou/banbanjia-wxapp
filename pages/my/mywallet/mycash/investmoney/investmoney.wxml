@@ -1,0 +1,22 @@
+<view class="investmoney">
+  <view class="investmoney_1">
+    <view class="bank">
+      <view class="bank_1">储蓄卡</view>
+      <picker bindchange="bankclick" value="{{bank_index}}" range="{{bank_list}}">
+        <view class="bank_2">
+          <view class="bank_2_name">{{bank_list[bank_index]}}</view>
+          <view class="bank_2_icon"><text class="iconfont icon-more icon1"></text></view>
+        </view>
+      </picker>
+    </view>
+    <view class="investmoney_text">
+      <view class="text1">充值金额</view>
+      <view class="text2">
+        <view>￥</view>
+        <input type="digit" class="text2_inutp" focus="{{focus}}"></input>
+      </view>
+      <view class="text3">现金余额￥200.00</view>
+      <view class="text4">充值</view>
+    </view>
+  </view>
+</view>

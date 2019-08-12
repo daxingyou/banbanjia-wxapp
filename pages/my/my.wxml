@@ -105,7 +105,7 @@
 				<image src="../../images/kf22.png" class="name_image"></image>
 				<div class="name">客服中心</div>
 			</navigator>
-			<navigator class="button_box">
+			<navigator class="button_box" url="./joiningin/joiningin">
 				<image src="../../images/rz111.png" class="name_image"></image>
 				<div class="name">我要入驻</div>
 			</navigator>
@@ -115,13 +115,15 @@
 			</navigator>
 		</view>
 	</view>
-	<view class="feedback">
-		<navigator>意见反馈</navigator>
-	</view>
-	<view class="platform_b">
-		<view>平台规则</view>
-		<image src="../../images/fii.png"></image>
-	</view>
+  <view class="feedback">
+    <navigator url="./feedback/feedback">意见反馈</navigator>
+  </view>
+  <view>
+    <navigator class="platform_b" url="./platformrules/platformrules">
+      <view>平台规则</view>
+      <image src="../../images/fii.png"></image>
+    </navigator>
+  </view>
 	<!-- 商户 -->
 	<!-- <view class="content_box">
 		<view class="gn"></view>

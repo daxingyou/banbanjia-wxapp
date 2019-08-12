@@ -1,0 +1,17 @@
+@import '../../../../../utils/iconfont.wxss'; 
+.withdrawal{border-top: 2rpx solid rgba(229, 229, 229, 1);padding: 40rpx 34rpx 0}
+.withdrawal_1{background-color: rgba(255, 255, 255, 1);border-radius: 16rpx;box-shadow: 0px 0px 12px 0px rgba(215, 215, 215, 1);border-radius: 16rpx;}
+.bank{background-color: rgba(245, 245, 245, 1);display: flex;align-items: center;justify-content: space-between;padding: 30rpx 40rpx}
+.bank_1{color: rgba(0, 0, 0, 1);font-size: 24rpx;}
+.bank_2{color: rgba(0, 0, 0, 1);font-size: 24rpx;overflow: hidden;width: 420rpx;}
+.bank_2_name{float: left;}
+.bank_2_icon{float: right;}
+.icon1{font-weight: bold}
+
+.withdrawal_text{padding: 40rpx 40rpx 64rpx}
+.text1{color: rgba(0, 0, 0, 1);font-size: 24rpx;padding-bottom: 40rpx;}
+.text2{display: flex;align-items: center;color: rgba(0, 0, 0, 1);font-size: 60rpx;font-weight: bold;border-bottom: 2rpx solid rgba(229, 229, 229, 1);padding-bottom: 5rpx;}
+.text2_inutp{height: 90rpx;line-height: 90rpx;padding-left: 5rpx;}
+.text3{color: rgba(128, 128, 128, 1);font-size: 24rpx;padding: 25rpx 0 30rpx}
+.text3_qb{color: rgba(3, 69, 143, 1);margin-left: 8rpx}
+.text4{background-color: rgba(236, 65, 73, 1);border-radius: 16rpx;box-shadow: 0px 5px 5px 0px rgba(236, 65, 73, 0.3);text-align: center;color: rgba(255, 255, 255, 1);font-size: 32rpx;padding: 16rpx 0}
