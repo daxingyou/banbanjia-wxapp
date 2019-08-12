@@ -100,12 +100,20 @@
 				<div class="name">我要入驻</div>
 			</navigator>
 			<navigator class="button_box">
-				<image src="../../images/gduo.png" class="name_image gd"></image>
-				<div class="name">更多</div>
+				<image src="../../images/f2432f8c68e4d2d12e1ceea5ffdfa73.png" class="name_image saidan"></image>
+				<div class="name">邀请得现金</div>
+			</navigator>
+      <navigator class="button_box" url="./feedback/feedback">
+				<image src="../../images/ccc4ffede6ac7081e369286fe655311.png" class="name_image"></image>
+				<div class="name">意见反馈</div>
+			</navigator>
+			<navigator class="button_box" url="./platformrules/platformrules">
+				<image src="../../images/0f7de0a49178045d39a0ef3c0cf8e0d.png" class="name_image dd"></image>
+				<div class="name">平台规则</div>
 			</navigator>
 		</view>
 	</view>
-  <view class="feedback">
+  <!-- <view class="feedback">
     <navigator url="./feedback/feedback">意见反馈</navigator>
   </view>
   <view>
@@ -113,7 +121,7 @@
       <view>平台规则</view>
       <image src="../../images/fii.png"></image>
     </navigator>
-  </view>
+  </view> -->
 	<!-- 商户 -->
 	<!-- <view class="content_box">
 		<view class="gn"></view>
